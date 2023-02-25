@@ -9,7 +9,7 @@ public class Entry {
     private String notes;
 
     /**
-     * @REQUIRES: none of name, username, password, url, notes are null
+     * @REQUIRES: name, username, url, and notes have non-zero length; password is not null
      * @EFFECTS: creates entry object which instantiates all the fields with the parameters that are passed into the
      * constructor
      */
