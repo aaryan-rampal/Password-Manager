@@ -21,12 +21,17 @@ behind algorithms and I think applying them in a project would be the best way t
 
 
 As a user, I want to be able to:
-- store entries with a name, url, password, and notes
-- edit previous entries to change any of the fields
-- delete previous entries
+- create entries with a name, url, password, and notes
+- add multiple entries to one collective file
 - generate a random password
-- specify a *minimum* entropy for the generated password
 - enter a *custom* password
+- specify a *minimum* entropy for the generated password
+- view a specific previous entry
+- view a list of all entries
+
+Stretch Goals: Not Implemented Yet
+- delete previous entries
+- edit previous entries to change any of the fields
 - **encrypt** the file when I'm done using it
 - **decrypt** the file using a password
 - store the encrypted file on my computer and have it be easily transportable

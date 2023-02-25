@@ -8,6 +8,11 @@ public class Entry {
     private String url;
     private String notes;
 
+    /**
+     * @REQUIRES: none of name, username, password, url, notes are null
+     * @EFFECTS: creates entry object which instantiates all the fields with the parameters that are passed into the
+     * constructor
+     */
     public Entry(String name, String username, Password password, String url, String notes) {
         this.name = name;
         this.username = username;

@@ -12,7 +12,11 @@ public class Password {
     private Result result;
     private Feedback feedback;
 
-
+    /**
+     * @REQUIRES: password is not null
+     * @EFFECTS: creates password object and sets password field to the parameter it was passed; creates a temporary
+     * Nbvcxz to instantiate the result and feedback fields
+     */
     public Password(String password) {
         this.password = password;
 
@@ -23,6 +27,13 @@ public class Password {
 
     private long findEntropy() {
         return Math.round(result.getEntropy());
+    }
+
+    /**
+     * @EFFECTS: returns the score (between 1 and 4) of the password calculated by the nbvcxz library
+     */
+    public int findScore() {
+        return result.getBasicScore();
     }
 
     private List<String> getSuggestions() {
