@@ -28,6 +28,10 @@ public class PasswordGenerator extends Generator {
         return buffer.toString();
     }
 
+    /**
+     * @REQUIRES: characterTypes has at least 1 element
+     * @EFFECTS: creates a string with all the possible characters types that the user wants in their password
+     */
     private String createCharacterSequence(ArrayList<CharacterTypes> characterTypes) {
 
         StringBuilder sb = new StringBuilder();
@@ -51,6 +55,9 @@ public class PasswordGenerator extends Generator {
         return sb.toString();
     }
 
+    /**
+     * @REQUIRES: characterTypesBoolean has 4 elements
+     */
     public ArrayList<CharacterTypes> addCharacterTypes(ArrayList<Boolean> characterTypesBoolean) {
         ArrayList<CharacterTypes> ct = new ArrayList<>();
 

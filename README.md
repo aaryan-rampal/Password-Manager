@@ -25,11 +25,11 @@ As a user, I want to be able to:
 - add multiple entries to one collective file
 - generate a random password
 - enter a *custom* password
-- specify a *minimum* entropy for the generated password
-- view a specific previous entry
 - view a list of all entries
 
 Stretch Goals: Not Implemented Yet
+- view a specific previous entry
+- specify a *minimum* entropy for the generated password
 - delete previous entries
 - edit previous entries to change any of the fields
 - **encrypt** the file when I'm done using it
