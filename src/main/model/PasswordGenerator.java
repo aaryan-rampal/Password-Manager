@@ -12,7 +12,8 @@ public class PasswordGenerator extends Generator {
      * @EFFECTS: generates a password of the given length; password includes all the character types that are
      * included in the list that was passed into the function
      */
-    public String generateRandomPassword(ArrayList<CharacterTypes> characterTypes, int length) {
+    public String generateRandomPassword(ArrayList<CharacterTypes> characterTypes, int length)
+            throws NullPointerException {
         StringBuffer buffer = new StringBuffer();
         String characters = createCharacterSequence(characterTypes);
 
@@ -31,7 +32,7 @@ public class PasswordGenerator extends Generator {
      * @REQUIRES: characterTypes has at least 1 element
      * @EFFECTS: creates a string with all the possible characters types that the user wants in their password
      */
-    private String createCharacterSequence(ArrayList<CharacterTypes> characterTypes) {
+    private String createCharacterSequence(ArrayList<CharacterTypes> characterTypes) throws NullPointerException {
 
         StringBuilder sb = new StringBuilder();
         for (CharacterTypes ct : characterTypes) {
@@ -45,11 +46,9 @@ public class PasswordGenerator extends Generator {
                 case SYMBOLS:
                     sb.append("!@#$%^&*()");
                     break;
-                case NUMERIC:
+                default:
                     sb.append("1234567890");
                     break;
-                default:
-                    throw new NullPointerException();
             }
         }
 
