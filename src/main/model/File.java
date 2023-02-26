@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 
 public class File {
-
     ArrayList<Entry> entries;
 
     public File() {
@@ -28,9 +27,5 @@ public class File {
 
     public ArrayList<Entry> getEntries() {
         return entries;
-    }
-
-    public void setEntries(ArrayList<Entry> entries) {
-        this.entries = entries;
     }
 }

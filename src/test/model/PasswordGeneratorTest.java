@@ -2,6 +2,7 @@ package model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static model.PasswordGenerator.CharacterTypes;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -10,7 +11,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class PasswordGeneratorTest {
-
     PasswordGenerator pg;
     ArrayList<Boolean> characterTypesBoolean;
 
@@ -86,16 +86,16 @@ public class PasswordGeneratorTest {
         assertTrue(setContainsAllCharacters(random, allTypes));
     }
 
-     @Test
-     void testGenerateRandomPasswordMultipleTypes() {
-         HashSet<Character> upperCaseAndSymbols = addStringToSet("ABCDEFGHIJKLNOPQRSTUVWXYZ!@#$%^&*()");
-         ArrayList<CharacterTypes> ct = new ArrayList<>();
-         ct.add(CharacterTypes.UPPERCASE_ALPHA);
-         ct.add(CharacterTypes.SYMBOLS);
+    @Test
+    void testGenerateRandomPasswordMultipleTypes() {
+        HashSet<Character> upperCaseAndSymbols = addStringToSet("ABCDEFGHIJKLNOPQRSTUVWXYZ!@#$%^&*()");
+        ArrayList<CharacterTypes> ct = new ArrayList<>();
+        ct.add(CharacterTypes.UPPERCASE_ALPHA);
+        ct.add(CharacterTypes.SYMBOLS);
 
-         String random = pg.generateRandomPassword(ct, 20);
-         assertTrue(setContainsAllCharacters(random, upperCaseAndSymbols));
-     }
+        String random = pg.generateRandomPassword(ct, 20);
+        assertTrue(setContainsAllCharacters(random, upperCaseAndSymbols));
+    }
 
 
     private HashSet<Character> addStringToSet(String s) {
@@ -114,5 +114,4 @@ public class PasswordGeneratorTest {
         }
         return true;
     }
-
 }
