@@ -14,7 +14,8 @@ public class PasswordGenerator extends Generator {
      * @EFFECTS: generates a password of the given length; password includes all the character types that are
      * included in the list that was passed into the function 
      */
-    public String generateRandomPassword(ArrayList<CharacterTypes> characterTypes, int length) throws NotValidEnumException {
+    public String generateRandomPassword(ArrayList<CharacterTypes> characterTypes, int length)
+            throws NotValidEnumException {
         StringBuffer buffer = new StringBuffer();
         String characters = createCharacterSequence(characterTypes);
 
