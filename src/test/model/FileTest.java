@@ -7,15 +7,15 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ListOfEntriesTest {
-    private ListOfEntries testList;
+public class FileTest {
+    private File testFile;
     private ArrayList<Entry> entryArrayList;
     private Entry e1;
     private Entry e2;
 
     @BeforeEach
     void runBefore() {
-        testList = new ListOfEntries();
+        testFile = new File();
         entryArrayList = new ArrayList<>();
         e1 = new Entry("Bing", "a@outlook.com", new Password("helloworld123"),
                 "www.bing.ca", "none");
@@ -28,14 +28,14 @@ public class ListOfEntriesTest {
 
     @Test
     void testEmptyConstructor() {
-        assertEquals(testList.getSizeOfEntries(), 0);
+        assertEquals(testFile.getSizeOfEntries(), 0);
     }
 
     @Test
     void testNotEmptyConstructor() {
-        testList = new ListOfEntries(entryArrayList);
+        testFile = new File(entryArrayList);
 
-        ArrayList<Entry> actualList = testList.getEntries();
+        ArrayList<Entry> actualList = testFile.getEntries();
         assertEquals(2, actualList.size());
         assertEquals(e1, actualList.get(0));
         assertEquals(e2, actualList.get(1));
@@ -43,23 +43,23 @@ public class ListOfEntriesTest {
 
     @Test
     void testGetEntryAtIndexZero() {
-        testList = new ListOfEntries(entryArrayList);
+        testFile = new File(entryArrayList);
 
-        assertEquals(e1, testList.getEntryAtIndex(0));
+        assertEquals(e1, testFile.getEntryAtIndex(0));
     }
 
     @Test
     void testGetEntryAtIndexLast() {
-        testList = new ListOfEntries(entryArrayList);
+        testFile = new File(entryArrayList);
 
-        assertEquals(e2, testList.getEntryAtIndex(1));
+        assertEquals(e2, testFile.getEntryAtIndex(1));
     }
 
     @Test
     void testAddEntry() {
-        testList.addEntry(e1);
+        testFile.addEntry(e1);
 
-        assertEquals(testList.getSizeOfEntries(), 1);
-        assertEquals(testList.getEntryAtIndex(0), e1);
+        assertEquals(testFile.getSizeOfEntries(), 1);
+        assertEquals(testFile.getEntryAtIndex(0), e1);
     }
 }

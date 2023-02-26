@@ -2,15 +2,15 @@ package model;
 
 import java.util.ArrayList;
 
-public class ListOfEntries {
+public class File {
 
     ArrayList<Entry> entries;
 
-    public ListOfEntries() {
+    public File() {
         entries = new ArrayList<>();
     }
 
-    public ListOfEntries(ArrayList<Entry> entries) {
+    public File(ArrayList<Entry> entries) {
         this.entries = entries;
     }
 

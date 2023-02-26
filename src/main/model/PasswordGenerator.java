@@ -8,10 +8,10 @@ import java.util.ArrayList;
 public class PasswordGenerator extends Generator {
 
     /**
-     * @REQUIRES: characterTypes is a valid enum value (ALPHA, ALPHANUMERIC, ALPHANUMERICSYMBOL, or NUMERIC),
+     * @REQUIRES: characterTypes is a valid enum value (LOWERCASE_ALPHA, UPPERCASE_ALPHA, NUMERIC, or SYMBOLS); 
      * length > 0
-     * @EFFECTS: generates a password of the given length; password includes all of the character types that are
-     * included in the list parameter
+     * @EFFECTS: generates a password of the given length; password includes all the character types that are
+     * included in the list that was passed into the function 
      */
     public String generateRandomPassword(ArrayList<CharacterTypes> characterTypes, int length) {
         StringBuffer buffer = new StringBuffer();
