@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FileTest {
-    private File testFile;
+    private File testList;
     private ArrayList<Entry> entryArrayList;
     private Entry e1;
     private Entry e2;
 
     @BeforeEach
     void runBefore() {
-        testFile = new File();
+        testList = new File();
         entryArrayList = new ArrayList<>();
         e1 = new Entry("Bing", "a@outlook.com", new Password("helloworld123"),
                 "www.bing.ca", "none");
@@ -28,14 +28,14 @@ public class FileTest {
 
     @Test
     void testEmptyConstructor() {
-        assertEquals(testFile.getSizeOfEntries(), 0);
+        assertEquals(testList.getSizeOfEntries(), 0);
     }
 
     @Test
     void testNotEmptyConstructor() {
-        testFile = new File(entryArrayList);
+        testList = new File(entryArrayList);
 
-        ArrayList<Entry> actualList = testFile.getEntries();
+        ArrayList<Entry> actualList = testList.getEntries();
         assertEquals(2, actualList.size());
         assertEquals(e1, actualList.get(0));
         assertEquals(e2, actualList.get(1));
@@ -43,23 +43,23 @@ public class FileTest {
 
     @Test
     void testGetEntryAtIndexZero() {
-        testFile = new File(entryArrayList);
+        testList = new File(entryArrayList);
 
-        assertEquals(e1, testFile.getEntryAtIndex(0));
+        assertEquals(e1, testList.getEntryAtIndex(0));
     }
 
     @Test
     void testGetEntryAtIndexLast() {
-        testFile = new File(entryArrayList);
+        testList = new File(entryArrayList);
 
-        assertEquals(e2, testFile.getEntryAtIndex(1));
+        assertEquals(e2, testList.getEntryAtIndex(1));
     }
 
     @Test
     void testAddEntry() {
-        testFile.addEntry(e1);
+        testList.addEntry(e1);
 
-        assertEquals(testFile.getSizeOfEntries(), 1);
-        assertEquals(testFile.getEntryAtIndex(0), e1);
+        assertEquals(testList.getSizeOfEntries(), 1);
+        assertEquals(testList.getEntryAtIndex(0), e1);
     }
 }
