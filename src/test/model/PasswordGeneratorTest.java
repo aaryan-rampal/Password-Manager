@@ -1,5 +1,6 @@
 package model;
 
+import exceptions.NotValidEnumException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static model.PasswordGenerator.CharacterTypes;
@@ -61,7 +62,7 @@ public class PasswordGeneratorTest {
     }
 
     @Test
-    void testGenerateRandomPasswordOneType() {
+    void testGenerateRandomPasswordOneType() throws NotValidEnumException {
         HashSet<Character> lowerCase = addStringToSet("1234567890");
         ArrayList<CharacterTypes> ct = new ArrayList<>();
         ct.add(CharacterTypes.NUMERIC);
@@ -72,7 +73,7 @@ public class PasswordGeneratorTest {
     }
 
     @Test
-    void testGenerateRandomPasswordAllTypes() {
+    void testGenerateRandomPasswordAllTypes() throws NotValidEnumException {
         HashSet<Character> allTypes =
                 addStringToSet("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLNOPQRSTUVWXYZ1234567890!@#$%^&*()");
         ArrayList<CharacterTypes> ct = new ArrayList<>();
@@ -87,7 +88,7 @@ public class PasswordGeneratorTest {
     }
 
      @Test
-     void testGenerateRandomPasswordMultipleTypes() {
+     void testGenerateRandomPasswordMultipleTypes() throws NotValidEnumException {
          HashSet<Character> upperCaseAndSymbols = addStringToSet("ABCDEFGHIJKLNOPQRSTUVWXYZ!@#$%^&*()");
          ArrayList<CharacterTypes> ct = new ArrayList<>();
          ct.add(CharacterTypes.UPPERCASE_ALPHA);
