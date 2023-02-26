@@ -49,6 +49,8 @@ public class PasswordGenerator extends Generator {
                 case NUMERIC:
                     sb.append("1234567890");
                     break;
+                default:
+                    throw new NullPointerException();
             }
         }
 
