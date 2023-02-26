@@ -1,5 +1,6 @@
 package model;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -97,6 +98,14 @@ public class PasswordGeneratorTest {
         assertTrue(setContainsAllCharacters(random, upperCaseAndSymbols));
     }
 
+    // https://junit.org/junit5/docs/current/user-guide/#extensions-exception-handling
+    @Test
+    void testGenerateRandomPasswordNull() {
+        ArrayList<CharacterTypes> ct = new ArrayList<>();
+        ct.add(null);
+
+        Assertions.assertThrows(NullPointerException.class, () -> pg.generateRandomPassword(ct, 20));
+    }
 
     private HashSet<Character> addStringToSet(String s) {
         HashSet<Character> set = new HashSet<>();
