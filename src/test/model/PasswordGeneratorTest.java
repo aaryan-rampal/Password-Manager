@@ -57,6 +57,9 @@ public class PasswordGeneratorTest {
         assertTrue(ct.get(3) == CharacterTypes.SYMBOLS);
     }
 
+    // The implementation of HashSet was learned through the Javadocs
+    // https://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html
+
     @Test
     void testGenerateRandomPasswordOneType() {
         HashSet<Character> lowerCase = addStringToSet("1234567890");

@@ -5,7 +5,8 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 
 // Represents a random password generator. It extends the Generator class included in the Nbvcxz library and overrides
-// some methods to be better utilized by the password manager.
+// some methods to be better utilized by the password manager. The code methods and outline is inspired by the Generator
+// class in the Nbvcxz library.
 public class PasswordGenerator extends Generator {
     /**
      * @REQUIRES: characterTypes is a valid enum value (LOWERCASE_ALPHA, UPPERCASE_ALPHA, NUMERIC, or SYMBOLS);
@@ -24,7 +25,6 @@ public class PasswordGenerator extends Generator {
             int index = rnd.nextInt(charactersLength);
             buffer.append(characters.charAt(index));
         }
-
         return buffer.toString();
     }
 
@@ -81,6 +81,9 @@ public class PasswordGenerator extends Generator {
         }
     }
 
+    /**
+     * @EFFECTS: list of the 4 different character types that are included as an option in the password
+     */
     public enum CharacterTypes {
         UPPERCASE_ALPHA,
         LOWERCASE_ALPHA,

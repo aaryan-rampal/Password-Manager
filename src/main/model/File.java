@@ -6,10 +6,17 @@ import java.util.ArrayList;
 public class File {
     ArrayList<Entry> entries;
 
+    /**
+     * @EFFECTS: creates a new file with no entries
+     */
     public File() {
         entries = new ArrayList<>();
     }
 
+    /**
+     * @REQUIRES: entries is not null
+     * @EFFECTS: creates a new file with existing entries
+     */
     public File(ArrayList<Entry> entries) {
         this.entries = entries;
     }

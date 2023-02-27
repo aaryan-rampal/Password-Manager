@@ -25,6 +25,7 @@ public class Password {
     }
 
     /**
+     * @REQUIRES: result is not null
      * @EFFECTS: returns the score (between 1 and 4) of the password calculated by the nbvcxz library
      */
     public int findScore() {
