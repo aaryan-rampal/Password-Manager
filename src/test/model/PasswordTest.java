@@ -1,9 +1,7 @@
 package model;
 
-import me.gosimple.nbvcxz.Nbvcxz;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PasswordTest {
@@ -16,11 +14,7 @@ public class PasswordTest {
 
     @Test
     void testConstructor() {
-        Nbvcxz nbvcxzTest = new Nbvcxz();
-
         assertEquals(password.getPassword(), "password");
-        //assertEquals(password.getFeedback(), nbvcxzTest.estimate(password.getPassword()).getFeedback());
-        //assertEquals(password.getResult(), nbvcxzTest.estimate(password.getPassword()));
     }
 
     @Test

@@ -94,6 +94,10 @@ public class PasswordGeneratorTest {
         assertTrue(setContainsAllCharacters(random, upperCaseAndSymbols));
     }
 
+    /**
+     * @REQUIRES: s is not null and not empty
+     * @EFFECTS: adds all the characters of s to a hashset and returns the set
+     */
     private HashSet<Character> addStringToSet(String s) {
         HashSet<Character> set = new HashSet<>();
         for (int i = 0; i < s.length(); i++) {
@@ -102,6 +106,10 @@ public class PasswordGeneratorTest {
         return set;
     }
 
+    /**
+     * @REQUIRES: set is not empty
+     * @EFFECTS: returns true if all characters of s are contained in set, false otherwise
+     */
     private boolean setContainsAllCharacters(String s, HashSet<Character> set) {
         for (int i = 0; i < s.length(); i++) {
             if (!set.contains(s.charAt(i))) {

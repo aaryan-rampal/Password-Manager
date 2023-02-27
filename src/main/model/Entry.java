@@ -1,5 +1,6 @@
 package model;
 
+// Represents an entry in the password manager including a name, username, password, url, and notes
 public class Entry {
     private String name;
     private String username;
