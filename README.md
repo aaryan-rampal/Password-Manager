@@ -21,14 +21,15 @@ behind algorithms and I think applying them in a project would be the best way t
 
 
 As a user, I want to be able to:
-- create entries with a name, url, password, and notes
-- add multiple entries to one collective file
+- create entries with a name, url, password, and notes and addmultiple entries to one collective file
 - generate a random password
+- generate a random passphrase
 - enter a *custom* password
+- show score for the password in an entry 
 - view a list of all entries
 
 Stretch Goals: Not Implemented Yet
-- view a specific previous entry
+- view a specific previous entry using any of the entry fields or index 
 - specify a *minimum* entropy for the generated password
 - delete previous entries
 - edit previous entries to change any of the fields
