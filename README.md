@@ -27,6 +27,8 @@ As a user, I want to be able to:
 - enter a *custom* password
 - show score for the password in an entry 
 - view a list of all entries
+- option to save file on exit
+- option to load previously saved file on startup
 
 Stretch Goals: Not Implemented Yet
 - view a specific previous entry using any of the entry fields or index 
