@@ -1,7 +1,11 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 // Represents an entry in the password manager including a name, username, password, url, and notes
-public class Entry {
+public class Entry implements Writable {
     private String name;
     private String username;
     private Password password;
@@ -40,4 +44,16 @@ public class Entry {
     public String getNotes() {
         return notes;
     }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("username", username);
+        json.put("password", password.toJson());
+        json.put("url", url);
+        json.put("notes", notes);
+        return json;
+    }
+
 }

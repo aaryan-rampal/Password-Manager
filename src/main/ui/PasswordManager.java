@@ -5,7 +5,13 @@ import model.Entry;
 import model.File;
 import model.Password;
 import model.PasswordGenerator;
+import persistence.JsonWriter;
+
 import static model.PasswordGenerator.CharacterTypes;
+
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,6 +20,10 @@ public class PasswordManager {
     private File file;
     private Scanner scan;
     private PasswordGenerator passwordGenerator;
+
+    private static final String JSON_STORE = "./data/workroom.json";
+    private JsonWriter jsonWriter;
+    
     private static final String CREATE_COMMAND = "create";
     private static final String LIST_COMMAND = "list";
     private static final String EXIT_COMMAND = "exit";
@@ -21,15 +31,17 @@ public class PasswordManager {
     private static final String RANDOM_COMMAND = "random";
     private static final String PASSPHRASE_COMMAND = "passphrase";
     private static final String PASSWORD_COMMAND = "password";
+    private static final String SAVE_COMMAND = "save";
 
     /**
      * @MODIFIES: this
      * @EFFECTS: starts the password manager application
      */
-    public void start() {
-        file = new File();
+    public void start() throws IOException {
+        file = new File("passwords");
         scan = new Scanner(System.in);
         passwordGenerator = new PasswordGenerator();
+        jsonWriter = new JsonWriter(JSON_STORE);
         displayIntroduction();
     }
 
@@ -42,6 +54,7 @@ public class PasswordManager {
             System.out.println("Welcome to your password manager\n"
                     + "Enter " + CREATE_COMMAND + " to create a new entry.\n"
                     + "Enter " + LIST_COMMAND + " to list all entries.\n"
+                    + "Enter " + SAVE_COMMAND + " to save your file.\n"
                     + "Enter " + EXIT_COMMAND + " to exit.");
 
             breakCondition = parseInput(scan.nextLine());
@@ -65,6 +78,9 @@ public class PasswordManager {
             case EXIT_COMMAND:
                 System.out.println("Thanks for using the password manager!");
                 return true;
+            case SAVE_COMMAND:
+                saveFile();
+                return false;
             default:
                 System.out.println("Sorry, I didn't understand that command. Please try again.");
                 return false;
@@ -251,5 +267,17 @@ public class PasswordManager {
                 convertInputToBoolean();
         }
         return false;
+    }
+
+    // EFFECTS: saves the workroom to file
+    private void saveFile() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(file);
+            jsonWriter.close();
+            System.out.println("Saved " + file.getName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
     }
 }
