@@ -1,10 +1,10 @@
 package persistence;
+
 import org.json.JSONObject;
 import model.File;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-
 
 // Represents a writer that writes JSON representation of workroom to file
 public class JsonWriter {

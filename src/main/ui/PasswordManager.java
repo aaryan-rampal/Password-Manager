@@ -6,11 +6,11 @@ import model.File;
 import model.Password;
 import model.PasswordGenerator;
 import persistence.JsonWriter;
+import persistence.JsonReader;
 
 import static model.PasswordGenerator.CharacterTypes;
 
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -23,6 +23,7 @@ public class PasswordManager {
 
     private static final String JSON_STORE = "./data/workroom.json";
     private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
     
     private static final String CREATE_COMMAND = "create";
     private static final String LIST_COMMAND = "list";
@@ -32,6 +33,7 @@ public class PasswordManager {
     private static final String PASSPHRASE_COMMAND = "passphrase";
     private static final String PASSWORD_COMMAND = "password";
     private static final String SAVE_COMMAND = "save";
+    private static final String LOAD_COMMAND = "load";
 
     /**
      * @MODIFIES: this
@@ -42,6 +44,7 @@ public class PasswordManager {
         scan = new Scanner(System.in);
         passwordGenerator = new PasswordGenerator();
         jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         displayIntroduction();
     }
 
@@ -55,6 +58,7 @@ public class PasswordManager {
                     + "Enter " + CREATE_COMMAND + " to create a new entry.\n"
                     + "Enter " + LIST_COMMAND + " to list all entries.\n"
                     + "Enter " + SAVE_COMMAND + " to save your file.\n"
+                    + "Enter " + LOAD_COMMAND + " to load your file.\n"
                     + "Enter " + EXIT_COMMAND + " to exit.");
 
             breakCondition = parseInput(scan.nextLine());
@@ -80,6 +84,9 @@ public class PasswordManager {
                 return true;
             case SAVE_COMMAND:
                 saveFile();
+                return false;
+            case LOAD_COMMAND:
+                loadFile();
                 return false;
             default:
                 System.out.println("Sorry, I didn't understand that command. Please try again.");
@@ -278,6 +285,17 @@ public class PasswordManager {
             System.out.println("Saved " + file.getName() + " to " + JSON_STORE);
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads workroom from file
+    private void loadFile() {
+        try {
+            file = jsonReader.read();
+            System.out.println("Loaded " + file.getName() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
         }
     }
 }
