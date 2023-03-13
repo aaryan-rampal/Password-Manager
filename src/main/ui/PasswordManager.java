@@ -40,7 +40,7 @@ public class PasswordManager {
      * @EFFECTS: starts the password manager application
      */
     public void start() throws IOException {
-        file = new File("passwords");
+        file = new File();
         scan = new Scanner(System.in);
         passwordGenerator = new PasswordGenerator();
         jsonWriter = new JsonWriter(JSON_STORE);
@@ -282,7 +282,7 @@ public class PasswordManager {
             jsonWriter.open();
             jsonWriter.write(file);
             jsonWriter.close();
-            System.out.println("Saved " + file.getName() + " to " + JSON_STORE);
+            System.out.println("Saved file to " + JSON_STORE);
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to file: " + JSON_STORE);
         }
@@ -293,7 +293,7 @@ public class PasswordManager {
     private void loadFile() {
         try {
             file = jsonReader.read();
-            System.out.println("Loaded " + file.getName() + " from " + JSON_STORE);
+            System.out.println("Loaded file from " + JSON_STORE);
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
         }

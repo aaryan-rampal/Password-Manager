@@ -42,8 +42,7 @@ public class JsonReader {
 
     // EFFECTS: parses workroom from JSON object and returns it
     private File parseFile(JSONObject jsonObject) {
-        String name = jsonObject.getString("name");
-        File f = new File(name);
+        File f = new File();
         addEntries(f, jsonObject);
         return f;
     }

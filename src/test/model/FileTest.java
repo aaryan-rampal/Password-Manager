@@ -14,7 +14,7 @@ public class FileTest {
 
     @BeforeEach
     void runBefore() {
-        testList = new File("testing");
+        testList = new File();
         entryArrayList = new ArrayList<>();
         e1 = new Entry("Bing", "a@outlook.com", new Password("helloworld123"),
                 "www.bing.ca", "none");
@@ -32,7 +32,7 @@ public class FileTest {
 
     @Test
     void testNotEmptyConstructor() {
-        testList = new File("test", entryArrayList);
+        testList = new File(entryArrayList);
 
         ArrayList<Entry> actualList = testList.getEntries();
         assertEquals(2, actualList.size());
@@ -42,14 +42,14 @@ public class FileTest {
 
     @Test
     void testGetEntryAtIndexZero() {
-        testList = new File("test", entryArrayList);
+        testList = new File(entryArrayList);
 
         assertEquals(e1, testList.getEntryAtIndex(0));
     }
 
     @Test
     void testGetEntryAtIndexLast() {
-        testList = new File("test", entryArrayList);
+        testList = new File(entryArrayList);
 
         assertEquals(e2, testList.getEntryAtIndex(1));
     }

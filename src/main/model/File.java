@@ -8,14 +8,12 @@ import java.util.ArrayList;
 
 // Represents a file which will contain a list of entries
 public class File implements Writable {
-    private String name;
     private ArrayList<Entry> entries;
 
     /**
      * @EFFECTS: creates a new file with no entries
      */
-    public File(String name) {
-        this.name = name;
+    public File() {
         entries = new ArrayList<>();
     }
 
@@ -23,13 +21,8 @@ public class File implements Writable {
      * @REQUIRES: entries is not null
      * @EFFECTS: creates a new file with existing entries
      */
-    public File(String name, ArrayList<Entry> entries) {
-        this.name = name;
+    public File(ArrayList<Entry> entries) {
         this.entries = entries;
-    }
-
-    public String getName() {
-        return this.name;
     }
 
     /**
@@ -62,7 +55,6 @@ public class File implements Writable {
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
-        json.put("name", name);
         json.put("entries", entriesToJson());
         return json;
     }
