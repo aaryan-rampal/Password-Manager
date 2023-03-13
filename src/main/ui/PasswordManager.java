@@ -39,7 +39,7 @@ public class PasswordManager {
      * @MODIFIES: this
      * @EFFECTS: starts the password manager application
      */
-    public void start() throws IOException {
+    public void start() {
         file = new File();
         scan = new Scanner(System.in);
         passwordGenerator = new PasswordGenerator();
@@ -276,7 +276,9 @@ public class PasswordManager {
         return false;
     }
 
-    // EFFECTS: saves the workroom to file
+    /**
+     * @EFFECTS: saves the file object
+     */
     private void saveFile() {
         try {
             jsonWriter.open();
@@ -288,8 +290,10 @@ public class PasswordManager {
         }
     }
 
-    // MODIFIES: this
-    // EFFECTS: loads workroom from file
+    /**
+     * @MODIFIES: this
+     * @EFFECTS: loads saved file object
+     */
     private void loadFile() {
         try {
             file = jsonReader.read();

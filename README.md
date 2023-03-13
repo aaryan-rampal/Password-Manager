@@ -38,3 +38,7 @@ Stretch Goals: Not Implemented Yet
 - **encrypt** the file when I'm done using it
 - **decrypt** the file using a password
 - store the encrypted file on my computer and have it be easily transportable
+
+Note: The files JsonReader.java, JsonWriter.java, Writable.java, JsonReaderTest.java, JsonWriterTest.java, and 
+JsonTest.java were inspired by the 
+[sample project provided by CPSC 210](https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git).
