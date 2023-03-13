@@ -58,24 +58,17 @@ public class JsonReader {
         }
     }
 
-    // MODIFIES: wr
-    // EFFECTS: parses thingy from JSON object and adds it to workroom
+    // MODIFIES: f
+    // EFFECTS: parses entires from JSON object and adds it to file
     private void addEntry(File f, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         String username = jsonObject.getString("username");
-        Password password = new Password(extractPassword(jsonObject));
+        Password password = new Password(jsonObject.getString("password"));
         String url = jsonObject.getString("url");
         String notes = jsonObject.getString("notes");
-        Entry entry = new Entry(name, username, password, url, notes);
 
+        Entry entry = new Entry(name, username, password, url, notes);
         f.addEntry(entry);
     }
 
-    private String extractPassword(JSONObject jsonObject) {
-        JSONObject passwordObject = jsonObject.getJSONObject("password");
-        String password = passwordObject.getString("password");
-
-        return password;
-
-    }
 }

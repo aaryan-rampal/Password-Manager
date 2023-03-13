@@ -3,12 +3,10 @@ package model;
 import me.gosimple.nbvcxz.Nbvcxz;
 import me.gosimple.nbvcxz.resources.Feedback;
 import me.gosimple.nbvcxz.scoring.Result;
-import org.json.JSONObject;
-import persistence.Writable;
 
 // Represents a password with the plaintext string password, Result field and Feedback field. The latter two are
 // provided by Nbvcxz and are used to calculate password strength and potential feedback on bad passwords.
-public class Password implements Writable {
+public class Password {
     private String password;
     private Result result;
     private Feedback feedback;
@@ -38,12 +36,4 @@ public class Password implements Writable {
         return password;
     }
 
-    @Override
-    public JSONObject toJson() {
-        JSONObject json = new JSONObject();
-        json.put("password", password);
-        json.put("result", result);
-        json.put("feedback", feedback);
-        return json;
-    }
 }

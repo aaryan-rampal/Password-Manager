@@ -1,6 +1,5 @@
 package model;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
 
@@ -50,7 +49,7 @@ public class Entry implements Writable {
         JSONObject json = new JSONObject();
         json.put("name", name);
         json.put("username", username);
-        json.put("password", password.toJson());
+        json.put("password", password.getPassword());
         json.put("url", url);
         json.put("notes", notes);
         return json;
