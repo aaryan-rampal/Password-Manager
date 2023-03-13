@@ -1,10 +1,26 @@
 {
-    "entries": [{
-        "password": "Eu6JKZHBAlhIaj5CXJBoH0pxGDlCFIJb7sykurXN",
-        "notes": "a",
-        "name": "a",
-        "url": "a",
-        "username": "a"
-    }],
+    "entries": [
+        {
+            "password": "gTlLIhCSVAJuOEQbmxvirnRWNPzuzvblpAmeqjYA",
+            "notes": "none",
+            "name": "Google",
+            "url": "www.google.com",
+            "username": "polar1denkd2@gmail.com"
+        },
+        {
+            "password": "nearby-stainless-captivate-retry-hurried-slicing",
+            "notes": "none",
+            "name": "Bing",
+            "url": "none",
+            "username": "aaryanr.2017@outlook.com"
+        },
+        {
+            "password": "hypnotize-taking-cornhusk-seltzer",
+            "notes": "none",
+            "name": "BMO",
+            "url": "www.bmo.ca",
+            "username": "54931831932849"
+        }
+    ],
     "name": "passwords"
 }
