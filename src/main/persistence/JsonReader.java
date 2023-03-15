@@ -7,8 +7,10 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.stream.Stream;
 
+import model.Keyset;
 import model.Password;
 import org.json.*;
 
@@ -72,14 +74,35 @@ public class JsonReader {
      * @EFFECTS: parses a single entry from JSON object and adds it to file
      */
     private void addEntry(File f, JSONObject jsonObject) {
-        String name = jsonObject.getString("name");
-        String username = jsonObject.getString("username");
-        Password password = new Password(jsonObject.getString("password"));
-        String url = jsonObject.getString("url");
-        String notes = jsonObject.getString("notes");
+        String salt = jsonObject.getString("salt");
+
+        String name = decryptField(jsonObject.getJSONArray("name"), salt);
+        String username = decryptField(jsonObject.getJSONArray("username"), salt);
+        Password password = new Password(decryptField(jsonObject.getJSONArray("password"), salt));
+        String url = decryptField(jsonObject.getJSONArray("url"), salt);
+        String notes = decryptField(jsonObject.getJSONArray("notes"), salt);
 
         Entry entry = new Entry(name, username, password, url, notes);
         f.addEntry(entry);
     }
 
+    private String decryptField(JSONArray field, String salt) {
+        Keyset keyset = new Keyset("A");
+        byte[] cipherBytes = convertJSONArrayToBytes(field);
+
+        byte[] decryptedBytes = keyset.decrypt(cipherBytes, salt);
+        return convertBytesToString(decryptedBytes);
+    }
+
+    private byte[] convertJSONArrayToBytes(JSONArray field) {
+        byte[] cipherBytes = new byte[field.length()];
+        for (int i = 0; i < field.length(); i++) {
+            cipherBytes[i] = (byte) field.get(i);
+        }
+        return cipherBytes;
+    }
+
+    private String convertBytesToString(byte[] bytes) {
+        return new String(bytes, StandardCharsets.UTF_8);
+    }
 }
