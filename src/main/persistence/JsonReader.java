@@ -27,10 +27,10 @@ public class JsonReader {
      * @EFFECTS: reads file object from JSON data and returns it; throws IOException if an
      * error occurs reading data from file
      */
-    public File read() throws IOException {
+    public File read(String masterPassword) throws IOException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
-        return parseFile(jsonObject);
+        return parseFile(jsonObject, masterPassword);
     }
 
     /**
@@ -49,9 +49,9 @@ public class JsonReader {
     /**
      * @EFFECTS: parses file from JSON object and returns it
      */
-    private File parseFile(JSONObject jsonObject) {
+    private File parseFile(JSONObject jsonObject, String masterPassword) {
         File f = new File();
-        addEntries(f, jsonObject);
+        addEntries(f, jsonObject, masterPassword);
         return f;
     }
 
@@ -59,11 +59,11 @@ public class JsonReader {
      * @MODIFIES: f
      * @EFFECTS: parses entries from JSON object and adds them to file
      */
-    private void addEntries(File f, JSONObject jsonObject) {
+    private void addEntries(File f, JSONObject jsonObject, String masterPassword) {
         JSONArray jsonArray = jsonObject.getJSONArray("entries");
         for (Object json : jsonArray) {
             JSONObject nextEntry = (JSONObject) json;
-            addEntry(f, nextEntry);
+            addEntry(f, nextEntry, masterPassword);
         }
     }
 
@@ -71,10 +71,10 @@ public class JsonReader {
      * @MODIFIES: f
      * @EFFECTS: parses a single entry from JSON object and adds it to file
      */
-    private void addEntry(File f, JSONObject jsonObject) {
+    private void addEntry(File f, JSONObject jsonObject, String masterPassword) {
         String salt = jsonObject.getString("salt");
         byte[] saltBytes = bc.stringToBytes(salt);
-        Keyset keyset = new Keyset("A");
+        Keyset keyset = new Keyset(masterPassword);
 
         String name = decryptField(jsonObject.getString("name"), saltBytes, keyset);
         String username = decryptField(jsonObject.getString("username"), saltBytes, keyset);

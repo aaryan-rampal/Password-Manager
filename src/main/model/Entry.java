@@ -10,6 +10,7 @@ public class Entry implements Writable {
     private final String name;
     private final String username;
     private final Password password;
+    private String masterPassword;
     private final String url;
     private final String notes;
     private ByteConvertor bc;
@@ -26,6 +27,10 @@ public class Entry implements Writable {
         this.url = url;
         this.notes = notes;
         bc = new ByteConvertor();
+    }
+
+    public void setMasterPassword(String masterPassword) {
+        this.masterPassword = masterPassword;
     }
 
     public String getName() {
@@ -52,7 +57,7 @@ public class Entry implements Writable {
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         byte[] saltBytes = createSalt();
-        Keyset keySet = new Keyset("A");
+        Keyset keySet = new Keyset(masterPassword);
 
         json.put("salt", bc.bytesToString(saltBytes));
         encryptField(name, json, "name", saltBytes, keySet);

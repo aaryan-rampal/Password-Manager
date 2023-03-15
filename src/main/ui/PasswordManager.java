@@ -281,8 +281,10 @@ public class PasswordManager {
      */
     private void saveFile() {
         try {
+            System.out.println("Enter your master password: ");
+            String masterPassword = scan.nextLine();
             jsonWriter.open();
-            jsonWriter.write(file);
+            jsonWriter.write(file, masterPassword);
             jsonWriter.close();
             System.out.println("Saved file to " + JSON_STORE);
         } catch (FileNotFoundException e) {
@@ -296,7 +298,9 @@ public class PasswordManager {
      */
     private void loadFile() {
         try {
-            file = jsonReader.read();
+            System.out.println("Enter your master password: ");
+            String masterPassword = scan.nextLine();
+            file = jsonReader.read(masterPassword);
             System.out.println("Loaded file from " + JSON_STORE);
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);

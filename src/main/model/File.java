@@ -9,6 +9,7 @@ import java.util.ArrayList;
 // Represents a file which will contain a list of entries
 public class File implements Writable {
     private ArrayList<Entry> entries;
+    private String masterPassword;
 
     /**
      * @EFFECTS: creates a new file with no entries
@@ -40,6 +41,10 @@ public class File implements Writable {
         return entries.size();
     }
 
+    public void setMasterPassword(String masterPassword) {
+        this.masterPassword = masterPassword;
+    }
+
     /**
      * @REQUIRES: entries has at least one element; i < entries.getSizeOfEntries()
      * @EFFECTS: returns the entry at the specified index of the entries list
@@ -55,14 +60,15 @@ public class File implements Writable {
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
-        json.put("entries", entriesToJson());
+        json.put("entries", entriesToJson(masterPassword));
         return json;
     }
 
-    private JSONArray entriesToJson() {
+    private JSONArray entriesToJson(String masterPassword) {
         JSONArray jsonArray = new JSONArray();
 
         for (Entry e : entries) {
+            e.setMasterPassword(masterPassword);
             jsonArray.put(e.toJson());
         }
 
