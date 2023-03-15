@@ -12,9 +12,11 @@ import java.security.NoSuchAlgorithmException;
 public class Keyset {
 
     private AesGcmJce aead;
+    private ByteConvertor bc;
 
     public Keyset(String password) {
         try {
+            bc = new ByteConvertor();
             AeadConfig.register();
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
             messageDigest.update(password.getBytes(StandardCharsets.UTF_8));
@@ -33,21 +35,21 @@ public class Keyset {
         return key128Bit;
     }
 
-    public byte[] encrypt(String plainText, String salt) {
+    public byte[] encrypt(String plainText, byte[] saltBytes) {
         byte[] cipherText;
         try {
             cipherText = aead.encrypt(plainText.getBytes(StandardCharsets.UTF_8),
-                    salt.getBytes(StandardCharsets.UTF_8));
+                    saltBytes);
         } catch (GeneralSecurityException e) {
             throw new RuntimeException(e);
         }
         return cipherText;
     }
 
-    public byte[] decrypt(byte[] cipherText, String salt) {
+    public byte[] decrypt(byte[] cipherText, byte[] saltBytes) {
         byte[] decryptedText;
         try {
-            decryptedText = aead.decrypt(cipherText, salt.getBytes(StandardCharsets.UTF_8));
+            decryptedText = aead.decrypt(cipherText, saltBytes);
         } catch (AEADBadTagException e) {
             System.out.println("Wrong password!");
             return null;

@@ -1,28 +1,26 @@
 package persistence;
 
-import model.Entry;
-import model.File;
+import model.*;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.stream.Stream;
 
-import model.Keyset;
-import model.Password;
 import org.json.*;
 
 // Represents a reader that reads file object from stored JSON data
 public class JsonReader {
     private String source;
+    private ByteConvertor bc;
 
     /**
      * @EFFECTS: constructs reader to read from source file
      */
     public JsonReader(String source) {
         this.source = source;
+        bc = new ByteConvertor();
     }
 
     /**
@@ -75,34 +73,23 @@ public class JsonReader {
      */
     private void addEntry(File f, JSONObject jsonObject) {
         String salt = jsonObject.getString("salt");
+        byte[] saltBytes = bc.stringToBytes(salt);
+        Keyset keyset = new Keyset("A");
 
-        String name = decryptField(jsonObject.getJSONArray("name"), salt);
-        String username = decryptField(jsonObject.getJSONArray("username"), salt);
-        Password password = new Password(decryptField(jsonObject.getJSONArray("password"), salt));
-        String url = decryptField(jsonObject.getJSONArray("url"), salt);
-        String notes = decryptField(jsonObject.getJSONArray("notes"), salt);
+        String name = decryptField(jsonObject.getString("name"), saltBytes, keyset);
+        String username = decryptField(jsonObject.getString("username"), saltBytes, keyset);
+        Password password = new Password(decryptField(jsonObject.getString("password"), saltBytes, keyset));
+        String url = decryptField(jsonObject.getString("url"), saltBytes, keyset);
+        String notes = decryptField(jsonObject.getString("notes"), saltBytes, keyset);
 
         Entry entry = new Entry(name, username, password, url, notes);
         f.addEntry(entry);
     }
 
-    private String decryptField(JSONArray field, String salt) {
-        Keyset keyset = new Keyset("A");
-        byte[] cipherBytes = convertJSONArrayToBytes(field);
-
+    private String decryptField(String field, byte[] salt, Keyset keyset) {
+        byte[] cipherBytes = bc.stringToBytes(field);
         byte[] decryptedBytes = keyset.decrypt(cipherBytes, salt);
-        return convertBytesToString(decryptedBytes);
+        return new String(decryptedBytes, StandardCharsets.UTF_8);
     }
 
-    private byte[] convertJSONArrayToBytes(JSONArray field) {
-        byte[] cipherBytes = new byte[field.length()];
-        for (int i = 0; i < field.length(); i++) {
-            cipherBytes[i] = (byte) field.get(i);
-        }
-        return cipherBytes;
-    }
-
-    private String convertBytesToString(byte[] bytes) {
-        return new String(bytes, StandardCharsets.UTF_8);
-    }
 }
