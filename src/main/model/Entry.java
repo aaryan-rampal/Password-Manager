@@ -7,12 +7,12 @@ import java.security.SecureRandom;
 
 // Represents an entry in the password manager including a name, username, password, url, and notes
 public class Entry implements Writable {
-    private final String name;
-    private final String username;
-    private final Password password;
+    private String name;
+    private String username;
+    private Password password;
     private String masterPassword;
-    private final String url;
-    private final String notes;
+    private String url;
+    private String notes;
     private ByteConvertor bc;
 
     /**
@@ -69,11 +69,19 @@ public class Entry implements Writable {
         return json;
     }
 
+    /**
+     * @REQUIRES: field is not null, json is not null, salt has 16 elements, keySet is not null
+     * @MODIFIES: json
+     * @EFFECTS: converts plaintext string to an encrypted string which it then puts into the json object
+     */
     private void encryptField(String field, JSONObject json, String nameOfField, byte[] salt, Keyset keySet) {
         byte[] cipherBytes = keySet.encrypt(field, salt);
         json.put(nameOfField, bc.bytesToString(cipherBytes));
     }
 
+    /**
+     * @EFFECTS: creates an array of 16 random bytes which will be used as the salt
+     */
     private byte[] createSalt() {
         SecureRandom random = new SecureRandom();
         byte[] saltBytes = new byte[16];

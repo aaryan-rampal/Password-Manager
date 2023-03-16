@@ -36,27 +36,26 @@ public class Keyset {
     }
 
     public byte[] encrypt(String plainText, byte[] saltBytes) {
-        byte[] cipherText;
+        byte[] cipherBytes;
         try {
-            cipherText = aead.encrypt(plainText.getBytes(StandardCharsets.UTF_8),
-                    saltBytes);
+            cipherBytes = aead.encrypt(plainText.getBytes(StandardCharsets.UTF_8), saltBytes);
         } catch (GeneralSecurityException e) {
             throw new RuntimeException(e);
         }
-        return cipherText;
+        return cipherBytes;
     }
 
-    public byte[] decrypt(byte[] cipherText, byte[] saltBytes) {
-        byte[] decryptedText;
+    public byte[] decrypt(byte[] cipherBytes, byte[] saltBytes) {
+        byte[] decryptedBytes;
         try {
-            decryptedText = aead.decrypt(cipherText, saltBytes);
+            decryptedBytes = aead.decrypt(cipherBytes, saltBytes);
         } catch (AEADBadTagException e) {
             System.out.println("Wrong password!");
             return null;
         } catch (GeneralSecurityException e) {
             throw new RuntimeException(e);
         }
-        return decryptedText;
+        return decryptedBytes;
     }
 
 
