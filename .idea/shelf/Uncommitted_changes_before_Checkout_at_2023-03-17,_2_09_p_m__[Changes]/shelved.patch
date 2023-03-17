@@ -1,0 +1,43 @@
+Index: data/workroom.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\"entries\": [{\n    \"password\": \"lol\",\n    \"notes\": \"lol\",\n    \"name\": \"BMO\",\n    \"url\": \"no\",\n    \"username\": \"bro\"\n}]}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/data/workroom.json b/data/workroom.json
+--- a/data/workroom.json	(revision 098e6040721bd4945d28b52b6dfc887fee4d8dff)
++++ b/data/workroom.json	(date 1679087350701)
+@@ -1,7 +1,23 @@
+-{"entries": [{
+-    "password": "lol",
+-    "notes": "lol",
+-    "name": "BMO",
+-    "url": "no",
+-    "username": "bro"
+-}]}
+\ No newline at end of file
++{"entries": [
++    {
++        "password": "astute-facecloth-qualified-mutate-stole-unwoven",
++        "notes": "none",
++        "name": "Google",
++        "url": "www.google.ca",
++        "username": "polar@gmail.com"
++    },
++    {
++        "password": "4hvhTrJmhUnI3q3VIu62TFvCadvltEQUvxP2tqD0",
++        "notes": "none",
++        "name": "Bing",
++        "url": "www.bing.ca",
++        "username": "a@outlook.com"
++    },
++    {
++        "password": "password123",
++        "notes": "none",
++        "name": "Reddit",
++        "url": "www.reddit.com",
++        "username": "A"
++    }
++]}
+\ No newline at end of file

@@ -87,6 +87,7 @@ public class Entry implements Writable {
         byte[] saltBytes = new byte[16];
         random.nextBytes(saltBytes);
         return saltBytes;
+//        return bc.stringToBytes("test");
     }
 
 }
