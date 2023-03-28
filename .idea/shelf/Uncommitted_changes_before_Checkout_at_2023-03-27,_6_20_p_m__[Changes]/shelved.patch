@@ -1,0 +1,26 @@
+Index: src/main/ui/GUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ui;\n\nimport javax.swing.*;\nimport java.awt.*;\nimport java.awt.event.ActionEvent;\nimport java.awt.event.ActionListener;\n\npublic class GUI extends JFrame implements ActionListener {\n    private JPanel cardPanel;\n    private JPanel mainMenu;\n    private JButton createButton;\n    private JButton loadButton;\n    private JPanel createFieldMenu;\n    private JTextField nameTextField;\n    private JTextField userNameTextField;\n    private JTextField urlTextField;\n    private JTextField notesTextField;\n    private JButton nextButton;\n    private PasswordManager passwordManager;\n\n    private final String CREATE_BUTTON = \"CREATE BUTTON\";\n    private final String LOAD_BUTTON = \"LOAD BUTTON\";\n\n    private final String MAIN_MENU = \"MAIN MENU\";\n    private final String CREATE_FIELD_MENU = \"CREATE FIELD MENU\";\n\n    public GUI() {\n        super(\"Password Manager\");\n        setDefaultCloseOperation(EXIT_ON_CLOSE);\n        setSize(new Dimension(600, 500));\n        setContentPane(cardPanel);\n        setVisible(true);\n\n        passwordManager = new PasswordManager();\n        passwordManager.start();\n\n        setupCardLayout();\n        addActionToButtons();\n    }\n\n    private void setupCardLayout() {\n        cardPanel.add(mainMenu, MAIN_MENU);\n        setupMainMenu();\n        cardPanel.add(createFieldMenu, CREATE_FIELD_MENU);\n        setupCreateFieldMenu();\n//        final CardLayout cl = (CardLayout) cardPanel.getLayout();\n//        cl.show(cardPanel, CREATE_FIELD_MENU);\n        ((CardLayout) cardPanel.getLayout()).show(cardPanel, MAIN_MENU);\n    }\n\n    private void setupCreateFieldMenu() {\n        createFieldMenu.add(nameTextField);\n        createFieldMenu.add(userNameTextField);\n        createFieldMenu.add(urlTextField);\n        createFieldMenu.add(notesTextField);\n    }\n\n    private void setupMainMenu() {\n        mainMenu.add(createButton);\n        mainMenu.add(loadButton);\n    }\n\n    public void addActionToButtons() {\n        createButton.addActionListener(this);\n        createButton.setActionCommand(CREATE_BUTTON);\n        loadButton.addActionListener(this);\n        loadButton.setActionCommand(LOAD_BUTTON);\n    }\n\n    @Override\n    public void actionPerformed(ActionEvent actionEvent) {\n        final CardLayout cl = (CardLayout) cardPanel.getLayout();\n        cl.show(cardPanel, CREATE_FIELD_MENU);\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/ui/GUI.java b/src/main/ui/GUI.java
+--- a/src/main/ui/GUI.java	
++++ b/src/main/ui/GUI.java	
+@@ -18,7 +18,6 @@
+     private JButton nextButton;
+     private PasswordManager passwordManager;
+ 
+-    private final String CREATE_BUTTON = "CREATE BUTTON";
+     private final String LOAD_BUTTON = "LOAD BUTTON";
+ 
+     private final String MAIN_MENU = "MAIN MENU";
+@@ -62,6 +61,7 @@
+ 
+     public void addActionToButtons() {
+         createButton.addActionListener(this);
++        String CREATE_BUTTON = "CREATE BUTTON";
+         createButton.setActionCommand(CREATE_BUTTON);
+         loadButton.addActionListener(this);
+         loadButton.setActionCommand(LOAD_BUTTON);

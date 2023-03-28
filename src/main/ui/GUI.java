@@ -16,61 +16,79 @@ public class GUI extends JFrame implements ActionListener {
     private JTextField urlTextField;
     private JTextField notesTextField;
     private JButton nextButton;
+    private JPanel chooseCustomOrRandom;
+    private JRadioButton customPasswordRadioButton;
+    private JRadioButton generatePasswordRadioButton;
+    private JPanel customPassword;
+    private JPasswordField passwordField1;
+    private JButton nextButton1;
     private PasswordManager passwordManager;
+
+    private CardLayout cl;
 
     private final String CREATE_BUTTON = "CREATE BUTTON";
     private final String LOAD_BUTTON = "LOAD BUTTON";
-
-    private final String MAIN_MENU = "MAIN MENU";
-    private final String CREATE_FIELD_MENU = "CREATE FIELD MENU";
+    private final String NEXT_BUTTON = "NEXT BUTTON";
+    private final String GENERATE_PASSWORD_BUTTON = "GENERATE_PASSWORD_BUTTON ";
+    private final String CUSTOM_PASSWORD_BUTTON = "CUSTOM_PASSWORD_BUTTON ";
 
     public GUI() {
         super("Password Manager");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(new Dimension(600, 500));
+        setSize(new Dimension((int) (600*1.5), (int) (500*1.5)));
         setContentPane(cardPanel);
         setVisible(true);
 
         passwordManager = new PasswordManager();
-        passwordManager.start();
 
         setupCardLayout();
         addActionToButtons();
     }
 
     private void setupCardLayout() {
-        cardPanel.add(mainMenu, MAIN_MENU);
-        setupMainMenu();
-        cardPanel.add(createFieldMenu, CREATE_FIELD_MENU);
-        setupCreateFieldMenu();
-//        final CardLayout cl = (CardLayout) cardPanel.getLayout();
-//        cl.show(cardPanel, CREATE_FIELD_MENU);
-        ((CardLayout) cardPanel.getLayout()).show(cardPanel, MAIN_MENU);
-    }
-
-    private void setupCreateFieldMenu() {
-        createFieldMenu.add(nameTextField);
-        createFieldMenu.add(userNameTextField);
-        createFieldMenu.add(urlTextField);
-        createFieldMenu.add(notesTextField);
-    }
-
-    private void setupMainMenu() {
-        mainMenu.add(createButton);
-        mainMenu.add(loadButton);
+        cl = (CardLayout) cardPanel.getLayout();
+        cl.first(cardPanel);
     }
 
     public void addActionToButtons() {
-        createButton.addActionListener(this);
-        createButton.setActionCommand(CREATE_BUTTON);
-        loadButton.addActionListener(this);
-        loadButton.setActionCommand(LOAD_BUTTON);
+        activate(createButton, CREATE_BUTTON);
+        activate(loadButton, LOAD_BUTTON);
+        activate(nextButton, NEXT_BUTTON);
+        activate(generatePasswordRadioButton, GENERATE_PASSWORD_BUTTON);
+        activate(customPasswordRadioButton, CUSTOM_PASSWORD_BUTTON);
+    }
+
+    public void activate(JRadioButton button, String actionCommand) {
+        button.addActionListener(this);
+        button.setActionCommand(actionCommand);
+    }
+
+    public void activate(JButton button, String actionCommand) {
+        button.addActionListener(this);
+        button.setActionCommand(actionCommand);
     }
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        final CardLayout cl = (CardLayout) cardPanel.getLayout();
-        cl.show(cardPanel, CREATE_FIELD_MENU);
+        switch(actionEvent.getActionCommand()) {
+            case CREATE_BUTTON:
+                cl.show(cardPanel, "Card2");
+                break;
+            case LOAD_BUTTON:
+                break;
+            case NEXT_BUTTON:
+                cl.show(cardPanel, "Card3");
+                break;
+            case CUSTOM_PASSWORD_BUTTON:
+                cl.show(cardPanel, "Card4");
+                break;
+            case GENERATE_PASSWORD_BUTTON:
+                cl.show(cardPanel, "Card5");
+                break;
+            default:
+                System.out.println();
+                break;
+        }
     }
 
 }
