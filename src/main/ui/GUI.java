@@ -26,16 +26,16 @@ public class GUI extends JFrame implements ActionListener {
 
     private CardLayout cl;
 
-    private final String CREATE_BUTTON = "CREATE BUTTON";
-    private final String LOAD_BUTTON = "LOAD BUTTON";
-    private final String NEXT_BUTTON = "NEXT BUTTON";
-    private final String GENERATE_PASSWORD_BUTTON = "GENERATE_PASSWORD_BUTTON ";
-    private final String CUSTOM_PASSWORD_BUTTON = "CUSTOM_PASSWORD_BUTTON ";
+    private static final String CREATE_BUTTON = "CREATE BUTTON";
+    private static final String LOAD_BUTTON = "LOAD BUTTON";
+    private static final String NEXT_BUTTON = "NEXT BUTTON";
+    private static final String GENERATE_PASSWORD_BUTTON = "GENERATE_PASSWORD_BUTTON ";
+    private static final String CUSTOM_PASSWORD_BUTTON = "CUSTOM_PASSWORD_BUTTON ";
 
     public GUI() {
         super("Password Manager");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(new Dimension((int) (600*1.5), (int) (500*1.5)));
+        setSize(new Dimension((int) (600 * 1.5), (int) (500 * 1.5)));
         setContentPane(cardPanel);
         setVisible(true);
 
@@ -70,7 +70,7 @@ public class GUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        switch(actionEvent.getActionCommand()) {
+        switch (actionEvent.getActionCommand()) {
             case CREATE_BUTTON:
                 cl.show(cardPanel, "Card2");
                 break;
