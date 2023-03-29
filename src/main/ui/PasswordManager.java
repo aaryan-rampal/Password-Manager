@@ -5,15 +5,16 @@ import model.Entry;
 import model.File;
 import model.Password;
 import model.PasswordGenerator;
-import persistence.JsonWriter;
 import persistence.JsonReader;
-
-import static model.PasswordGenerator.CharacterTypes;
+import persistence.JsonWriter;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import static model.PasswordGenerator.CharacterTypes;
 
 // Represents the password manager application with the file currently open
 public class PasswordManager {
@@ -45,7 +46,7 @@ public class PasswordManager {
         passwordGenerator = new PasswordGenerator();
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
-        displayIntroduction();
+//        displayIntroduction();
     }
 
     /**
@@ -134,6 +135,11 @@ public class PasswordManager {
         file.addEntry(entry);
     }
 
+    public void createEntry(String name, String username, Password password, String url, String notes) {
+        Entry entry = new Entry(name, username, password, url, notes);
+        file.addEntry(entry);
+    }
+
     /**
      * @EFFECTS: takes a string and prompts the user to enter that string's value for the entry
      */
@@ -205,6 +211,15 @@ public class PasswordManager {
         }
 
         return new Password(passwordText);
+    }
+
+    public String generatePassphraseForGUI(int words) {
+        return Generator.generatePassphrase("-", words);
+    }
+
+    public String generatePasswordForGUI(ArrayList<Boolean> characterTypesBoolean, int length) {
+        ArrayList<CharacterTypes> ct = passwordGenerator.addCharacterTypes(characterTypesBoolean);
+        return generatePassword(ct, length);
     }
 
     /**
@@ -292,6 +307,18 @@ public class PasswordManager {
         }
     }
 
+    public void saveFileFromGUI(String masterPassword) {
+        try {
+            System.out.println("Enter your master password: ");
+            jsonWriter.open();
+            jsonWriter.write(file, masterPassword);
+            jsonWriter.close();
+            System.out.println("Saved file to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            e.getMessage();
+        }
+    }
+
     /**
      * @MODIFIES: this
      * @EFFECTS: loads saved file object
@@ -304,6 +331,9 @@ public class PasswordManager {
             System.out.println("Loaded file from " + JSON_STORE);
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
+        } catch (GeneralSecurityException e) {
+            System.out.println("Wrong password!");
         }
     }
+
 }

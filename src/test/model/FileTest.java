@@ -1,5 +1,6 @@
 package model;
 
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
@@ -60,5 +61,15 @@ public class FileTest {
 
         assertEquals(testList.getSizeOfEntries(), 1);
         assertEquals(testList.getEntryAtIndex(0), e1);
+    }
+
+    @Test
+    void testToJson() {
+        testList.addEntry(e1);
+        testList.addEntry(e2);
+        testList.setMasterPassword("test password");
+
+        JSONObject a = testList.toJson();
+        System.out.println();
     }
 }

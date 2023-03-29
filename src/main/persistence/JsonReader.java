@@ -6,9 +6,12 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.security.GeneralSecurityException;
 import java.util.stream.Stream;
 
 import org.json.*;
+
+import javax.crypto.AEADBadTagException;
 
 // Represents a reader that reads file object from stored JSON data
 public class JsonReader {
@@ -27,7 +30,7 @@ public class JsonReader {
      * @EFFECTS: reads file object from JSON data and returns it; throws IOException if an
      * error occurs reading data from file
      */
-    public File read(String masterPassword) throws IOException {
+    public File read(String masterPassword) throws IOException, GeneralSecurityException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
         return parseFile(jsonObject, masterPassword);
@@ -49,7 +52,7 @@ public class JsonReader {
     /**
      * @EFFECTS: parses file from JSON object and returns it
      */
-    private File parseFile(JSONObject jsonObject, String masterPassword) {
+    private File parseFile(JSONObject jsonObject, String masterPassword) throws GeneralSecurityException {
         File f = new File();
         addEntries(f, jsonObject, masterPassword);
         return f;
@@ -59,7 +62,7 @@ public class JsonReader {
      * @MODIFIES: f
      * @EFFECTS: parses entries from JSON object and adds them to file
      */
-    private void addEntries(File f, JSONObject jsonObject, String masterPassword) {
+    private void addEntries(File f, JSONObject jsonObject, String masterPassword) throws GeneralSecurityException {
         JSONArray jsonArray = jsonObject.getJSONArray("entries");
         for (Object json : jsonArray) {
             JSONObject nextEntry = (JSONObject) json;
@@ -71,7 +74,7 @@ public class JsonReader {
      * @MODIFIES: f
      * @EFFECTS: parses a single entry from JSON object and adds it to file
      */
-    private void addEntry(File f, JSONObject jsonObject, String masterPassword) {
+    private void addEntry(File f, JSONObject jsonObject, String masterPassword) throws GeneralSecurityException {
         String salt = jsonObject.getString("salt");
         byte[] saltBytes = bc.stringToBytes(salt);
         Keyset keyset = new Keyset(masterPassword);
@@ -86,7 +89,7 @@ public class JsonReader {
         f.addEntry(entry);
     }
 
-    private String decryptField(String field, byte[] salt, Keyset keyset) {
+    private String decryptField(String field, byte[] salt, Keyset keyset) throws GeneralSecurityException {
         byte[] cipherBytes = bc.stringToBytes(field);
         byte[] decryptedBytes = keyset.decrypt(cipherBytes, salt);
         return new String(decryptedBytes, StandardCharsets.UTF_8);

@@ -45,16 +45,9 @@ public class Keyset {
         return cipherBytes;
     }
 
-    public byte[] decrypt(byte[] cipherBytes, byte[] saltBytes) {
+    public byte[] decrypt(byte[] cipherBytes, byte[] saltBytes) throws GeneralSecurityException {
         byte[] decryptedBytes;
-        try {
-            decryptedBytes = aead.decrypt(cipherBytes, saltBytes);
-        } catch (AEADBadTagException e) {
-            System.out.println("Wrong password!");
-            return null;
-        } catch (GeneralSecurityException e) {
-            throw new RuntimeException(e);
-        }
+        decryptedBytes = aead.decrypt(cipherBytes, saltBytes);
         return decryptedBytes;
     }
 
