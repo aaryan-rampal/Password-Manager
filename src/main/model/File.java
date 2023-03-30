@@ -34,6 +34,10 @@ public class File implements Writable {
         entries.add(entry);
     }
 
+    public void removeEntry(int index) {
+        entries.remove(index);
+    }
+
     /**
      * @EFFECTS: returns the size of the list
      */

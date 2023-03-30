@@ -49,6 +49,10 @@ public class PasswordManager {
 //        displayIntroduction();
     }
 
+    public File getFile() {
+        return file;
+    }
+
     /**
      * @EFFECTS: displays the introduction menu and handles user input
      */
@@ -138,6 +142,10 @@ public class PasswordManager {
     public void createEntry(String name, String username, Password password, String url, String notes) {
         Entry entry = new Entry(name, username, password, url, notes);
         file.addEntry(entry);
+    }
+
+    public void removeEntryForGUI(int index) {
+        file.removeEntry(index);
     }
 
     /**
@@ -327,6 +335,17 @@ public class PasswordManager {
         try {
             System.out.println("Enter your master password: ");
             String masterPassword = scan.nextLine();
+            file = jsonReader.read(masterPassword);
+            System.out.println("Loaded file from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        } catch (GeneralSecurityException e) {
+            System.out.println("Wrong password!");
+        }
+    }
+
+    public void loadFileFromGUI(String masterPassword) {
+        try {
             file = jsonReader.read(masterPassword);
             System.out.println("Loaded file from " + JSON_STORE);
         } catch (IOException e) {

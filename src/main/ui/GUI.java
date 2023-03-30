@@ -1,5 +1,7 @@
 package ui;
 
+import model.Entry;
+import model.File;
 import model.Password;
 
 import javax.swing.*;
@@ -59,6 +61,11 @@ public class GUI extends JFrame implements ActionListener {
     private JButton saveButton;
     private JButton backButton1;
     private JPanel loadEntries;
+    private JTable table1;
+    private JButton deleteAnEntryButton;
+    private JTextField textField3;
+    private JButton deleteButton;
+    private JPanel deleteEntry;
 
     private PasswordManager passwordManager;
     private CardLayout cl;
@@ -80,6 +87,11 @@ public class GUI extends JFrame implements ActionListener {
     private static final String BACK_FROM_LOAD_BUTTON = "BACK_FROM_LOAD_BUTTON";
     private static final String BACK_BUTTON = "BACK_BUTTON";
     private static final String EXIT_BUTTON = "EXIT BUTTON";
+    private static final String LOAD_ENTRIES_BUTTON = "LOAD ENTRIES BUTTON";
+    private static final String LIST_ENTRIES = "LIST ENTRIES";
+    private static final String DELETE_BUTTON = "DELETE BUTTON";
+    private static final String GO_TO_DELETE_BUTTON = "GO_TO_DELETE_BUTTON";
+
 
     public GUI() {
         super("Password Manager");
@@ -118,6 +130,10 @@ public class GUI extends JFrame implements ActionListener {
         activate(backButton1, BACK_BUTTON);
         activate(saveButton, SAVE_BUTTON);
         activate(exitButton, EXIT_BUTTON);
+        activate(loadButton1, LOAD_ENTRIES_BUTTON);
+        activate(listAllEntriesButton, LIST_ENTRIES);
+        activate(deleteButton, DELETE_BUTTON);
+        activate(deleteAnEntryButton, GO_TO_DELETE_BUTTON);
     }
 
     public void activate(JRadioButton button, String actionCommand) {
@@ -182,6 +198,10 @@ public class GUI extends JFrame implements ActionListener {
                     cl.show(cardPanel, "mainMenu");
                 }
                 break;
+            case LIST_ENTRIES:
+                listEntries();
+                cl.show(cardPanel, "listEntries");
+                break;
             case SAVE_BUTTON:
                 save();
                 cl.show(cardPanel, "mainMenu");
@@ -192,15 +212,47 @@ public class GUI extends JFrame implements ActionListener {
             case EXIT_BUTTON:
                 System.exit(0);
                 break;
+            case LOAD_ENTRIES_BUTTON:
+                load();
+                cl.show(cardPanel, "mainMenu");
+                break;
+            case DELETE_BUTTON:
+                deleteEntry();
+                cl.show(cardPanel, "mainMenu");
+                break;
+            case GO_TO_DELETE_BUTTON:
+                cl.show(cardPanel, "deleteEntry");
+                break;
             default:
                 System.out.println();
                 break;
         }
     }
 
+    private void deleteEntry() {
+        passwordManager.removeEntryForGUI(Integer.parseInt(textField3.getText()));
+    }
+
+    private void listEntries() {
+        File file = passwordManager.getFile();
+        ArrayList<Entry> entries = file.getEntries();
+
+        DefaultListModel<String> model = new DefaultListModel<>();
+        for (Entry e : entries) {
+            model.addElement(e.getName());
+        }
+
+
+    }
+
     private void save() {
         String masterPassword = new String(passwordField2.getPassword());
         passwordManager.saveFileFromGUI(masterPassword);
+    }
+
+    private void load() {
+        String masterPassword = new String(passwordField3.getPassword());
+        passwordManager.loadFileFromGUI(masterPassword);
     }
 
     private void callCreateEntry(int passwordType) {
