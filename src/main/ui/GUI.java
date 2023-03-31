@@ -126,6 +126,7 @@ public class GUI extends JFrame implements ActionListener {
         cl.first(cardPanel);
     }
 
+    @SuppressWarnings("methodlength")
     public void addActionToButtons() {
         activate(createButton, CREATE_BUTTON);
         activate(loadFromIntroButton, LOAD_FROM_INTRO_BUTTON);
@@ -168,6 +169,7 @@ public class GUI extends JFrame implements ActionListener {
     }
 
     @Override
+    @SuppressWarnings("methodlength")
     public void actionPerformed(ActionEvent actionEvent) {
         switch (actionEvent.getActionCommand()) {
             case CREATE_BUTTON:
