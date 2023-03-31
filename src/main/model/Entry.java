@@ -3,6 +3,7 @@ package model;
 import org.json.JSONObject;
 import persistence.Writable;
 
+import java.security.GeneralSecurityException;
 import java.security.SecureRandom;
 
 // Represents an entry in the password manager including a name, username, password, url, and notes
@@ -14,6 +15,7 @@ public class Entry implements Writable {
     private String url;
     private String notes;
     private ByteConvertor bc;
+    private String algorithm;
 
     /**
      * @REQUIRES: name, username, url, and notes have non-zero length; password is not null
@@ -26,7 +28,16 @@ public class Entry implements Writable {
         this.password = password;
         this.url = url;
         this.notes = notes;
+        algorithm = "SHA-256";
         bc = new ByteConvertor();
+    }
+
+    public void setAlgorithm(String algorithm) {
+        this.algorithm = algorithm;
+    }
+
+    public String getAlgorithm() {
+        return algorithm;
     }
 
     public void setMasterPassword(String masterPassword) {
@@ -57,7 +68,12 @@ public class Entry implements Writable {
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         byte[] saltBytes = createSalt();
-        Keyset keySet = new Keyset(masterPassword);
+        Keyset keySet = null;
+        try {
+            keySet = new Keyset(masterPassword, algorithm);
+        } catch (GeneralSecurityException e) {
+            return null;
+        }
 
         json.put("salt", bc.bytesToString(saltBytes));
         encryptField(name, json, "name", saltBytes, keySet);

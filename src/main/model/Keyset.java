@@ -14,19 +14,13 @@ public class Keyset {
     private AesGcmJce aead;
     private ByteConvertor bc;
 
-    public Keyset(String password) {
-        try {
-            bc = new ByteConvertor();
-            AeadConfig.register();
-            MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-            messageDigest.update(password.getBytes(StandardCharsets.UTF_8));
-            byte[] key128Bit = convertTo128Bits(messageDigest.digest());
-            aead = new AesGcmJce(key128Bit);
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        } catch (GeneralSecurityException e) {
-            throw new RuntimeException(e);
-        }
+    public Keyset(String password, String algorithm) throws GeneralSecurityException {
+        bc = new ByteConvertor();
+        AeadConfig.register();
+        MessageDigest messageDigest = MessageDigest.getInstance(algorithm);
+        messageDigest.update(password.getBytes(StandardCharsets.UTF_8));
+        byte[] key128Bit = convertTo128Bits(messageDigest.digest());
+        aead = new AesGcmJce(key128Bit);
     }
 
     private byte[] convertTo128Bits(byte[] digest) {
@@ -39,8 +33,8 @@ public class Keyset {
         byte[] cipherBytes;
         try {
             cipherBytes = aead.encrypt(plainText.getBytes(StandardCharsets.UTF_8), saltBytes);
-        } catch (GeneralSecurityException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            return null;
         }
         return cipherBytes;
     }

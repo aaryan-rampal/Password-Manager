@@ -64,6 +64,16 @@ public class FileTest {
     }
 
     @Test
+    void testRemoveEntry() {
+        testList.addEntry(e1);
+        testList.addEntry(e2);
+
+        testList.removeEntry(0);
+        assertEquals(testList.getSizeOfEntries(), 1);
+        assertEquals(testList.getEntries().get(0), e2);
+    }
+
+    @Test
     void testToJson() {
         testList.addEntry(e1);
         testList.addEntry(e2);

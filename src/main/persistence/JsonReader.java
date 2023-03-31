@@ -77,7 +77,7 @@ public class JsonReader {
     private void addEntry(File f, JSONObject jsonObject, String masterPassword) throws GeneralSecurityException {
         String salt = jsonObject.getString("salt");
         byte[] saltBytes = bc.stringToBytes(salt);
-        Keyset keyset = new Keyset(masterPassword);
+        Keyset keyset = new Keyset(masterPassword, "SHA-256");
 
         String name = decryptField(jsonObject.getString("name"), saltBytes, keyset);
         String username = decryptField(jsonObject.getString("username"), saltBytes, keyset);

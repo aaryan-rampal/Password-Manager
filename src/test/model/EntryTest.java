@@ -3,6 +3,7 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class EntryTest {
     private Entry testEntry;
@@ -22,5 +23,17 @@ public class EntryTest {
         assertEquals(p, testEntry.getPassword());
         assertEquals("www.google.com", testEntry.getUrl());
         assertEquals("made for school", testEntry.getNotes());
+    }
+
+    @Test
+    void testSetAlgorithm() {
+        testEntry.setAlgorithm("invalid");
+        assertEquals(testEntry.getAlgorithm(), "invalid");
+    }
+
+    @Test
+    void testExceptionInToJson() {
+        testEntry.setAlgorithm("invalid");
+        assertNull(testEntry.toJson());
     }
 }

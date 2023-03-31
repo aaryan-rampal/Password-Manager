@@ -107,7 +107,6 @@ public class GUI extends JFrame implements ActionListener {
     private static final String ALL_BUTTON = "ALL BUTTON";
     private static final String BACK_FROM_LIST_BUTTON = "BACK FROM LIST BUTTON";
 
-
     public GUI() {
         super("Password Manager");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -250,6 +249,7 @@ public class GUI extends JFrame implements ActionListener {
                 break;
             case DELETE_BUTTON:
                 deleteEntry();
+                clearTextField(textField3);
                 cl.show(cardPanel, "mainMenu");
                 break;
             case GO_TO_DELETE_BUTTON:
@@ -305,10 +305,7 @@ public class GUI extends JFrame implements ActionListener {
     }
 
     private void listEntries(ArrayList<Entry> entries) {
-//        File file = passwordManager.getFile();
-//        ArrayList<Entry> entries = file.getEntries();
         DefaultTableModel tableModel = new DefaultTableModel() {
-
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -343,7 +340,8 @@ public class GUI extends JFrame implements ActionListener {
     private void fillTableWithEntries(DefaultTableModel tableModel, ArrayList<Entry> entries) {
         for (int i = 0; i < entries.size(); i++) {
             Entry e = entries.get(i);
-            String[] entryData = new String[]{e.getName(), e.getUsername(), e.getPassword().getPassword(), e.getUrl(), e.getNotes()};
+            String[] entryData = new String[]{e.getName(), e.getUsername(), e.getPassword().getPassword(), e.getUrl(),
+                    e.getNotes()};
             tableModel.addRow(entryData);
         }
     }
