@@ -72,7 +72,7 @@ public class Entry implements Writable {
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         byte[] saltBytes = createSalt();
-        Keyset keySet = null;
+        Keyset keySet;
         try {
             keySet = new Keyset(masterPassword, algorithm);
         } catch (GeneralSecurityException e) {

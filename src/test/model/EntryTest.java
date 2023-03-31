@@ -1,9 +1,12 @@
 package model;
 
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class EntryTest {
     private Entry testEntry;
@@ -35,5 +38,18 @@ public class EntryTest {
     void testExceptionInToJson() {
         testEntry.setAlgorithm("invalid");
         assertNull(testEntry.toJson());
+    }
+
+    @Test
+    void testToJson() {
+        testEntry.setMasterPassword("password");
+        JSONObject testJson = testEntry.toJson();
+        Set<String> jsonKeys = testJson.keySet();
+        assertTrue(jsonKeys.contains("salt"));
+        assertTrue(jsonKeys.contains("name"));
+        assertTrue(jsonKeys.contains("username"));
+        assertTrue(jsonKeys.contains("password"));
+        assertTrue(jsonKeys.contains("url"));
+        assertTrue(jsonKeys.contains("notes"));
     }
 }
