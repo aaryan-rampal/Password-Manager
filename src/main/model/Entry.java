@@ -73,8 +73,7 @@ public class Entry implements Writable {
         try {
             JSONObject json = new JSONObject();
             byte[] saltBytes = createSalt();
-            Keyset keySet;
-            keySet = new Keyset(masterPassword, algorithm);
+            Keyset keySet = new Keyset(masterPassword, algorithm);
             json.put("salt", bc.bytesToString(saltBytes));
             encryptField(name, json, "name", saltBytes, keySet);
             encryptField(username, json, "username", saltBytes, keySet);

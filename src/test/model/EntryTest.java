@@ -52,4 +52,5 @@ public class EntryTest {
         assertTrue(jsonKeys.contains("url"));
         assertTrue(jsonKeys.contains("notes"));
     }
+
 }

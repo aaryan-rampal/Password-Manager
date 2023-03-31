@@ -44,13 +44,11 @@ public class Keyset {
      * @EFFECTS: encrypts the plain text into an encrypted byte array
      */
     public byte[] encrypt(String plainText, byte[] saltBytes) {
-        byte[] cipherBytes;
         try {
-            cipherBytes = aead.encrypt(plainText.getBytes(StandardCharsets.UTF_8), saltBytes);
+            return aead.encrypt(plainText.getBytes(StandardCharsets.UTF_8), saltBytes);
         } catch (Exception e) {
             return null;
         }
-        return cipherBytes;
     }
 
     /**
@@ -58,9 +56,7 @@ public class Keyset {
      * @EFFECTS: decrypts the encrypted byte array into a plain text string
      */
     public byte[] decrypt(byte[] cipherBytes, byte[] saltBytes) throws GeneralSecurityException {
-        byte[] decryptedBytes;
-        decryptedBytes = aead.decrypt(cipherBytes, saltBytes);
-        return decryptedBytes;
+        return aead.decrypt(cipherBytes, saltBytes);
     }
 
 
