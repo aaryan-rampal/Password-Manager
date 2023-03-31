@@ -9,8 +9,6 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class GUI extends JFrame implements ActionListener {
@@ -110,7 +108,10 @@ public class GUI extends JFrame implements ActionListener {
     private static final String ALL_BUTTON = "ALL BUTTON";
     private static final String BACK_FROM_LIST_BUTTON = "BACK FROM LIST BUTTON";
 
-    public GUI() throws MalformedURLException {
+    /**
+     * @EFFECTS: creates the initial GUI and password manager backend
+     */
+    public GUI() {
         super("Password Manager");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(new Dimension((int) (600 * 1.5), (int) (500 * 1.5)));

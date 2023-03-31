@@ -16,6 +16,10 @@ public class Keyset {
     private AesGcmJce aead;
     private ByteConvertor bc;
 
+    /**
+     * @REQUIRES: password and algorithm are not null, algorithm is a valid algorithm that MessageDigest recognizes
+     * @EFFECTS: creates a keyset that is linked to the password given
+     */
     public Keyset(String password, String algorithm) throws GeneralSecurityException {
         bc = new ByteConvertor();
         AeadConfig.register();
