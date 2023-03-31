@@ -195,7 +195,7 @@
               <text value="Custom password"/>
             </properties>
           </component>
-          <component id="fe016" class="javax.swing.JPasswordField" binding="passwordField1" default-binding="true">
+          <component id="fe016" class="javax.swing.JPasswordField" binding="customPasswordField">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -205,7 +205,7 @@
               <horizontalAlignment value="0"/>
             </properties>
           </component>
-          <component id="2553a" class="javax.swing.JButton" binding="nextButton4" default-binding="true">
+          <component id="2553a" class="javax.swing.JButton" binding="nextButtonFromCustomPassword">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -265,7 +265,7 @@
               <text value="Password specifications"/>
             </properties>
           </component>
-          <component id="75afc" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+          <component id="75afc" class="javax.swing.JTextField" binding="passwordLengthTextField">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -405,7 +405,7 @@
               <text value="Passphrase specifications"/>
             </properties>
           </component>
-          <component id="b593" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+          <component id="b593" class="javax.swing.JTextField" binding="passphraseLengthTextField">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -523,7 +523,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="2fd65" class="javax.swing.JRadioButton" binding="a1RadioButton" default-binding="true">
+          <component id="2fd65" class="javax.swing.JRadioButton" binding="scoreButton1">
             <constraints>
               <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -531,7 +531,7 @@
               <text value="1"/>
             </properties>
           </component>
-          <component id="813a5" class="javax.swing.JRadioButton" binding="a2RadioButton" default-binding="true">
+          <component id="813a5" class="javax.swing.JRadioButton" binding="scoreButton2">
             <constraints>
               <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -539,7 +539,7 @@
               <text value="2"/>
             </properties>
           </component>
-          <component id="4fc1" class="javax.swing.JRadioButton" binding="a3RadioButton" default-binding="true">
+          <component id="4fc1" class="javax.swing.JRadioButton" binding="scoreButton3">
             <constraints>
               <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -547,7 +547,7 @@
               <text value="3"/>
             </properties>
           </component>
-          <component id="75ad3" class="javax.swing.JRadioButton" binding="a4RadioButton" default-binding="true">
+          <component id="75ad3" class="javax.swing.JRadioButton" binding="scoreButton4">
             <constraints>
               <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -563,7 +563,7 @@
               <text value="Filter by password score"/>
             </properties>
           </component>
-          <component id="fb9b4" class="javax.swing.JRadioButton" binding="allRadioButton" default-binding="true">
+          <component id="fb9b4" class="javax.swing.JRadioButton" binding="scoreButtonAll">
             <constraints>
               <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -571,7 +571,7 @@
               <text value="All"/>
             </properties>
           </component>
-          <component id="bf027" class="javax.swing.JRadioButton" binding="a0RadioButton" default-binding="true">
+          <component id="bf027" class="javax.swing.JRadioButton" binding="scoreButton0">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -605,7 +605,7 @@
               <text value="Save entries"/>
             </properties>
           </component>
-          <component id="7dd53" class="javax.swing.JPasswordField" binding="passwordField2" default-binding="true">
+          <component id="7dd53" class="javax.swing.JPasswordField" binding="savePasswordTextField">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -657,7 +657,7 @@
               <text value="Load entries"/>
             </properties>
           </component>
-          <component id="9a280" class="javax.swing.JPasswordField" binding="passwordField3" default-binding="true">
+          <component id="9a280" class="javax.swing.JPasswordField" binding="loadPasswordTextField">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -709,7 +709,7 @@
               <text value="Enter the index (0 based) of the entry you want to delete"/>
             </properties>
           </component>
-          <component id="b58fa" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+          <component id="b58fa" class="javax.swing.JTextField" binding="deleteEntryTextField">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>

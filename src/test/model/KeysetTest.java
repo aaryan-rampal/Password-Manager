@@ -3,11 +3,9 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
 import java.util.Arrays;
-import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -60,13 +58,4 @@ public class KeysetTest {
         return salt;
     }
 
-//    @Test
-//    void testExceptionInConstructor() {
-//        try {
-//            Keyset failed = new Keyset("test-password", "not-valid");
-//            fail("Should not have constructed object");
-//        } catch (GeneralSecurityException e) {
-//            // passes
-//        }
-//    }
 }

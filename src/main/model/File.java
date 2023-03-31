@@ -61,6 +61,9 @@ public class File implements Writable {
         return entries;
     }
 
+    /**
+     * @EFFECTS: returns contents of entries arraylist to JSONObject
+     */
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
@@ -68,6 +71,11 @@ public class File implements Writable {
         return json;
     }
 
+    /**
+     * @REQUIRES: masterPassword and entries are not null
+     * @MODIFIES: entries
+     * @EFFECTS: uses the masterPassword to add the encrypted entries to a JSONArray which it then returns
+     */
     private JSONArray entriesToJson(String masterPassword) {
         JSONArray jsonArray = new JSONArray();
 

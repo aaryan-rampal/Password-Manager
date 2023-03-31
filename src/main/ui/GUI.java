@@ -9,6 +9,8 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class GUI extends JFrame implements ActionListener {
@@ -27,13 +29,13 @@ public class GUI extends JFrame implements ActionListener {
     private JRadioButton customPasswordRadioButton;
     private JRadioButton generatePasswordRadioButton;
     private JPanel customPassword;
-    private JPasswordField passwordField1;
-    private JButton nextButton4;
+    private JPasswordField customPasswordField;
+    private JButton nextButtonFromCustomPassword;
     private JPanel choosePasswordOrPassphrase;
     private JRadioButton passphraseRadioButton;
     private JRadioButton passwordRadioButton;
     private JPanel passwordSpecifications;
-    private JTextField textField1;
+    private JTextField passwordLengthTextField;
     private JButton nextButton2;
     private JRadioButton lowercaseNo;
     private JRadioButton uppercaseNo;
@@ -44,7 +46,7 @@ public class GUI extends JFrame implements ActionListener {
     private JRadioButton numbersYes;
     private JRadioButton symbolsYes;
     private JPanel passphraseSpecifications;
-    private JTextField textField2;
+    private JTextField passphraseLengthTextField;
     private JButton nextButton3;
     private JPanel mainMenu;
     private JButton createANewEntryButton;
@@ -55,24 +57,24 @@ public class GUI extends JFrame implements ActionListener {
     private JList list1;
     private JPanel listEntries;
     private JPanel saveEntries;
-    private JPasswordField passwordField3;
+    private JPasswordField loadPasswordTextField;
     private JButton loadButton1;
     private JButton backButton;
-    private JPasswordField passwordField2;
+    private JPasswordField savePasswordTextField;
     private JButton saveButton;
     private JButton backButton1;
     private JPanel loadEntries;
     private JButton deleteAnEntryButton;
-    private JTextField textField3;
+    private JTextField deleteEntryTextField;
     private JButton deleteButton;
     private JPanel deleteEntry;
     private JTable table1;
-    private JRadioButton a1RadioButton;
-    private JRadioButton a2RadioButton;
-    private JRadioButton a3RadioButton;
-    private JRadioButton a4RadioButton;
-    private JRadioButton allRadioButton;
-    private JRadioButton a0RadioButton;
+    private JRadioButton scoreButton1;
+    private JRadioButton scoreButton2;
+    private JRadioButton scoreButton3;
+    private JRadioButton scoreButton4;
+    private JRadioButton scoreButtonAll;
+    private JRadioButton scoreButton0;
     private JButton backButton2;
 
     private PasswordManager passwordManager;
@@ -108,11 +110,13 @@ public class GUI extends JFrame implements ActionListener {
     private static final String ALL_BUTTON = "ALL BUTTON";
     private static final String BACK_FROM_LIST_BUTTON = "BACK FROM LIST BUTTON";
 
-    public GUI() {
+    public GUI() throws MalformedURLException {
         super("Password Manager");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(new Dimension((int) (600 * 1.5), (int) (500 * 1.5)));
         setContentPane(cardPanel);
+
+        showSplashScreen();
         setVisible(true);
 
         passwordManager = new PasswordManager();
@@ -123,6 +127,30 @@ public class GUI extends JFrame implements ActionListener {
         populateButtonGroups();
     }
 
+    /**
+     * @EFFECTS: shows a splash screen on start up
+     * code inspired by https://stackoverflow.com/a/16134912
+     * GIF was downloaded from
+     * https://static01.nyt.com/newsgraphics/2017/05/12/online-privacy-service/3f8185ccde46daab14d283d4156ae2ddd3a17755/password.gif
+     */
+    private void showSplashScreen() {
+        JWindow window = new JWindow();
+        window.getContentPane().add(
+                new JLabel("", new ImageIcon("images/password.gif"), SwingConstants.CENTER));
+        window.setSize(new Dimension((int) (600 * 1.5), (int) (500 * 1.5)));
+        window.setVisible(true);
+        try {
+            Thread.sleep(5050);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        window.setVisible(false);
+    }
+
+    /**
+     * @MODIFIES: buttonGroups
+     * @EFFECTS: initializes and adds 5 button groups to buttonGroups
+     */
     private void populateButtonGroups() {
         buttonGroups = new ArrayList<>();
         buttonGroups.add(new ButtonGroup());
@@ -132,54 +160,116 @@ public class GUI extends JFrame implements ActionListener {
         buttonGroups.add(new ButtonGroup());
     }
 
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: initializes cl to be the layout of the main panel and shows the first (intro) panel
+     */
     private void setupCardLayout() {
         cl = (CardLayout) cardPanel.getLayout();
         cl.first(cardPanel);
     }
 
-    @SuppressWarnings("methodlength")
+    /**
+     * @MODIFIES: listAllEntriesButton, generatePasswordRadioButton, customPasswordRadioButton, passphraseRadioButton,
+     * passwordRadioButton, saveEntriesToFileButton, saveButton, deleteButton, deleteAnEntryButton, exitButton
+     * @EFFECTS: adds a unique action command to the specified buttons
+     */
     public void addActionToButtons() {
-        activate(createButton, CREATE_BUTTON);
-        activate(loadFromIntroButton, LOAD_FROM_INTRO_BUTTON);
-        activate(nextButton, NEXT_BUTTON);
+        activateCreateButtons();
+        activateLoadButtons();
+        activateNextButtons();
+        activateBackButtons();
+        activateScoreButtons();
+        activate(listAllEntriesButton, LIST_ENTRIES);
         activate(generatePasswordRadioButton, GENERATE_PASSWORD_BUTTON);
         activate(customPasswordRadioButton, CUSTOM_PASSWORD_BUTTON);
         activate(passphraseRadioButton, PASSPHRASE_BUTTON);
         activate(passwordRadioButton, PASSWORD_BUTTON);
-        activate(nextButton2, BUTTON_TO_MAIN_MENU_FROM_PASSWORD);
-        activate(nextButton3, BUTTON_TO_MAIN_MENU_FROM_PASSPHRASE);
-        activate(nextButton4, BUTTON_TO_MAIN_MENU_FROM_CUSTOM_PASSWORD);
-        activate(createANewEntryButton, CREATE_BUTTON);
-        activate(loadEntriesFromFileButton, LOAD_BUTTON);
         activate(saveEntriesToFileButton, GO_TO_SAVE_BUTTON);
-        activate(backButton, BACK_FROM_LOAD_BUTTON);
-        activate(backButton1, BACK_BUTTON);
         activate(saveButton, SAVE_BUTTON);
-        activate(exitButton, EXIT_BUTTON);
-        activate(loadButton1, LOAD_ENTRIES_BUTTON);
-        activate(listAllEntriesButton, LIST_ENTRIES);
         activate(deleteButton, DELETE_BUTTON);
         activate(deleteAnEntryButton, GO_TO_DELETE_BUTTON);
-        activate(a0RadioButton, A0_BUTTON);
-        activate(a1RadioButton, A1_BUTTON);
-        activate(a2RadioButton, A2_BUTTON);
-        activate(a3RadioButton, A3_BUTTON);
-        activate(a4RadioButton, A4_BUTTON);
-        activate(allRadioButton, ALL_BUTTON);
+        activate(exitButton, EXIT_BUTTON);
+    }
+
+    /**
+     * @MODIFIES: scoreButton0, scoreButton1, scoreButton2, scoreButton3, scoreButton4, scoreButtonAll
+     * @EFFECTS: adds a unique action command to the specified buttons
+     */
+    private void activateScoreButtons() {
+        activate(scoreButton0, A0_BUTTON);
+        activate(scoreButton1, A1_BUTTON);
+        activate(scoreButton2, A2_BUTTON);
+        activate(scoreButton3, A3_BUTTON);
+        activate(scoreButton4, A4_BUTTON);
+        activate(scoreButtonAll, ALL_BUTTON);
+    }
+
+    /**
+     * @MODIFIES: backButton, backButton2, backButton3
+     * @EFFECTS: adds a unique action command to the specified buttons
+     */
+    private void activateBackButtons() {
+        activate(backButton, BACK_FROM_LOAD_BUTTON);
+        activate(backButton1, BACK_BUTTON);
         activate(backButton2, BACK_FROM_LIST_BUTTON);
     }
 
+    /**
+     * @MODIFIES: nextButton, nextButton2, nextButton3, nextButtonFromCustomPassword,
+     * @EFFECTS: adds a unique action command to the specified buttons
+     */
+    private void activateNextButtons() {
+        activate(nextButton, NEXT_BUTTON);
+        activate(nextButton2, BUTTON_TO_MAIN_MENU_FROM_PASSWORD);
+        activate(nextButton3, BUTTON_TO_MAIN_MENU_FROM_PASSPHRASE);
+        activate(nextButtonFromCustomPassword, BUTTON_TO_MAIN_MENU_FROM_CUSTOM_PASSWORD);
+    }
+
+    /**
+     * @MODIFIES: loadFromIntroButton, loadButton1, loadEntriesFromFileButton
+     * @EFFECTS: adds a unique action command to the specified buttons
+     */
+    private void activateLoadButtons() {
+        activate(loadFromIntroButton, LOAD_FROM_INTRO_BUTTON);
+        activate(loadButton1, LOAD_ENTRIES_BUTTON);
+        activate(loadEntriesFromFileButton, LOAD_BUTTON);
+    }
+
+    /**
+     * @MODIFIES: createButton, createANewEntryButton
+     * @EFFECTS: adds a unique action command to the specified buttons
+     */
+    private void activateCreateButtons() {
+        activate(createButton, CREATE_BUTTON);
+        activate(createANewEntryButton, CREATE_BUTTON);
+    }
+
+    /**
+     * @REQUIRES: button and actionCommand is not null; actionCommand is a unique string
+     * @MODIFIES: button
+     * @EFFECTS: adds an action listener to radio button and sets its action command
+     */
     public void activate(JRadioButton button, String actionCommand) {
         button.addActionListener(this);
         button.setActionCommand(actionCommand);
     }
 
+
+    /**
+     * @REQUIRES: button and actionCommand is not null; actionCommand is a unique string
+     * @MODIFIES: button
+     * @EFFECTS: adds an action listener to button and sets its action command
+     */
     public void activate(JButton button, String actionCommand) {
         button.addActionListener(this);
         button.setActionCommand(actionCommand);
     }
 
-    @SuppressWarnings("methodlength")
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: reacts to different button presses on the GUI
+     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         switch (actionEvent.getActionCommand()) {
@@ -187,87 +277,165 @@ public class GUI extends JFrame implements ActionListener {
                 cl.show(cardPanel, "createFieldMenu");
                 break;
             case LOAD_BUTTON:
-                cl.show(cardPanel, "loadEntries");
-                loadFromIntro = false;
-                break;
             case LOAD_FROM_INTRO_BUTTON:
-                cl.show(cardPanel, "loadEntries");
-                loadFromIntro = true;
+            case LOAD_ENTRIES_BUTTON: {
+                actionPerformedLoad(actionEvent);
                 break;
+            }
             case NEXT_BUTTON:
-                cl.show(cardPanel, "chooseCustomOrRandom");
-                break;
-            case CUSTOM_PASSWORD_BUTTON:
-                cl.show(cardPanel, "customPassword");
-                clearRadioButton(customPasswordRadioButton);
-                break;
-            case GENERATE_PASSWORD_BUTTON:
-                cl.show(cardPanel, "choosePasswordOrPassphrase");
-                clearRadioButton(generatePasswordRadioButton);
-                break;
-            case PASSWORD_BUTTON:
-                cl.show(cardPanel, "passwordSpecifications");
-                makeRadioButtonsGroup();
-                clearRadioButton(passwordRadioButton);
-                break;
-            case PASSPHRASE_BUTTON:
-                cl.show(cardPanel, "passphraseSpecifications");
-                clearRadioButton(passphraseRadioButton);
-                break;
             case BUTTON_TO_MAIN_MENU_FROM_PASSPHRASE:
-                callCreateEntry(1);
-                clearRandomPassphraseMenu();
-                cl.show(cardPanel, "mainMenu");
-                break;
             case BUTTON_TO_MAIN_MENU_FROM_PASSWORD:
-                callCreateEntry(2);
-                clearRandomPasswordMenu();
+            case BUTTON_TO_MAIN_MENU_FROM_CUSTOM_PASSWORD: {
+                actionPerformedNext(actionEvent);
+                break;
+            }
+            default:
+                actionPerformedTwo(actionEvent);
+                break;
+        }
+    }
+
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: reacts to different button presses on the GUI
+     */
+    private void actionPerformedTwo(ActionEvent actionEvent) {
+        switch (actionEvent.getActionCommand()) {
+            case PASSWORD_BUTTON:
+            case PASSPHRASE_BUTTON: {
+                actionPerformedGenerate(actionEvent);
+                break;
+            }
+            case A0_BUTTON:
+            case A1_BUTTON:
+            case A2_BUTTON:
+            case A3_BUTTON:
+            case A4_BUTTON:
+            case ALL_BUTTON: {
+                actionPerformedFilterTable(actionEvent);
+                break;
+            }
+            default:
+                actionPerformedThree(actionEvent);
+                break;
+        }
+    }
+
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: reacts to different button presses on the GUI
+     */
+    private void actionPerformedThree(ActionEvent actionEvent) {
+        switch (actionEvent.getActionCommand()) {
+            case GO_TO_SAVE_BUTTON:
+            case SAVE_BUTTON: {
+                actionPerformedSave(actionEvent);
+                break;
+            }
+            case GO_TO_DELETE_BUTTON:
+            case DELETE_BUTTON: {
+                actionPerformedDelete(actionEvent);
+                break;
+            }
+            case LIST_ENTRIES:
+                listEntries(passwordManager.getFile().getEntries());
+                cl.show(cardPanel, "listEntries");
+                break;
+            case EXIT_BUTTON:
+                System.exit(0);
+                break;
+            default:
+                actionPerformedFour(actionEvent);
+                break;
+        }
+    }
+
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: reacts to different button presses on the GUI
+     */
+    private void actionPerformedFour(ActionEvent actionEvent) {
+        switch (actionEvent.getActionCommand()) {
+            case CUSTOM_PASSWORD_BUTTON:
+            case GENERATE_PASSWORD_BUTTON: {
+                actionPerformedRandom(actionEvent);
+                break;
+            }
+            case BACK_BUTTON:
+            case BACK_FROM_LIST_BUTTON:
+            case BACK_FROM_LOAD_BUTTON: {
+                actionPerformedBack(actionEvent);
+                break;
+            }
+        }
+    }
+
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: reacts to different button presses on the GUI
+     */
+    private void actionPerformedDelete(ActionEvent actionEvent) {
+        switch (actionEvent.getActionCommand()) {
+            case DELETE_BUTTON:
+                deleteEntry();
+                clearTextField(deleteEntryTextField);
                 cl.show(cardPanel, "mainMenu");
                 break;
-            case BUTTON_TO_MAIN_MENU_FROM_CUSTOM_PASSWORD:
-                callCreateEntry(3);
-                clearCustomPasswordMenu();
+            case GO_TO_DELETE_BUTTON:
+                cl.show(cardPanel, "deleteEntry");
+                break;
+        }
+    }
+
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: reacts to different button presses on the GUI
+     */
+    private void actionPerformedSave(ActionEvent actionEvent) {
+        switch (actionEvent.getActionCommand()) {
+            case SAVE_BUTTON:
+                save();
+                clearTextField(savePasswordTextField);
                 cl.show(cardPanel, "mainMenu");
+                break;
+            case GO_TO_SAVE_BUTTON:
+                cl.show(cardPanel, "saveEntries");
+                break;
+        }
+    }
+
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: reacts to different button presses on the GUI
+     */
+    private void actionPerformedBack(ActionEvent actionEvent) {
+        switch (actionEvent.getActionCommand()) {
             case BACK_BUTTON:
-                clearTextField(passwordField2);
+                clearTextField(savePasswordTextField);
                 cl.show(cardPanel, "mainMenu");
                 break;
             case BACK_FROM_LOAD_BUTTON:
-                clearTextField(passwordField3);
+                clearTextField(loadPasswordTextField);
                 if (loadFromIntro) {
                     cl.show(cardPanel, "introMenu");
                 } else {
                     cl.show(cardPanel, "mainMenu");
                 }
                 break;
-            case LIST_ENTRIES:
-                listEntries(passwordManager.getFile().getEntries());
-                cl.show(cardPanel, "listEntries");
-                break;
-            case SAVE_BUTTON:
-                save();
-                clearTextField(passwordField2);
+            case BACK_FROM_LIST_BUTTON:
+                filterTable(5);
+                clearRadioButtonGroup(buttonGroups.get(4));
                 cl.show(cardPanel, "mainMenu");
                 break;
-            case GO_TO_SAVE_BUTTON:
-                cl.show(cardPanel, "saveEntries");
-                break;
-            case EXIT_BUTTON:
-                System.exit(0);
-                break;
-            case LOAD_ENTRIES_BUTTON:
-                load();
-                clearTextField(passwordField3);
-                cl.show(cardPanel, "mainMenu");
-                break;
-            case DELETE_BUTTON:
-                deleteEntry();
-                clearTextField(textField3);
-                cl.show(cardPanel, "mainMenu");
-                break;
-            case GO_TO_DELETE_BUTTON:
-                cl.show(cardPanel, "deleteEntry");
-                break;
+        }
+    }
+
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: reacts to different button presses on the GUI
+     */
+    private void actionPerformedFilterTable(ActionEvent actionEvent) {
+        switch (actionEvent.getActionCommand()) {
             case A0_BUTTON:
                 filterTable(0);
                 break;
@@ -286,17 +454,96 @@ public class GUI extends JFrame implements ActionListener {
             case ALL_BUTTON:
                 filterTable(5);
                 break;
-            case BACK_FROM_LIST_BUTTON:
-                filterTable(5);
-                clearRadioButtonGroup(buttonGroups.get(4));
-                cl.show(cardPanel, "mainMenu");
+        }
+    }
+
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: reacts to different button presses on the GUI
+     */
+    private void actionPerformedGenerate(ActionEvent actionEvent) {
+        switch (actionEvent.getActionCommand()) {
+            case PASSWORD_BUTTON:
+                cl.show(cardPanel, "passwordSpecifications");
+                makeRadioButtonsGroup();
+                clearRadioButton(passwordRadioButton);
                 break;
-            default:
-                System.out.println();
+            case PASSPHRASE_BUTTON:
+                cl.show(cardPanel, "passphraseSpecifications");
+                clearRadioButton(passphraseRadioButton);
                 break;
         }
     }
 
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: reacts to different button presses on the GUI
+     */
+    private void actionPerformedRandom(ActionEvent actionEvent) {
+        switch (actionEvent.getActionCommand()) {
+            case CUSTOM_PASSWORD_BUTTON:
+                cl.show(cardPanel, "customPassword");
+                clearRadioButton(customPasswordRadioButton);
+                break;
+            case GENERATE_PASSWORD_BUTTON:
+                cl.show(cardPanel, "choosePasswordOrPassphrase");
+                clearRadioButton(generatePasswordRadioButton);
+                break;
+        }
+    }
+
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: reacts to different button presses on the GUI
+     */
+    private void actionPerformedNext(ActionEvent actionEvent) {
+        switch (actionEvent.getActionCommand()) {
+            case NEXT_BUTTON:
+                cl.show(cardPanel, "chooseCustomOrRandom");
+                break;
+            case BUTTON_TO_MAIN_MENU_FROM_PASSPHRASE:
+                callCreateEntry(1);
+                clearRandomPassphraseMenu();
+                cl.show(cardPanel, "mainMenu");
+                break;
+            case BUTTON_TO_MAIN_MENU_FROM_PASSWORD:
+                callCreateEntry(2);
+                clearRandomPasswordMenu();
+                cl.show(cardPanel, "mainMenu");
+                break;
+            case BUTTON_TO_MAIN_MENU_FROM_CUSTOM_PASSWORD:
+                callCreateEntry(3);
+                clearCustomPasswordMenu();
+                cl.show(cardPanel, "mainMenu");
+        }
+    }
+
+    /**
+     * @MODIFIES: cl
+     * @EFFECTS: reacts to different button presses on the GUI
+     */
+    private void actionPerformedLoad(ActionEvent actionEvent) {
+        switch (actionEvent.getActionCommand()) {
+            case LOAD_BUTTON:
+                cl.show(cardPanel, "loadEntries");
+                loadFromIntro = false;
+                break;
+            case LOAD_FROM_INTRO_BUTTON:
+                cl.show(cardPanel, "loadEntries");
+                loadFromIntro = true;
+                break;
+            case LOAD_ENTRIES_BUTTON:
+                load();
+                clearTextField(loadPasswordTextField);
+                cl.show(cardPanel, "mainMenu");
+                break;
+        }
+    }
+
+    /**
+     * @REQUIRES: 0 < i < 5
+     * @EFFECTS: filters the table to show passwords which have a password score from 0 to 4 or all password
+     */
     private void filterTable(int i) {
         File file = passwordManager.getFile();
         ArrayList<Entry> entries = file.getEntries();
@@ -313,10 +560,20 @@ public class GUI extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * @REQUIRES: deleteEntryTextField.getText() must be an int
+     * @MODIFIES: passwordManager
+     * @EFFECTS: removes the index from the entries stored in passwordManager
+     */
     private void deleteEntry() {
-        passwordManager.removeEntryForGUI(Integer.parseInt(textField3.getText()));
+        passwordManager.removeEntryForGUI(Integer.parseInt(deleteEntryTextField.getText()));
     }
 
+    /**
+     * @REQUIRES: entries is not null
+     * @MODIFIES: table1
+     * @EFFECTS: adds all the entries in entries to the JTabel and updates the GUI
+     */
     private void listEntries(ArrayList<Entry> entries) {
         DefaultTableModel tableModel = new DefaultTableModel() {
             @Override
@@ -337,19 +594,27 @@ public class GUI extends JFrame implements ActionListener {
 
         fillTableWithEntries(tableModel, entries);
         makePasswordScoreRadioButtons();
-//        this.add(new JScrollPane(table1));
     }
 
+    /**
+     * @MODIFIES: buttons
+     * @EFFECTS: adds all the password score buttons to the same button group
+     */
     private void makePasswordScoreRadioButtons() {
         ArrayList<JRadioButton> buttons = new ArrayList<>();
-        buttons.add(a1RadioButton);
-        buttons.add(a2RadioButton);
-        buttons.add(a3RadioButton);
-        buttons.add(a4RadioButton);
-        buttons.add(allRadioButton);
+        buttons.add(scoreButton1);
+        buttons.add(scoreButton2);
+        buttons.add(scoreButton3);
+        buttons.add(scoreButton4);
+        buttons.add(scoreButtonAll);
         makePairOfRadioButtons(buttons, buttonGroups.get(4));
     }
 
+    /**
+     * @REQUIRES: tableModel and entries are not null
+     * @MODIFIES: tableModel
+     * @EFFECTS: populates tableModel with the data from entries
+     */
     private void fillTableWithEntries(DefaultTableModel tableModel, ArrayList<Entry> entries) {
         for (int i = 0; i < entries.size(); i++) {
             Entry e = entries.get(i);
@@ -359,16 +624,31 @@ public class GUI extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * @REQUIRES: masterPassword is not an empty string
+     * @MODIFIES: passwordManager
+     * @EFFECTS: saves the entries to file using the master password entered by the user
+     */
     private void save() {
-        String masterPassword = new String(passwordField2.getPassword());
+        String masterPassword = new String(savePasswordTextField.getPassword());
         passwordManager.saveFileFromGUI(masterPassword);
     }
 
+    /**
+     * @REQUIRES: masterPassword is not an empty string
+     * @MODIFIES: passwordManager
+     * @EFFECTS: loads the entries from file using the master password entered by the user
+     */
     private void load() {
-        String masterPassword = new String(passwordField3.getPassword());
+        String masterPassword = new String(loadPasswordTextField.getPassword());
         passwordManager.loadFileFromGUI(masterPassword);
     }
 
+    /**
+     * @REQUIRES: 1 <= passwordType <= 3
+     * @MODIFIES: passwordManager
+     * @EFFECTS: gets user input and creates an entry
+     */
     private void callCreateEntry(int passwordType) {
         String name = nameTextField.getText();
         String username = userNameTextField.getText();
@@ -376,7 +656,7 @@ public class GUI extends JFrame implements ActionListener {
         String notes = notesTextField.getText();
         Password password;
         if (passwordType == 3) {
-            password = new Password(new String(passwordField1.getPassword()));
+            password = new Password(new String(customPasswordField.getPassword()));
         } else {
             password = getPassword(passwordType);
         }
@@ -385,10 +665,15 @@ public class GUI extends JFrame implements ActionListener {
         clearCreateFieldMenu();
     }
 
+    /**
+     * @REQUIRES: 1 <= passwordType <= 2
+     * @EFFECTS: returns a random password or passphrase depending on the specifications given by the user
+     */
     private Password getPassword(int passwordType) {
         String passwordText = null;
         if (passwordType == 1) {
-            passwordText = passwordManager.generatePassphraseForGUI(Integer.parseInt(textField2.getText()));
+            passwordText =
+                    passwordManager.generatePassphraseForGUI(Integer.parseInt(passphraseLengthTextField.getText()));
         } else {
             ArrayList<Boolean> characterTypesBoolean = new ArrayList<>();
             characterTypesBoolean.add(returnBooleanValue(lowercaseYes));
@@ -396,15 +681,23 @@ public class GUI extends JFrame implements ActionListener {
             characterTypesBoolean.add(returnBooleanValue(numbersYes));
             characterTypesBoolean.add(returnBooleanValue(symbolsYes));
             passwordText = passwordManager.generatePasswordForGUI(characterTypesBoolean,
-                    Integer.parseInt(textField1.getText()));
+                    Integer.parseInt(passwordLengthTextField.getText()));
         }
         return new Password(passwordText);
     }
 
-    private boolean returnBooleanValue(JRadioButton yes) {
-        return yes.isSelected();
+    /**
+     * @REQUIRES: button is not null
+     * @EFFECTS: returns true if button is selected
+     */
+    private boolean returnBooleanValue(JRadioButton button) {
+        return button.isSelected();
     }
 
+    /**
+     * @MODIFIES: nameTextField, userNameTextField, urlTextField, notesTextField
+     * @EFFECTS: clears the specified text fields
+     */
     private void clearCreateFieldMenu() {
         clearTextField(nameTextField);
         clearTextField(userNameTextField);
@@ -412,34 +705,66 @@ public class GUI extends JFrame implements ActionListener {
         clearTextField(notesTextField);
     }
 
+    /**
+     * @MODIFIES: customPasswordField
+     * @EFFECTS: clears the specified text fields
+     */
     private void clearCustomPasswordMenu() {
-        clearTextField(passwordField1);
+        clearTextField(customPasswordField);
     }
 
+    /**
+     * @MODIFIES: passwordLengthTextField, buttonsGroup.get(0), buttonsGroup.get(1), buttonsGroup.get(2),
+     * buttonsGroup.get(3),
+     * @EFFECTS: clears the specified text fields and radio button groups
+     */
     private void clearRandomPasswordMenu() {
-        clearTextField(textField1);
+        clearTextField(passwordLengthTextField);
         clearRadioButtonGroup(buttonGroups.get(0));
         clearRadioButtonGroup(buttonGroups.get(1));
         clearRadioButtonGroup(buttonGroups.get(2));
         clearRadioButtonGroup(buttonGroups.get(3));
     }
 
+    /**
+     * @MODIFIES: passphraseLengthTextField
+     * @EFFECTS: sets the text inside of textField to be an empty string
+     */
     private void clearRandomPassphraseMenu() {
-        clearTextField(textField2);
+        clearTextField(passphraseLengthTextField);
     }
 
+    /**
+     * @REQUIRES: radioButton is not null
+     * @MODIFIES: radioButton
+     * @EFFECTS: unselects radioButton
+     */
     private void clearRadioButton(JRadioButton radioButton) {
         radioButton.setSelected(false);
     }
 
+    /**
+     * @REQUIRES: buttonGroup is not null
+     * @MODIFIES: buttonGroup
+     * @EFFECTS: unselects all JButtons in buttonGroup
+     */
     private void clearRadioButtonGroup(ButtonGroup buttonGroup) {
         buttonGroup.clearSelection();
     }
 
+    /**
+     * @REQUIRES: textField is not null
+     * @MODIFIES: textField
+     * @EFFECTS: sets the text inside of textField to be an empty string
+     */
     private void clearTextField(JTextField textField) {
         textField.setText("");
     }
 
+    /**
+     * @MODIFIES: lowercaseNo, lowercaseYes, uppercaseNo, uppercaseYes, numbersNo, numbersYes,, symbolsNo, symbolsYes
+     * @EFFECTS: makes pair of radio buttons between the similar buttons
+     */
     private void makeRadioButtonsGroup() {
         makePairOfRadioButtons(lowercaseNo, lowercaseYes, buttonGroups.get(0));
         makePairOfRadioButtons(uppercaseNo, uppercaseYes, buttonGroups.get(1));
@@ -447,12 +772,22 @@ public class GUI extends JFrame implements ActionListener {
         makePairOfRadioButtons(symbolsNo, symbolsYes, buttonGroups.get(3));
     }
 
-    // https://stackoverflow.com/a/2253626
+    /**
+     * @REQUIRES: buttonA, buttonB, and group are not null
+     * @MODIFIES: group
+     * @EFFECTS: adds buttonA and buttonB to group
+     * code found via https://stackoverflow.com/a/2253626
+     */
     private void makePairOfRadioButtons(JRadioButton buttonA, JRadioButton buttonB, ButtonGroup group) {
         group.add(buttonA);
         group.add(buttonB);
     }
 
+    /**
+     * @REQUIRES: buttons, group
+     * @MODIFIES: group
+     * @EFFECTS: adds all JRadioButtons in buttons to group
+     */
     private void makePairOfRadioButtons(ArrayList<JRadioButton> buttons, ButtonGroup group) {
         for (JRadioButton button : buttons) {
             group.add(button);

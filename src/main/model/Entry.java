@@ -64,6 +64,10 @@ public class Entry implements Writable {
         return notes;
     }
 
+    /**
+     * @REQUIRES: name, username, password, url, and notes are not null
+     * @EFFECTS: creates a JSONObject and adds the encrypted strings of the fields to it
+     */
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

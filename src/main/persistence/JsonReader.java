@@ -1,6 +1,8 @@
 package persistence;
 
 import model.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -8,10 +10,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
 import java.util.stream.Stream;
-
-import org.json.*;
-
-import javax.crypto.AEADBadTagException;
 
 // Represents a reader that reads file object from stored JSON data
 public class JsonReader {
@@ -89,6 +87,10 @@ public class JsonReader {
         f.addEntry(entry);
     }
 
+    /**
+     * @REQUIRES: field, salt, and keyset are not null
+     * @EFFECTS: decrypts the field using keyset and returns the decrypted string
+     */
     private String decryptField(String field, byte[] salt, Keyset keyset) throws GeneralSecurityException {
         byte[] cipherBytes = bc.stringToBytes(field);
         byte[] decryptedBytes = keyset.decrypt(cipherBytes, salt);
