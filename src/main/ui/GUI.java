@@ -78,6 +78,7 @@ public class GUI extends JFrame implements ActionListener {
     private PasswordManager passwordManager;
     private CardLayout cl;
     private boolean loadFromIntro;
+    private ArrayList<ButtonGroup> buttonGroups;
 
     private static final String CREATE_BUTTON = "CREATE BUTTON";
     private static final String LOAD_BUTTON = "LOAD BUTTON";
@@ -119,6 +120,16 @@ public class GUI extends JFrame implements ActionListener {
 
         setupCardLayout();
         addActionToButtons();
+        populateButtonGroups();
+    }
+
+    private void populateButtonGroups() {
+        buttonGroups = new ArrayList<>();
+        buttonGroups.add(new ButtonGroup());
+        buttonGroups.add(new ButtonGroup());
+        buttonGroups.add(new ButtonGroup());
+        buttonGroups.add(new ButtonGroup());
+        buttonGroups.add(new ButtonGroup());
     }
 
     private void setupCardLayout() {
@@ -168,8 +179,8 @@ public class GUI extends JFrame implements ActionListener {
         button.setActionCommand(actionCommand);
     }
 
-    @Override
     @SuppressWarnings("methodlength")
+    @Override
     public void actionPerformed(ActionEvent actionEvent) {
         switch (actionEvent.getActionCommand()) {
             case CREATE_BUTTON:
@@ -277,7 +288,7 @@ public class GUI extends JFrame implements ActionListener {
                 break;
             case BACK_FROM_LIST_BUTTON:
                 filterTable(5);
-                clearRadioButtonGroup(a1RadioButton.getModel().getGroup());
+                clearRadioButtonGroup(buttonGroups.get(4));
                 cl.show(cardPanel, "mainMenu");
                 break;
             default:
@@ -336,7 +347,7 @@ public class GUI extends JFrame implements ActionListener {
         buttons.add(a3RadioButton);
         buttons.add(a4RadioButton);
         buttons.add(allRadioButton);
-        makePairOfRadioButtons(buttons);
+        makePairOfRadioButtons(buttons, buttonGroups.get(4));
     }
 
     private void fillTableWithEntries(DefaultTableModel tableModel, ArrayList<Entry> entries) {
@@ -407,10 +418,10 @@ public class GUI extends JFrame implements ActionListener {
 
     private void clearRandomPasswordMenu() {
         clearTextField(textField1);
-        clearRadioButtonGroup(lowercaseNo.getModel().getGroup());
-        clearRadioButtonGroup(uppercaseNo.getModel().getGroup());
-        clearRadioButtonGroup(numbersNo.getModel().getGroup());
-        clearRadioButtonGroup(symbolsNo.getModel().getGroup());
+        clearRadioButtonGroup(buttonGroups.get(0));
+        clearRadioButtonGroup(buttonGroups.get(1));
+        clearRadioButtonGroup(buttonGroups.get(2));
+        clearRadioButtonGroup(buttonGroups.get(3));
     }
 
     private void clearRandomPassphraseMenu() {
@@ -430,21 +441,19 @@ public class GUI extends JFrame implements ActionListener {
     }
 
     private void makeRadioButtonsGroup() {
-        makePairOfRadioButtons(lowercaseNo, lowercaseYes);
-        makePairOfRadioButtons(uppercaseNo, uppercaseYes);
-        makePairOfRadioButtons(numbersNo, numbersYes);
-        makePairOfRadioButtons(symbolsNo, symbolsYes);
+        makePairOfRadioButtons(lowercaseNo, lowercaseYes, buttonGroups.get(0));
+        makePairOfRadioButtons(uppercaseNo, uppercaseYes, buttonGroups.get(1));
+        makePairOfRadioButtons(numbersNo, numbersYes, buttonGroups.get(2));
+        makePairOfRadioButtons(symbolsNo, symbolsYes, buttonGroups.get(3));
     }
 
     // https://stackoverflow.com/a/2253626
-    private void makePairOfRadioButtons(JRadioButton buttonA, JRadioButton buttonB) {
-        ButtonGroup group = new ButtonGroup();
+    private void makePairOfRadioButtons(JRadioButton buttonA, JRadioButton buttonB, ButtonGroup group) {
         group.add(buttonA);
         group.add(buttonB);
     }
 
-    private void makePairOfRadioButtons(ArrayList<JRadioButton> buttons) {
-        ButtonGroup group = new ButtonGroup();
+    private void makePairOfRadioButtons(ArrayList<JRadioButton> buttons, ButtonGroup group) {
         for (JRadioButton button : buttons) {
             group.add(button);
         }
