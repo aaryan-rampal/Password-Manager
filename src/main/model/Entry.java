@@ -70,23 +70,22 @@ public class Entry implements Writable {
      */
     @Override
     public JSONObject toJson() {
-        JSONObject json = new JSONObject();
-        byte[] saltBytes = createSalt();
-        Keyset keySet;
         try {
+            JSONObject json = new JSONObject();
+            byte[] saltBytes = createSalt();
+            Keyset keySet;
             keySet = new Keyset(masterPassword, algorithm);
+            json.put("salt", bc.bytesToString(saltBytes));
+            encryptField(name, json, "name", saltBytes, keySet);
+            encryptField(username, json, "username", saltBytes, keySet);
+            encryptField(password.getPassword(), json, "password", saltBytes, keySet);
+            encryptField(url, json, "url", saltBytes, keySet);
+            encryptField(notes, json, "notes", saltBytes, keySet);
+
+            return json;
         } catch (GeneralSecurityException e) {
             return null;
         }
-
-        json.put("salt", bc.bytesToString(saltBytes));
-        encryptField(name, json, "name", saltBytes, keySet);
-        encryptField(username, json, "username", saltBytes, keySet);
-        encryptField(password.getPassword(), json, "password", saltBytes, keySet);
-        encryptField(url, json, "url", saltBytes, keySet);
-        encryptField(notes, json, "notes", saltBytes, keySet);
-
-        return json;
     }
 
     /**

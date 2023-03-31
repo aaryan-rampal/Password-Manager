@@ -13,22 +13,23 @@ public class KeysetTest {
 
     Keyset k;
     byte[] saltBytes = createSalt();
-    boolean setupCompleted = false;
-    ByteConvertor bc;
+//    boolean setupCompleted = false;
+//    ByteConvertor bc;
 
-    @BeforeEach
-    // will never throw GeneralSecurityException since "SHA-256" is a valid algorithm
-    void setup() throws GeneralSecurityException {
-        if (!setupCompleted) {
-            k = new Keyset("test-password", "SHA-256");
-            bc = new ByteConvertor();
-            setupCompleted = true;
-        }
-    }
+//    @BeforeEach
+//    // will never throw GeneralSecurityException since "SHA-256" is a valid algorithm
+//    void setup() throws GeneralSecurityException {
+//        if (!setupCompleted) {
+//            k = new Keyset("test-password", "SHA-256");
+//            bc = new ByteConvertor();
+//            setupCompleted = true;
+//        }
+//    }
 
     @Test
     void testEncryptAndDecrypt() {
         try {
+            k = new Keyset("test-password", "SHA-256");
             String plainText = "test-string";
             byte[] encryptedBytes = k.encrypt(plainText, saltBytes);
             assertEquals(encryptedBytes.length, 39);
@@ -43,6 +44,11 @@ public class KeysetTest {
 
     @Test
     void testExceptionForEncrypt() {
+        try {
+            k = new Keyset("test-password", "SHA-256");
+        } catch (GeneralSecurityException e) {
+            fail("Shouldn't have thrown exception.");
+        }
         String plainText = null;
         byte[] encryptedBytes = k.encrypt(plainText, Arrays.copyOfRange(saltBytes, 0, 1));
         assertNull(encryptedBytes);
