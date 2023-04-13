@@ -81,3 +81,17 @@ Saved entries to workroom.json.
 ```
 
 # Phase 4: Task 3
+I would make a few changes to my project to improve its design. Firstly, I had separate functions
+for saving and loading from the console or from the GUI where most of the code was the same, with 
+a few minor changes. I could have made an abstract save/load function which both the console and 
+GUI call with differing boolean values which would put the duplicate code together and call the 
+relevant section of the code which actually differs between the console and GUI. 
+
+Another part of my code I would change is the numerous `final static String` fields I had in 
+`PasswordManager.java` and `GUI.java`. For the former, I needed to store the keywords that the user
+would use somewhere so I can easily refer to them. For the latter, I needed to store the action 
+commands I had for the numerous buttons in my GUI. Instead of making all these strings final and 
+static at the start of my program (which I think causes it to look untidy), I could make two enum 
+classes which store the names of these variables for the `PasswordManager` and `GUI` classes. Then,
+I could import the enum class into these two classes and use the enums like how I use the
+`final static String` fields. 
