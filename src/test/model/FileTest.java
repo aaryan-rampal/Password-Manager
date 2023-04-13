@@ -1,8 +1,11 @@
 package model;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -76,10 +79,19 @@ public class FileTest {
     @Test
     void testToJson() {
         testList.addEntry(e1);
-        testList.addEntry(e2);
 
-        JSONObject a = testList.toJson();
-        System.out.println();
-        // TODO: actual test here
+        JSONArray arr = testList.toJson().getJSONArray("entries");
+        JSONObject entry = null;
+        for (Object json : arr) {
+            entry = (JSONObject) json;
+        }
+
+        assert entry != null;
+        assertEquals(entry.get("password"), e1.getPassword().getPassword());
+        assertEquals(entry.get("name"), e1.getName());
+        assertEquals(entry.get("notes"), e1.getNotes());
+        assertEquals(entry.get("username"), e1.getUsername());
+        assertEquals(entry.get("url"), e1.getUrl());
+
     }
 }

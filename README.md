@@ -45,9 +45,11 @@ As a user, I want to be able to:
 
 [//]: # (- store the encrypted file on my computer and have it be easily transportable)
 
-Note: The files JsonReader.java, JsonWriter.java, Writable.java, JsonReaderTest.java, JsonWriterTest.java, and 
-JsonTest.java were inspired by the 
-[sample project provided by CPSC 210](https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git).
+Note: The files `JsonReader.java`, `JsonWriter.java`, `Writable.java`, `JsonReaderTest.java`, `JsonWriterTest.java`, and 
+`JsonTest.java` were inspired by the 
+[sample project provided by CPSC 210](https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git). The files
+`Event.java`, `EventLog.java`, `EventTest.java`, and `EventLogTest.java` were inspired by the [alarm project provided by
+CPSC 210](https://github.students.cs.ubc.ca/CPSC210/AlarmSystem).
 
 # Instructions for Grader
 
@@ -77,3 +79,5 @@ Removed entry #3 with name Paypal.
 Thu Apr 13 15:57:12 PDT 2023
 Saved entries to workroom.json.
 ```
+
+# Phase 4: Task 3
