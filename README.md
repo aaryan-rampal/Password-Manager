@@ -95,3 +95,12 @@ static at the start of my program (which I think causes it to look untidy), I co
 classes which store the names of these variables for the `PasswordManager` and `GUI` classes. Then,
 I could import the enum class into these two classes and use the enums like how I use the
 `final static String` fields. 
+
+## Final note to grader
+
+Note that I had implemented encryption into my program. However, because autobot kept failing whenever 
+I used a certain object which I had used from an imported library in my project, I would keep getting <100% 
+for my code coverage. Therefore, I decided to remove the encryption aspect of my project. However, now I realize 
+that code coverage is not being tested for phase 4. I tried to revert my commit back to include encryption
+but I got quite confused by git and conflict resolution and checked out revisions that I decided to just keep it 
+as it is. All this to say, the final version of my project will not include encrypted entries. 
