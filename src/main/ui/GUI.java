@@ -83,7 +83,6 @@ public class GUI extends JFrame implements ActionListener {
     private CardLayout cl;
     private boolean loadFromIntro;
     private ArrayList<ButtonGroup> buttonGroups;
-    private File file;
 
     private static final String CREATE_BUTTON = "CREATE BUTTON";
     private static final String LOAD_BUTTON = "LOAD BUTTON";
@@ -151,8 +150,7 @@ public class GUI extends JFrame implements ActionListener {
      * @EFFECTS: prints the event log to the console before exiting
      */
     private void printLog() {
-        file = new File();
-        file.printLog(EventLog.getInstance());
+        passwordManager.getFile().printLog(EventLog.getInstance());
         System.exit(0);
     }
 
