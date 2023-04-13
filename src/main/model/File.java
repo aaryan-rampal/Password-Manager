@@ -49,6 +49,10 @@ public class File implements Writable {
         return entries.size();
     }
 
+    public void setMasterPassword(String masterPassword) {
+        this.masterPassword = masterPassword;
+    }
+
     /**
      * @REQUIRES: entries has at least one element; i < entries.getSizeOfEntries()
      * @EFFECTS: returns the entry at the specified index of the entries list
@@ -67,7 +71,7 @@ public class File implements Writable {
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
-        json.put("entries", entriesToJson());
+        json.put("entries", entriesToJson(masterPassword));
         return json;
     }
 
@@ -76,10 +80,11 @@ public class File implements Writable {
      * @MODIFIES: entries
      * @EFFECTS: uses the masterPassword to add the encrypted entries to a JSONArray which it then returns
      */
-    private JSONArray entriesToJson() {
+    private JSONArray entriesToJson(String masterPassword) {
         JSONArray jsonArray = new JSONArray();
 
         for (Entry e : entries) {
+            e.setMasterPassword(masterPassword);
             jsonArray.put(e.toJson());
         }
 

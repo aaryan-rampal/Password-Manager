@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class JsonWriterTest extends JsonTest {
 
+    private final static String masterPassword = "password";
+
     @Test
     void testWriterInvalidFile() {
         try {
@@ -27,13 +29,13 @@ class JsonWriterTest extends JsonTest {
             File file = new File();
             JsonWriter writer = new JsonWriter("./data/testWriterEmptyFile.json");
             writer.open();
-            writer.write(file);
+            writer.write(file, masterPassword);
             writer.close();
 
             JsonReader reader = new JsonReader("./data/testWriterEmptyFile.json");
-            file = reader.read();
+            file = reader.read(masterPassword);
             assertEquals(0, file.getSizeOfEntries());
-        } catch (IOException e) {
+        } catch (IOException | GeneralSecurityException e) {
             fail("Exception should not have been thrown");
         }
     }
@@ -42,15 +44,17 @@ class JsonWriterTest extends JsonTest {
     void testWriterGeneralWorkroom() {
         try {
             File file = new File();
-            file.addEntry(new Entry("Reddit", "atom9", new Password("password101"), "www.reddit.com", "old"));
-            file.addEntry(new Entry("Twitch", "piedipier", new Password("asddjakdsl"), "www.twitch.tv", "young"));
+            file.addEntry(new Entry("Reddit", "atom9", new Password("password101"),
+                    "www.reddit.com", "old"));
+            file.addEntry(new Entry("Twitch", "piedipier", new Password("asddjakdsl"),
+                    "www.twitch.tv", "young"));
             JsonWriter writer = new JsonWriter("./data/testWriterGeneralFile.json");
             writer.open();
-            writer.write(file);
+            writer.write(file, masterPassword);
             writer.close();
 
             JsonReader reader = new JsonReader("./data/testWriterGeneralFile.json");
-            file = reader.read();
+            file = reader.read(masterPassword);
             List<Entry> entries = file.getEntries();
             assertEquals(2, entries.size());
             checkEntry("Reddit", "atom9", new Password("password101"), "www.reddit.com",
@@ -58,7 +62,7 @@ class JsonWriterTest extends JsonTest {
             checkEntry("Twitch", "piedipier", new Password("asddjakdsl"), "www.twitch.tv",
                     "young", entries.get(1));
 
-        } catch (IOException e) {
+        } catch (IOException | GeneralSecurityException e) {
             fail("Exception should not have been thrown");
         }
     }
