@@ -77,9 +77,9 @@ public class FileTest {
     void testToJson() {
         testList.addEntry(e1);
         testList.addEntry(e2);
-        testList.setMasterPassword("test password");
 
         JSONObject a = testList.toJson();
         System.out.println();
+        // TODO: actual test here
     }
 }

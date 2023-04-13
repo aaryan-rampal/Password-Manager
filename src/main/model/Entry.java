@@ -11,11 +11,8 @@ public class Entry implements Writable {
     private String name;
     private String username;
     private Password password;
-    private String masterPassword;
     private String url;
     private String notes;
-    private ByteConvertor bc;
-    private String algorithm;
 
     /**
      * @REQUIRES: name, username, url, and notes have non-zero length; password is not null
@@ -28,20 +25,6 @@ public class Entry implements Writable {
         this.password = password;
         this.url = url;
         this.notes = notes;
-        algorithm = "SHA-256";
-        bc = new ByteConvertor();
-    }
-
-    public void setAlgorithm(String algorithm) {
-        this.algorithm = algorithm;
-    }
-
-    public String getAlgorithm() {
-        return algorithm;
-    }
-
-    public void setMasterPassword(String masterPassword) {
-        this.masterPassword = masterPassword;
     }
 
     public String getName() {
@@ -70,41 +53,13 @@ public class Entry implements Writable {
      */
     @Override
     public JSONObject toJson() {
-        try {
-            JSONObject json = new JSONObject();
-            byte[] saltBytes = createSalt();
-            Keyset keySet = new Keyset(masterPassword, algorithm);
-            json.put("salt", bc.bytesToString(saltBytes));
-            encryptField(name, json, "name", saltBytes, keySet);
-            encryptField(username, json, "username", saltBytes, keySet);
-            encryptField(password.getPassword(), json, "password", saltBytes, keySet);
-            encryptField(url, json, "url", saltBytes, keySet);
-            encryptField(notes, json, "notes", saltBytes, keySet);
-
-            return json;
-        } catch (GeneralSecurityException e) {
-            return null;
-        }
-    }
-
-    /**
-     * @REQUIRES: field is not null, json is not null, salt has 16 elements, keySet is not null
-     * @MODIFIES: json
-     * @EFFECTS: converts plaintext string to an encrypted string which it then puts into the json object
-     */
-    private void encryptField(String field, JSONObject json, String nameOfField, byte[] salt, Keyset keySet) {
-        byte[] cipherBytes = keySet.encrypt(field, salt);
-        json.put(nameOfField, bc.bytesToString(cipherBytes));
-    }
-
-    /**
-     * @EFFECTS: creates an array of 16 random bytes which will be used as the salt
-     */
-    private byte[] createSalt() {
-        SecureRandom random = new SecureRandom();
-        byte[] saltBytes = new byte[16];
-        random.nextBytes(saltBytes);
-        return saltBytes;
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("username", username);
+        json.put("password", password.getPassword());
+        json.put("url", url);
+        json.put("notes", notes);
+        return json;
     }
 
 }

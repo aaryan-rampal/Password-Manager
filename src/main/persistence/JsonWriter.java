@@ -31,8 +31,7 @@ public class JsonWriter {
      * @MODIFIES: this
      * @EFFECTS: writes JSON representation of file object to file
      */
-    public void write(File f, String masterPassword) {
-        f.setMasterPassword(masterPassword);
+    public void write(File f) {
         JSONObject json = f.toJson();
         saveToFile(json.toString(TAB));
     }
