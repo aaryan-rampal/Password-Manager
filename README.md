@@ -29,15 +29,21 @@ As a user, I want to be able to:
 - view a list of all entries
 - option to save file on exit
 - option to load previously saved file on startup
-
-Stretch Goals: Not Implemented Yet
-- view a specific previous entry using any of the entry fields or index 
-- specify a *minimum* entropy for the generated password
 - delete previous entries
-- edit previous entries to change any of the fields
-- **encrypt** the file when I'm done using it
-- **decrypt** the file using a password
-- store the encrypted file on my computer and have it be easily transportable
+
+[//]: # (Stretch Goals: Not Implemented Yet)
+
+[//]: # (- view a specific previous entry using any of the entry fields or index )
+
+[//]: # (- specify a *minimum* entropy for the generated password)
+
+[//]: # (- edit previous entries to change any of the fields)
+
+[//]: # (- **encrypt** the file when I'm done using it)
+
+[//]: # (- **decrypt** the file using a password)
+
+[//]: # (- store the encrypted file on my computer and have it be easily transportable)
 
 Note: The files JsonReader.java, JsonWriter.java, Writable.java, JsonReaderTest.java, JsonWriterTest.java, and 
 JsonTest.java were inspired by the 
@@ -52,3 +58,22 @@ after loading a file or creating entries and entering the index of the entry you
 - You can locate my visual component by the splash screen on startup
 - You can save the state of my application by pressing the save button after loading a file or creating entries a
 - You can reload the state of my application by pressing the load button after loading a file or creating entries a
+
+# Phase 4: Task 2
+
+```dtd
+Thu Apr 13 15:56:55 PDT 2023
+Loaded entries from workroom.json.
+Thu Apr 13 15:56:56 PDT 2023
+Added entry #1 with name Google.
+Thu Apr 13 15:56:56 PDT 2023
+Added entry #2 with name Reddit.
+Thu Apr 13 15:56:56 PDT 2023
+Added entry #3 with name Paypal.
+Thu Apr 13 15:57:07 PDT 2023
+Added entry #4 with name Bing.
+Thu Apr 13 15:57:10 PDT 2023
+Removed entry #3 with name Paypal.
+Thu Apr 13 15:57:12 PDT 2023
+Saved entries to workroom.json.
+```
