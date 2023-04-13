@@ -1,50 +1,8 @@
-{"entries": [
-    {
-        "password": "BgB1+BuNzeXwsEOIaJd2PTkq5kdrGnD8UF5mldyyjg==",
-        "salt": "8Tfv1lRzzSmwYWn3zVfIKw==",
-        "notes": "PC3gz1FBwvE5pgv3ml5jRMMV3UBPnjYi7J1McedXgg==",
-        "name": "CqWvxQj05ZATPbDufKXsFE35F2ya4Q9Dyzcwtd6axQ==",
-        "url": "1g8zPqVBYmnMmxMusAmXYz+U//KF3ECJnrOuMsufAg==",
-        "username": "DaUT2b5JYTmvuc1YxH4IjFfonZm5gCX5Y8IyQzZ1sA=="
-    },
-    {
-        "password": "yIKDDuFwcmOX8nXUqkzDb8rTxrhV1ZVZClOt0C635vvREazB82UgOoD0EgLEAP9wJJUb/+3Fn/LYxU0N",
-        "salt": "toYLm1wdF4tqgu3T+TjHMA==",
-        "notes": "KkMdPvgMJg69ktw3n5li1LTPIbXlVuhGjOFzqg==",
-        "name": "oPYArzdFgzGbrKivulbo9pqfD4Y6Op287V3+AA==",
-        "url": "AMdwlNA1g7n4i3nVj2s4k0/H6EkRI5YS89heuA==",
-        "username": "s/UqOcK2C9+eKBm5lCWrU33hbycEYzHmPYI3rQ=="
-    },
-    {
-        "password": "Lpouu2AAPtH5nT6qToRD/rdFC+tLnEiFq3DViQ==",
-        "salt": "lJXjul8uybJgaRqA5UruIg==",
-        "notes": "FuwBOPkdR/ejOGLwhyb5GOsFDIG/CBamIKdE9A==",
-        "name": "JoTel70ZK/g9ulgLtnssYtOb7e6o04lDVvwrKA==",
-        "url": "3XVKZq2bNSaVO9Hg9GT43NPEjU683B9Q1TcnZg==",
-        "username": "HLj6noNk9Qu2wrfNMjSTVI+Gn+W1pgTqB1zN/w=="
-    },
-    {
-        "password": "euQyEM2xUIy2183TF8vTAQKWVegAmz+jmGePBqUj",
-        "salt": "lBN4C4z4KfMrX8kH5IjXwQ==",
-        "notes": "ZF9zNemoX1oHfuWjEGSoHCvfw0NQKNPI4bIlUg==",
-        "name": "39/W9sex2+R0jbJ7s06JGTgxZVMDMUnWh9Meqg==",
-        "url": "xGY5D7lAqlQ583ICIbNmiawJklbkhLjNzksc+Q==",
-        "username": "Zb0GSVqm2hP2W/9Yg6D622HEFbfqSqR6ivmZ1g=="
-    },
-    {
-        "password": "O0zveH5/H6F+e4KzTJmdZq9ttsAOb358FURrXSM7IUssns7LtH3/3kzeTsZKHISt",
-        "salt": "cBicErYoSzyMVHKBcV1z9A==",
-        "notes": "15n0yDnae9auFbx6rpenC8MMaYRG0w+D6FqVVQ==",
-        "name": "gGtNCoxdzzxPAtVD0fkaTLXuoM7/9CWMgm19lw==",
-        "url": "UiRFXtirD6JAWy9OIdmt/Dev/x3x/BHyTJvttg==",
-        "username": "/Ha2ny69YCqhmLfLcvWJ8XJsUP07iZzxhDaD7A=="
-    },
-    {
-        "password": "JoeZ4kjiN3SRgfD1RC4KivOU+F87vqOSdvXj6yd7OTQHMa3pIEMKCd5tqeaswZrSEmMKrRl/aSuLNIm9iw==",
-        "salt": "93ERl8FSBWqLrUV3OJ8kgg==",
-        "notes": "XnZgd4XO/NVFIN3VQgFq/DmNMw9VCQFnvhPkPw==",
-        "name": "nP4wjW3kT2Xrwk7256qiQhAWWH3AYu0kU7aOVg==",
-        "url": "NxKlD459KnZRU/UnZfXmlDOPTGFONZZ00TAd/w==",
-        "username": "I3GOaJNXVa147llQL8pESoGbXs3qY2448NZKYA=="
-    }
-]}
+{"entries": [{
+    "password": "yLBRTEyZmZEae9js48KLpcjtOVdh5hUdix5v8oUDcvRGtyQC",
+    "salt": "TUKQWbyjllV3N9xNW3sorQ==",
+    "notes": "wDWXzkatoEWHPHcLU+IhMop+FrKmhVPB1eVStjM1q48=",
+    "name": "EEcJjxjJoAtSbzQVQiHOAjDHZtLwgW7yLkoSkAXwOMg=",
+    "url": "wVf7av3nkWabA4GlC3oxB6TVCxJfxlzFNkwVBaupUS8=",
+    "username": "voZSv1c64H63OUKhDCu7riAuC7+4dIK5+wjGwI2/oWA="
+}]}

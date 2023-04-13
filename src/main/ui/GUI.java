@@ -11,6 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+// TODO: class comment
+
 public class GUI extends JFrame implements ActionListener {
     
     private JPanel cardPanel;
