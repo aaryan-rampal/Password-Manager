@@ -1,6 +1,7 @@
 package ui;
 
 import model.Entry;
+import model.EventLog;
 import model.File;
 import model.Password;
 
@@ -9,6 +10,8 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 // TODO: class comment
@@ -81,6 +84,7 @@ public class GUI extends JFrame implements ActionListener {
     private CardLayout cl;
     private boolean loadFromIntro;
     private ArrayList<ButtonGroup> buttonGroups;
+    private File file;
 
     private static final String CREATE_BUTTON = "CREATE BUTTON";
     private static final String LOAD_BUTTON = "LOAD BUTTON";
@@ -115,7 +119,7 @@ public class GUI extends JFrame implements ActionListener {
      */
     public GUI() {
         super("Password Manager");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setSize(new Dimension((int) (600 * 1.5), (int) (500 * 1.5)));
         setContentPane(cardPanel);
 
@@ -128,6 +132,18 @@ public class GUI extends JFrame implements ActionListener {
         setupCardLayout();
         addActionToButtons();
         populateButtonGroups();
+
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                printLog();
+            }
+        });
+    }
+
+    private void printLog() {
+        file = new File();
+        file.printLog(EventLog.getInstance());
+        System.exit(0);
     }
 
     /**
@@ -345,7 +361,7 @@ public class GUI extends JFrame implements ActionListener {
                 cl.show(cardPanel, "listEntries");
                 break;
             case EXIT_BUTTON:
-                System.exit(0);
+                printLog();
                 break;
             default:
                 actionPerformedFour(actionEvent);

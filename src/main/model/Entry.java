@@ -3,9 +3,6 @@ package model;
 import org.json.JSONObject;
 import persistence.Writable;
 
-import java.security.GeneralSecurityException;
-import java.security.SecureRandom;
-
 // Represents an entry in the password manager including a name, username, password, url, and notes
 public class Entry implements Writable {
     private String name;

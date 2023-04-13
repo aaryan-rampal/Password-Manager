@@ -28,6 +28,7 @@ public class JsonReader {
     public File read() throws IOException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
+        EventLog.getInstance().logEvent(new Event("Loaded entries from workroom.json."));
         return parseFile(jsonObject);
     }
 

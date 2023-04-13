@@ -9,7 +9,6 @@ import java.util.ArrayList;
 // Represents a file which will contain a list of entries
 public class File implements Writable {
     private ArrayList<Entry> entries;
-    private String masterPassword;
 
     /**
      * @EFFECTS: creates a new file with no entries
@@ -32,10 +31,15 @@ public class File implements Writable {
      */
     public void addEntry(Entry entry) {
         entries.add(entry);
+        EventLog.getInstance().logEvent(new Event("Added entry #" + entries.size()
+                + " with name " + entry.getName() + "."));
     }
 
     public void removeEntry(int index) {
+        String nameOfEntry = entries.get(index).getName();
         entries.remove(index);
+        EventLog.getInstance().logEvent(new Event("Removed entry #" + ++index
+                + " with name " + nameOfEntry + "."));
     }
 
     /**
@@ -82,4 +86,9 @@ public class File implements Writable {
         return jsonArray;
     }
 
+    public void printLog(EventLog el) {
+        for (Event next : el) {
+            System.out.println(next.toString());
+        }
+    }
 }
