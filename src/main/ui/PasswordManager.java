@@ -304,10 +304,8 @@ public class PasswordManager {
      */
     private void saveFile() {
         try {
-            System.out.println("Enter your master password: ");
-            String masterPassword = scan.nextLine();
             jsonWriter.open();
-            jsonWriter.write(file, masterPassword);
+            jsonWriter.write(file);
             jsonWriter.close();
             System.out.println("Saved file to " + JSON_STORE);
         } catch (FileNotFoundException e) {
@@ -315,13 +313,11 @@ public class PasswordManager {
         }
     }
 
-    public void saveFileFromGUI(String masterPassword) {
+    public void saveFileFromGUI() {
         try {
-            System.out.println("Enter your master password: ");
             jsonWriter.open();
-            jsonWriter.write(file, masterPassword);
+            jsonWriter.write(file);
             jsonWriter.close();
-            System.out.println("Saved file to " + JSON_STORE);
         } catch (FileNotFoundException e) {
             e.getMessage();
         }
@@ -334,24 +330,19 @@ public class PasswordManager {
     private void loadFile() {
         try {
             System.out.println("Enter your master password: ");
-            String masterPassword = scan.nextLine();
-            file = jsonReader.read(masterPassword);
+            file = jsonReader.read();
             System.out.println("Loaded file from " + JSON_STORE);
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
-        } catch (GeneralSecurityException e) {
-            System.out.println("Wrong password!");
         }
     }
 
-    public void loadFileFromGUI(String masterPassword) {
+
+    public void loadFileFromGUI() {
         try {
-            file = jsonReader.read(masterPassword);
-            System.out.println("Loaded file from " + JSON_STORE);
+            file = jsonReader.read();
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
-        } catch (GeneralSecurityException e) {
-            System.out.println("Wrong password!");
         }
     }
 
