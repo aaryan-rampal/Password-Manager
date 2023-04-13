@@ -14,8 +14,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
-// TODO: class comment
-
+// Represents the GUI which the user interacts with to use the password manager
 public class GUI extends JFrame implements ActionListener {
     
     private JPanel cardPanel;
@@ -120,6 +119,7 @@ public class GUI extends JFrame implements ActionListener {
     public GUI() {
         super("Password Manager");
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        addWindowListener();
         setSize(new Dimension((int) (600 * 1.5), (int) (500 * 1.5)));
         setContentPane(cardPanel);
 
@@ -132,7 +132,13 @@ public class GUI extends JFrame implements ActionListener {
         setupCardLayout();
         addActionToButtons();
         populateButtonGroups();
+    }
 
+    /**
+     * @MODIFIES: this
+     * @EFFECTS: adds a window listener which prints the log before closing the program
+     */
+    private void addWindowListener() {
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 printLog();
@@ -140,6 +146,10 @@ public class GUI extends JFrame implements ActionListener {
         });
     }
 
+    /**
+     * @MODIFIES: file
+     * @EFFECTS: prints the event log to the console before exiting
+     */
     private void printLog() {
         file = new File();
         file.printLog(EventLog.getInstance());

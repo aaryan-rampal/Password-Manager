@@ -10,7 +10,6 @@ import persistence.JsonWriter;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -125,7 +124,7 @@ public class PasswordManager {
     }
 
     /**
-     * @MODIFIES: this
+     * @MODIFIES: file
      * @EFFECTS: takes user input and assigns it to a new entry object which is added to file
      */
     private void createEntry() {
@@ -139,11 +138,19 @@ public class PasswordManager {
         file.addEntry(entry);
     }
 
+    /**
+     * @MODIFIES: file
+     * @EFFECTS: assigns parameters to a new entry object which is added to file
+     */
     public void createEntry(String name, String username, Password password, String url, String notes) {
         Entry entry = new Entry(name, username, password, url, notes);
         file.addEntry(entry);
     }
 
+    /**
+     * @MODIFIES: file
+     * @EFFECTS: removes entry with the given index
+     */
     public void removeEntryForGUI(int index) {
         file.removeEntry(index);
     }
@@ -221,10 +228,18 @@ public class PasswordManager {
         return new Password(passwordText);
     }
 
+    /**
+     * @REQUIRES: words > 0
+     * @MODIFIES: returns a passphrase with the specified amount of words
+     */
     public String generatePassphraseForGUI(int words) {
         return Generator.generatePassphrase("-", words);
     }
 
+    /**
+     * @REQUIRES: length > 0, characterTypesBoolean has 4 boolean values
+     * @MODIFIES: returns a password with the specified character types and length
+     */
     public String generatePasswordForGUI(ArrayList<Boolean> characterTypesBoolean, int length) {
         ArrayList<CharacterTypes> ct = passwordGenerator.addCharacterTypes(characterTypesBoolean);
         return generatePassword(ct, length);
@@ -313,6 +328,9 @@ public class PasswordManager {
         }
     }
 
+    /**
+     * @EFFECTS: saves the file object
+     */
     public void saveFileFromGUI() {
         try {
             jsonWriter.open();
@@ -337,7 +355,10 @@ public class PasswordManager {
         }
     }
 
-
+    /**
+     * @MODIFIES: this
+     * @EFFECTS: loads saved file object
+     */
     public void loadFileFromGUI() {
         try {
             file = jsonReader.read();
