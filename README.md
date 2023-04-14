@@ -63,6 +63,9 @@ after loading a file or creating entries and entering the index of the entry you
 
 # Phase 4: Task 2
 
+The following log depicts the user loading the data from the workroom. This adds the 
+3 entries (Google, Reddit, and Paypal) that are on file to the program. The user then adds
+another entry (Bing) then removes an entry (Paypal). They then save their work.
 ```dtd
 Thu Apr 13 15:56:55 PDT 2023
 Loaded entries from workroom.json.
