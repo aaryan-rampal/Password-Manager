@@ -63,7 +63,6 @@ public class File {
     /**
      * @EFFECTS: returns contents of entries arraylist to JSONObject
      */
-    @Override
     public String toJson() {
         ObjectMapper mapper = new ObjectMapper();
         try {

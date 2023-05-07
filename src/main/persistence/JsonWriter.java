@@ -34,8 +34,8 @@ public class JsonWriter {
      * @EFFECTS: writes JSON representation of file object to file
      */
     public void write(File f) {
-        JSONObject json = f.toJson();
-        saveToFile(json.toString(TAB));
+        String json = f.toJson();
+        saveToFile(json);
         EventLog.getInstance().logEvent(new Event("Saved entries to workroom.json."));
     }
 

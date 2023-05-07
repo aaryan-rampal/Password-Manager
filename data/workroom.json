@@ -1,1 +1,16 @@
-{"entries": []}
+[
+  {
+    "name": "a",
+    "username": "a",
+    "password": "a",
+    "url": "a",
+    "notes": ""
+  },
+  {
+    "name": "b",
+    "username": "b",
+    "password": "b",
+    "url": "b",
+    "notes": "b"
+  }
+]

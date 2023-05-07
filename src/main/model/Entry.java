@@ -1,11 +1,11 @@
 package model;
 
-import org.json.JSONObject;
-import persistence.Writable;
-import com.fasterxml.jackson.annotation.*;
+
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 // Represents an entry in the password manager including a name, username, password, url, and notes
-public class Entry implements Writable {
+public class Entry {
     private String name;
     private String username;
     private Password password;
@@ -52,23 +52,6 @@ public class Entry implements Writable {
     @JsonProperty
     public String getNotes() {
         return notes;
-    }
-
-    /**
-     * @REQUIRES: name, username, password, url, and notes are not null
-     * @EFFECTS: creates a JSONObject and adds the encrypted strings of the fields to it
-     */
-    @Override
-    public JSONObject toJson() {
-//        JSONObject json = new JSONObject();
-//        json.put("name", name);
-//        json.put("username", username);
-//        json.put("password", password.getPassword());
-//        json.put("url", url);
-//        json.put("notes", notes);
-//        return json;
-//        getJson();
-        return null;
     }
 
 }
