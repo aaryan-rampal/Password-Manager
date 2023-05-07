@@ -2,6 +2,7 @@ package model;
 
 import org.json.JSONObject;
 import persistence.Writable;
+import com.fasterxml.jackson.annotation.*;
 
 // Represents an entry in the password manager including a name, username, password, url, and notes
 public class Entry implements Writable {
@@ -32,6 +33,7 @@ public class Entry implements Writable {
         return username;
     }
 
+    @JsonGetter("password")
     public Password getPassword() {
         return password;
     }
