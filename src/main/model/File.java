@@ -1,5 +1,7 @@
 package model;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
@@ -79,8 +81,16 @@ public class File implements Writable {
     private JSONArray entriesToJson() {
         JSONArray jsonArray = new JSONArray();
 
-        for (Entry e : entries) {
-            jsonArray.put(e.toJson());
+//        for (Entry e : entries) {
+//            jsonArray.put(e.toJson());
+//        }
+
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            String jsonArrayA = mapper.writeValueAsString(entries);
+            System.out.println(jsonArrayA);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
         }
 
         return jsonArray;

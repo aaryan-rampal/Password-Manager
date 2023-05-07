@@ -25,23 +25,31 @@ public class Entry implements Writable {
         this.notes = notes;
     }
 
+    @JsonProperty
     public String getName() {
         return name;
     }
 
+    @JsonProperty
     public String getUsername() {
         return username;
     }
 
-    @JsonGetter("password")
     public Password getPassword() {
         return password;
     }
 
+    @JsonGetter("password")
+    public String getPasswordText() {
+        return password.getPassword();
+    }
+
+    @JsonProperty
     public String getUrl() {
         return url;
     }
 
+    @JsonProperty
     public String getNotes() {
         return notes;
     }
@@ -52,13 +60,15 @@ public class Entry implements Writable {
      */
     @Override
     public JSONObject toJson() {
-        JSONObject json = new JSONObject();
-        json.put("name", name);
-        json.put("username", username);
-        json.put("password", password.getPassword());
-        json.put("url", url);
-        json.put("notes", notes);
-        return json;
+//        JSONObject json = new JSONObject();
+//        json.put("name", name);
+//        json.put("username", username);
+//        json.put("password", password.getPassword());
+//        json.put("url", url);
+//        json.put("notes", notes);
+//        return json;
+//        getJson();
+        return null;
     }
 
 }

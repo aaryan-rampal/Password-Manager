@@ -45,7 +45,7 @@ public class PasswordManager {
         passwordGenerator = new PasswordGenerator();
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
-//        displayIntroduction();
+        displayIntroduction();
     }
 
     public File getFile() {
