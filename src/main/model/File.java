@@ -4,10 +4,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 // Represents a file which will contain a list of entries
 public class File {
-    private ArrayList<Entry> entries;
+
+    private List<Entry> entries;
 
     /**
      * @EFFECTS: creates a new file with no entries
@@ -21,6 +23,10 @@ public class File {
      * @EFFECTS: creates a new file with existing entries
      */
     public File(ArrayList<Entry> entries) {
+        this.entries = entries;
+    }
+
+    public void setEntries(List<Entry> entries) {
         this.entries = entries;
     }
 

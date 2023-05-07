@@ -1,5 +1,7 @@
 package persistence;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import model.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -8,6 +10,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.stream.Stream;
 
 // Represents a reader that reads file object from stored JSON data
@@ -27,9 +30,13 @@ public class JsonReader {
      */
     public File read() throws IOException {
         String jsonData = readFile(source);
-        JSONObject jsonObject = new JSONObject(jsonData);
+//        JSONObject jsonObject = new JSONObject(jsonData);
+        ObjectMapper mapper = new ObjectMapper();
+
+        List<Entry> loadedEntries = mapper.readValue(jsonData, new TypeReference<List<Entry>>() { });
         EventLog.getInstance().logEvent(new Event("Loaded entries from workroom.json."));
-        return parseFile(jsonObject);
+
+        return parseFile(loadedEntries);
     }
 
     /**
@@ -48,9 +55,9 @@ public class JsonReader {
     /**
      * @EFFECTS: parses file from JSON object and returns it
      */
-    private File parseFile(JSONObject jsonObject) {
+    private File parseFile(List<Entry> loadedEntries) {
         File f = new File();
-        addEntries(f, jsonObject);
+        f.setEntries(loadedEntries);
         return f;
     }
 
