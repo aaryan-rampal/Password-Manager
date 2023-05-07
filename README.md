@@ -51,16 +51,6 @@ Note: The files `JsonReader.java`, `JsonWriter.java`, `Writable.java`, `JsonRead
 `Event.java`, `EventLog.java`, `EventTest.java`, and `EventLogTest.java` were inspired by the [alarm project provided by
 CPSC 210](https://github.students.cs.ubc.ca/CPSC210/AlarmSystem).
 
-# Instructions for Grader
-
-- You can generate the first required action related to adding Xs to a Y by pressing list entries
-after loading a file or creating entries
-- You can generate the second required action related to adding Xs to a Y by pressing the delete button on main menu
-after loading a file or creating entries and entering the index of the entry you want to delete
-- You can locate my visual component by the splash screen on startup
-- You can save the state of my application by pressing the save button after loading a file or creating entries a
-- You can reload the state of my application by pressing the load button after loading a file or creating entries a
-
 # Phase 4: Task 2
 
 The following log depicts the user loading the data from the workroom. This adds the 
@@ -83,7 +73,7 @@ Thu Apr 13 15:57:12 PDT 2023
 Saved entries to workroom.json.
 ```
 
-# Phase 4: Task 3
+# Improvements
 I would make a few changes to my project to improve its design. Firstly, I had separate functions
 for saving and loading from the console or from the GUI where most of the code was the same, with 
 a few minor changes. I could have made an abstract save/load function which both the console and 
@@ -98,12 +88,3 @@ static at the start of my program (which I think causes it to look untidy), I co
 classes which store the names of these variables for the `PasswordManager` and `GUI` classes. Then,
 I could import the enum class into these two classes and use the enums like how I use the
 `final static String` fields. 
-
-## Final note to grader
-
-Note that I had implemented encryption into my program. However, because autobot kept failing whenever 
-I used a certain object which I had used from an imported library in my project, I would keep getting <100% 
-for my code coverage. Therefore, I decided to remove the encryption aspect of my project. However, now I realize 
-that code coverage is not being tested for phase 4. I tried to revert my commit back to include encryption
-but I got quite confused by git and conflict resolution and checked out revisions that I decided to just keep it 
-as it is. All this to say, the final version of my project will not include encrypted entries. 
