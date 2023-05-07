@@ -2,14 +2,11 @@ package model;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import persistence.Writable;
 
 import java.util.ArrayList;
 
 // Represents a file which will contain a list of entries
-public class File implements Writable {
+public class File {
     private ArrayList<Entry> entries;
 
     /**
@@ -67,18 +64,7 @@ public class File implements Writable {
      * @EFFECTS: returns contents of entries arraylist to JSONObject
      */
     @Override
-    public JSONObject toJson() {
-        JSONObject json = new JSONObject();
-        json.put("entries", entriesToJson());
-        return json;
-    }
-
-    /**
-     * @REQUIRES: masterPassword and entries are not null
-     * @MODIFIES: entries
-     * @EFFECTS: uses the masterPassword to add the encrypted entries to a JSONArray which it then returns
-     */
-    private String entriesToJson() {
+    public String toJson() {
         ObjectMapper mapper = new ObjectMapper();
         try {
             return mapper.writeValueAsString(entries);
@@ -86,6 +72,20 @@ public class File implements Writable {
             throw new RuntimeException(e);
         }
     }
+
+//    /**
+//     * @REQUIRES: masterPassword and entries are not null
+//     * @MODIFIES: entries
+//     * @EFFECTS: uses the masterPassword to add the encrypted entries to a JSONArray which it then returns
+//     */
+//    private String entriesToJson() {
+//        ObjectMapper mapper = new ObjectMapper();
+//        try {
+//            return mapper.writeValueAsString(entries);
+//        } catch (JsonProcessingException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     public void printLog(EventLog el) {
         for (Event next : el) {
