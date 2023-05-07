@@ -72,20 +72,6 @@ public class File {
         }
     }
 
-//    /**
-//     * @REQUIRES: masterPassword and entries are not null
-//     * @MODIFIES: entries
-//     * @EFFECTS: uses the masterPassword to add the encrypted entries to a JSONArray which it then returns
-//     */
-//    private String entriesToJson() {
-//        ObjectMapper mapper = new ObjectMapper();
-//        try {
-//            return mapper.writeValueAsString(entries);
-//        } catch (JsonProcessingException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
-
     public void printLog(EventLog el) {
         for (Event next : el) {
             System.out.println(next.toString());
