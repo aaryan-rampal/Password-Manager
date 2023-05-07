@@ -78,22 +78,13 @@ public class File implements Writable {
      * @MODIFIES: entries
      * @EFFECTS: uses the masterPassword to add the encrypted entries to a JSONArray which it then returns
      */
-    private JSONArray entriesToJson() {
-        JSONArray jsonArray = new JSONArray();
-
-//        for (Entry e : entries) {
-//            jsonArray.put(e.toJson());
-//        }
-
+    private String entriesToJson() {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            String jsonArrayA = mapper.writeValueAsString(entries);
-            System.out.println(jsonArrayA);
+            return mapper.writeValueAsString(entries);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
-
-        return jsonArray;
     }
 
     public void printLog(EventLog el) {
