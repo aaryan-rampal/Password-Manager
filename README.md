@@ -1,16 +1,16 @@
-# Password Manager
+# SafePass 
 
-## Offline and encrypted
+## Offline and encrypted password manager
 
+Built using the [Jackson](https://github.com/FasterXML/jackson) library for json representation, the 
+[Nbvcxz](https://github.com/GoSimpleLLC/nbvcxz) library for password entropy calculations, and the 
+[Tink](https://github.com/google/tink) library for encryption.
 
-I will build a password manager for my project. It will be able to generate and store **random** (or user-entered) 
-passwords which it will save in an **encrypted** file on exit. It would be able to decrypt the file given that the 
-correct password is entered.
 
 A lot of people are notoriously bad at making good passwords. I think instead of remembering strong 20-30 character 
 passwords, my application would make it easier for people to secure themselves online. Moreover, if people feel 
 uneasy about trusting applications with their sensitive information, they can look through the code for this project
-to make sure that it is secure. Moreover, I am also not allowed to call any API's anyway for this project so it's a 
+to make sure that it is secure. I am not using any external API's for this project, so it's a 
 completely offline password manager, which was the first password manager I personally used. 
 
 I am interested in cryptography and encryption. I did research on the different types of algorithms that can be 
@@ -31,27 +31,29 @@ As a user, I want to be able to:
 - option to load previously saved file on startup
 - delete previous entries
 
-[//]: # (Stretch Goals: Not Implemented Yet)
+Stretch Goals: Not Implemented Yet
 
-[//]: # (- view a specific previous entry using any of the entry fields or index )
+- view a specific previous entry using any of the entry fields or index 
 
-[//]: # (- specify a *minimum* entropy for the generated password)
+- specify a *minimum* entropy for the generated password
 
-[//]: # (- edit previous entries to change any of the fields)
+- edit previous entries to change any of the fields
 
-[//]: # (- **encrypt** the file when I'm done using it)
+- **encrypt** the file when I'm done using it
 
-[//]: # (- **decrypt** the file using a password)
+- **decrypt** the file using a password
 
-[//]: # (- store the encrypted file on my computer and have it be easily transportable)
+- store the encrypted file on my computer and have it be easily transportable
 
-Note: The files `JsonReader.java`, `JsonWriter.java`, `Writable.java`, `JsonReaderTest.java`, `JsonWriterTest.java`, and 
-`JsonTest.java` were inspired by the 
-[sample project provided by CPSC 210](https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git). The files
-`Event.java`, `EventLog.java`, `EventTest.java`, and `EventLogTest.java` were inspired by the [alarm project provided by
+[//]: # (Note: The files `JsonReader.java`, `JsonWriter.java`, `Writable.java`, `JsonReaderTest.java`, `JsonWriterTest.java`, and )
+
+[//]: # (`JsonTest.java` were inspired by the )
+
+[//]: # ([sample project provided by CPSC 210]&#40;https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git&#41;.) 
+The files `Event.java`, `EventLog.java`, `EventTest.java`, and `EventLogTest.java` were inspired by the [alarm project provided by
 CPSC 210](https://github.students.cs.ubc.ca/CPSC210/AlarmSystem).
 
-# Phase 4: Task 2
+# Example of log
 
 The following log depicts the user loading the data from the workroom. This adds the 
 3 entries (Google, Reddit, and Paypal) that are on file to the program. The user then adds
