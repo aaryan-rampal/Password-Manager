@@ -60,31 +60,4 @@ public class JsonReader {
         return f;
     }
 
-    /**
-     * @MODIFIES: f
-     * @EFFECTS: parses entries from JSON object and adds them to file
-     */
-    private void addEntries(File f, JSONObject jsonObject) {
-        JSONArray jsonArray = jsonObject.getJSONArray("entries");
-        for (Object json : jsonArray) {
-            JSONObject nextEntry = (JSONObject) json;
-            addEntry(f, nextEntry);
-        }
-    }
-
-    /**
-     * @MODIFIES: f
-     * @EFFECTS: parses a single entry from JSON object and adds it to file
-     */
-    private void addEntry(File f, JSONObject jsonObject) {
-        String name = jsonObject.getString("name");
-        String username = jsonObject.getString("username");
-        Password password = new Password(jsonObject.getString("password"));
-        String url = jsonObject.getString("url");
-        String notes = jsonObject.getString("notes");
-
-        Entry entry = new Entry(name, username, password, url, notes);
-        f.addEntry(entry);
-    }
-
 }
