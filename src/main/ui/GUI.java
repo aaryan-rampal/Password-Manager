@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
+import java.util.List;
 
 // Represents the GUI which the user interacts with to use the password manager
 public class GUI extends JFrame implements ActionListener {
@@ -569,7 +570,7 @@ public class GUI extends JFrame implements ActionListener {
      */
     private void filterTable(int i) {
         File file = passwordManager.getFile();
-        ArrayList<Entry> entries = file.getEntries();
+        List<Entry> entries = file.getEntries();
         if (i == 5) {
             listEntries(entries);
         } else {
@@ -597,7 +598,7 @@ public class GUI extends JFrame implements ActionListener {
      * @MODIFIES: table1
      * @EFFECTS: adds all the entries in entries to the JTabel and updates the GUI
      */
-    private void listEntries(ArrayList<Entry> entries) {
+    private void listEntries(List<Entry> entries) {
         DefaultTableModel tableModel = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -638,7 +639,7 @@ public class GUI extends JFrame implements ActionListener {
      * @MODIFIES: tableModel
      * @EFFECTS: populates tableModel with the data from entries
      */
-    private void fillTableWithEntries(DefaultTableModel tableModel, ArrayList<Entry> entries) {
+    private void fillTableWithEntries(DefaultTableModel tableModel, List<Entry> entries) {
         for (int i = 0; i < entries.size(); i++) {
             Entry e = entries.get(i);
             String[] entryData = new String[]{e.getName(), e.getUsername(), e.getPassword().getPassword(), e.getUrl(),

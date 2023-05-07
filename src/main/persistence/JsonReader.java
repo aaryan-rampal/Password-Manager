@@ -30,7 +30,6 @@ public class JsonReader {
      */
     public File read() throws IOException {
         String jsonData = readFile(source);
-//        JSONObject jsonObject = new JSONObject(jsonData);
         ObjectMapper mapper = new ObjectMapper();
 
         List<Entry> loadedEntries = mapper.readValue(jsonData, new TypeReference<List<Entry>>() { });

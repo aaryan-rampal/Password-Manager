@@ -22,7 +22,7 @@ public class File {
      * @REQUIRES: entries is not null
      * @EFFECTS: creates a new file with existing entries
      */
-    public File(ArrayList<Entry> entries) {
+    public File(List<Entry> entries) {
         this.entries = entries;
     }
 
@@ -62,7 +62,7 @@ public class File {
         return entries.get(i);
     }
 
-    public ArrayList<Entry> getEntries() {
+    public List<Entry> getEntries() {
         return entries;
     }
 

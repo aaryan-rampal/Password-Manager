@@ -1,5 +1,6 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -20,6 +21,20 @@ public class Entry {
         this.name = name;
         this.username = username;
         this.password = password;
+        this.url = url;
+        this.notes = notes;
+    }
+
+    @JsonCreator
+    // custom constructor for Entry when reading from json file
+    public Entry(@JsonProperty("name") String name,
+                 @JsonProperty("username") String username,
+                 @JsonProperty("password") String password,
+                 @JsonProperty("url") String url,
+                 @JsonProperty("notes") String notes) {
+        this.name = name;
+        this.username = username;
+        this.password = new Password(password);
         this.url = url;
         this.notes = notes;
     }
