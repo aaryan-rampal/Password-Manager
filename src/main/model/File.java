@@ -74,8 +74,9 @@ public class File {
         try {
             return mapper.writeValueAsString(entries);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error in saving entries. Entries were not saved.");
         }
+        return null;
     }
 
     public void printLog(EventLog el) {

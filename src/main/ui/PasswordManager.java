@@ -347,7 +347,7 @@ public class PasswordManager {
      */
     private void loadFile() {
         try {
-            System.out.println("Enter your master password: ");
+//            System.out.println("Enter your master password: ");
             file = jsonReader.read();
             System.out.println("Loaded file from " + JSON_STORE);
         } catch (IOException e) {

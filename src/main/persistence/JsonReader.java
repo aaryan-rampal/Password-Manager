@@ -2,9 +2,10 @@ package persistence;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import model.*;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import model.Entry;
+import model.Event;
+import model.EventLog;
+import model.File;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
