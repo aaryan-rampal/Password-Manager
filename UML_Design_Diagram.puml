@@ -1,0 +1,37 @@
+@startuml
+
+'package model {
+class Entry
+class File
+class Password
+class PasswordGenerator
+'}
+'package persistence {
+class JsonReader
+class JsonWriter
+interface Writable <<interface>>
+'}
+'package ui {
+class Main
+class PasswordManager
+class GUI
+'}
+
+hide members
+hide circle
+
+Password <-- Entry
+
+Writable <|.. File
+Writable <|.. Entry
+
+Entry "0..*" <-- File
+
+PasswordManager <-- GUI
+
+File <-- PasswordManager
+PasswordGenerator <-- PasswordManager
+JsonReader <-- PasswordManager
+JsonWriter <-- PasswordManager
+
+@enduml

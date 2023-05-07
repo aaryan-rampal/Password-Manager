@@ -1,0 +1,958 @@
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13__4_16_a_m___Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13__4_16_a_m___Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13__4_16_a_m___Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13__4_16_a_m___Changes_.xml	(revision 56ed67557fc843df00d9c29d602d460cf513da92)
++++ /dev/null	(revision 56ed67557fc843df00d9c29d602d460cf513da92)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_2023-04-13,_4_16_a_m__[Changes]" date="1681384611827" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13,_4_16_a_m__[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2023-04-13, 4:16 a.m. [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13__3_53_a_m___Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13__3_53_a_m___Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13__3_53_a_m___Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13__3_53_a_m___Changes_.xml	(revision 56ed67557fc843df00d9c29d602d460cf513da92)
++++ /dev/null	(revision 56ed67557fc843df00d9c29d602d460cf513da92)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_2023-04-13,_3_53_a_m__[Changes]" date="1681383231052" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13,_3_53_a_m__[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2023-04-13, 3:53 a.m. [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13,_3_53_a_m__[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13,_3_53_a_m__[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13,_3_53_a_m__[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13,_3_53_a_m__[Changes]/shelved.patch	(revision 56ed67557fc843df00d9c29d602d460cf513da92)
++++ /dev/null	(revision 56ed67557fc843df00d9c29d602d460cf513da92)
+@@ -1,43 +0,0 @@
+-Index: data/workroom.json
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>{\"entries\": [\n    {\n        \"password\": \"fsdafasf\",\n        \"notes\": \"fasdfasdf\",\n        \"name\": \"sdafdsf\",\n        \"url\": \"sadfas\",\n        \"username\": \"afdsf\"\n    },\n    {\n        \"password\": \"312313\",\n        \"notes\": \"13213221\",\n        \"name\": \"31231\",\n        \"url\": \"23132\",\n        \"username\": \"21331\"\n    },\n    {\n        \"password\": \"sdaad\",\n        \"notes\": \"asdasd\",\n        \"name\": \"dsadad\",\n        \"url\": \"dasdad\",\n        \"username\": \"asdads\"\n    }\n]}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/data/workroom.json b/data/workroom.json
+---- a/data/workroom.json	(revision 6aec355b7126c3000ba8150a8eb10560c889f6e0)
+-+++ b/data/workroom.json	(date 1681383202814)
+-@@ -1,23 +1,7 @@
+--{"entries": [
+--    {
+--        "password": "fsdafasf",
+--        "notes": "fasdfasdf",
+--        "name": "sdafdsf",
+--        "url": "sadfas",
+--        "username": "afdsf"
+--    },
+--    {
+--        "password": "312313",
+--        "notes": "13213221",
+--        "name": "31231",
+--        "url": "23132",
+--        "username": "21331"
+--    },
+--    {
+--        "password": "sdaad",
+--        "notes": "asdasd",
+--        "name": "dsadad",
+--        "url": "dasdad",
+--        "username": "asdads"
+--    }
+--]}
+-\ No newline at end of file
+-+{"entries": [{
+-+    "password": "culinary-purr",
+-+    "notes": "",
+-+    "name": "",
+-+    "url": "",
+-+    "username": ""
+-+}]}
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13,_4_16_a_m__[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13,_4_16_a_m__[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13,_4_16_a_m__[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-04-13,_4_16_a_m__[Changes]/shelved.patch	(revision 56ed67557fc843df00d9c29d602d460cf513da92)
++++ /dev/null	(revision 56ed67557fc843df00d9c29d602d460cf513da92)
+@@ -1,850 +0,0 @@
+-Index: src/main/model/Entry.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package model;\n\nimport org.json.JSONObject;\nimport persistence.Writable;\n\nimport java.security.GeneralSecurityException;\nimport java.security.SecureRandom;\n\n// Represents an entry in the password manager including a name, username, password, url, and notes\npublic class Entry implements Writable {\n    private String name;\n    private String username;\n    private Password password;\n    private String url;\n    private String notes;\n\n    /**\n     * @REQUIRES: name, username, url, and notes have non-zero length; password is not null\n     * @EFFECTS: creates entry object which instantiates all the fields with the parameters that are passed into the\n     * constructor\n     */\n    public Entry(String name, String username, Password password, String url, String notes) {\n        this.name = name;\n        this.username = username;\n        this.password = password;\n        this.url = url;\n        this.notes = notes;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public String getUsername() {\n        return username;\n    }\n\n    public Password getPassword() {\n        return password;\n    }\n\n    public String getUrl() {\n        return url;\n    }\n\n    public String getNotes() {\n        return notes;\n    }\n\n    /**\n     * @REQUIRES: name, username, password, url, and notes are not null\n     * @EFFECTS: creates a JSONObject and adds the encrypted strings of the fields to it\n     */\n    @Override\n    public JSONObject toJson() {\n        JSONObject json = new JSONObject();\n        json.put(\"name\", name);\n        json.put(\"username\", username);\n        json.put(\"password\", password.getPassword());\n        json.put(\"url\", url);\n        json.put(\"notes\", notes);\n        return json;\n    }\n\n}\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/model/Entry.java b/src/main/model/Entry.java
+---- a/src/main/model/Entry.java	(revision 8f63c64a5cdca8b262f0fc371487a572bc97dfc4)
+-+++ b/src/main/model/Entry.java	(date 1681384350335)
+-@@ -11,8 +11,11 @@
+-     private String name;
+-     private String username;
+-     private Password password;
+-+    private String masterPassword;
+-     private String url;
+-     private String notes;
+-+    private ByteConvertor bc;
+-+    private String algorithm;
+- 
+-     /**
+-      * @REQUIRES: name, username, url, and notes have non-zero length; password is not null
+-@@ -25,6 +28,20 @@
+-         this.password = password;
+-         this.url = url;
+-         this.notes = notes;
+-+        algorithm = "SHA-256";
+-+        bc = new ByteConvertor();
+-+    }
+-+
+-+    public void setAlgorithm(String algorithm) {
+-+        this.algorithm = algorithm;
+-+    }
+-+
+-+    public String getAlgorithm() {
+-+        return algorithm;
+-+    }
+-+
+-+    public void setMasterPassword(String masterPassword) {
+-+        this.masterPassword = masterPassword;
+-     }
+- 
+-     public String getName() {
+-@@ -53,13 +70,41 @@
+-      */
+-     @Override
+-     public JSONObject toJson() {
+--        JSONObject json = new JSONObject();
+--        json.put("name", name);
+--        json.put("username", username);
+--        json.put("password", password.getPassword());
+--        json.put("url", url);
+--        json.put("notes", notes);
+--        return json;
+-+        try {
+-+            JSONObject json = new JSONObject();
+-+            byte[] saltBytes = createSalt();
+-+            Keyset keySet = new Keyset(masterPassword, algorithm);
+-+            json.put("salt", bc.bytesToString(saltBytes));
+-+            encryptField(name, json, "name", saltBytes, keySet);
+-+            encryptField(username, json, "username", saltBytes, keySet);
+-+            encryptField(password.getPassword(), json, "password", saltBytes, keySet);
+-+            encryptField(url, json, "url", saltBytes, keySet);
+-+            encryptField(notes, json, "notes", saltBytes, keySet);
+-+
+-+            return json;
+-+        } catch (GeneralSecurityException e) {
+-+            return null;
+-+        }
+-+    }
+-+
+-+    /**
+-+     * @REQUIRES: field is not null, json is not null, salt has 16 elements, keySet is not null
+-+     * @MODIFIES: json
+-+     * @EFFECTS: converts plaintext string to an encrypted string which it then puts into the json object
+-+     */
+-+    private void encryptField(String field, JSONObject json, String nameOfField, byte[] salt, Keyset keySet) {
+-+        byte[] cipherBytes = keySet.encrypt(field, salt);
+-+        json.put(nameOfField, bc.bytesToString(cipherBytes));
+-+    }
+-+
+-+    /**
+-+     * @EFFECTS: creates an array of 16 random bytes which will be used as the salt
+-+     */
+-+    private byte[] createSalt() {
+-+        SecureRandom random = new SecureRandom();
+-+        byte[] saltBytes = new byte[16];
+-+        random.nextBytes(saltBytes);
+-+        return saltBytes;
+-     }
+- 
+- }
+-Index: src/test/model/FileTest.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package model;\n\nimport org.json.JSONObject;\nimport org.junit.jupiter.api.BeforeEach;\nimport org.junit.jupiter.api.Test;\nimport java.util.ArrayList;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\n\npublic class FileTest {\n    private File testList;\n    private ArrayList<Entry> entryArrayList;\n    private Entry e1;\n    private Entry e2;\n\n    @BeforeEach\n    void runBefore() {\n        testList = new File();\n        entryArrayList = new ArrayList<>();\n        e1 = new Entry(\"Bing\", \"a@outlook.com\", new Password(\"helloworld123\"),\n                \"www.bing.ca\", \"none\");\n        e2 = new Entry(\"Adobe\", \"a@outlook.com\", new Password(\"goodpassword\"),\n                \"www.adobe.ca\", \"none\");\n\n        entryArrayList.add(e1);\n        entryArrayList.add(e2);\n    }\n\n    @Test\n    void testEmptyConstructor() {\n        assertEquals(testList.getSizeOfEntries(), 0);\n    }\n\n    @Test\n    void testNotEmptyConstructor() {\n        testList = new File(entryArrayList);\n\n        ArrayList<Entry> actualList = testList.getEntries();\n        assertEquals(2, actualList.size());\n        assertEquals(e1, actualList.get(0));\n        assertEquals(e2, actualList.get(1));\n    }\n\n    @Test\n    void testGetEntryAtIndexZero() {\n        testList = new File(entryArrayList);\n\n        assertEquals(e1, testList.getEntryAtIndex(0));\n    }\n\n    @Test\n    void testGetEntryAtIndexLast() {\n        testList = new File(entryArrayList);\n\n        assertEquals(e2, testList.getEntryAtIndex(1));\n    }\n\n    @Test\n    void testAddEntry() {\n        testList.addEntry(e1);\n\n        assertEquals(testList.getSizeOfEntries(), 1);\n        assertEquals(testList.getEntryAtIndex(0), e1);\n    }\n\n    @Test\n    void testRemoveEntry() {\n        testList.addEntry(e1);\n        testList.addEntry(e2);\n\n        testList.removeEntry(0);\n        assertEquals(testList.getSizeOfEntries(), 1);\n        assertEquals(testList.getEntries().get(0), e2);\n    }\n\n    @Test\n    void testToJson() {\n        testList.addEntry(e1);\n        testList.addEntry(e2);\n\n        JSONObject a = testList.toJson();\n        System.out.println();\n        // TODO: actual test here\n    }\n}\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/test/model/FileTest.java b/src/test/model/FileTest.java
+---- a/src/test/model/FileTest.java	(revision 8f63c64a5cdca8b262f0fc371487a572bc97dfc4)
+-+++ b/src/test/model/FileTest.java	(date 1681384350335)
+-@@ -77,9 +77,9 @@
+-     void testToJson() {
+-         testList.addEntry(e1);
+-         testList.addEntry(e2);
+-+        testList.setMasterPassword("test password");
+- 
+-         JSONObject a = testList.toJson();
+-         System.out.println();
+--        // TODO: actual test here
+-     }
+- }
+-Index: src/main/model/ByteConvertor.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/model/ByteConvertor.java b/src/main/model/ByteConvertor.java
+-new file mode 100644
+---- /dev/null	(date 1681384350335)
+-+++ b/src/main/model/ByteConvertor.java	(date 1681384350335)
+-@@ -0,0 +1,28 @@
+-+package model;
+-+
+-+import com.google.crypto.tink.subtle.Base64;
+-+
+-+// Represents a standardized converter between byte arrays and strings
+-+public class ByteConvertor {
+-+
+-+    public ByteConvertor() {
+-+    }
+-+
+-+    /**
+-+     * @REQUIRES: bytes is not null
+-+     * @EFFECTS: converts a byte array into a String object
+-+     */
+-+    public String bytesToString(byte[] bytes) {
+-+        return Base64.encode(bytes);
+-+    }
+-+
+-+    /**
+-+     * @REQUIRES: s is not null
+-+     * @EFFECTS: converts a String object into a byte array
+-+     */
+-+    public byte[] stringToBytes(String s) {
+-+        return Base64.decode(s);
+-+    }
+-+
+-+
+-+}
+-Index: src/main/ui/GUI.form
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<form xmlns=\"http://www.intellij.com/uidesigner/form/\" version=\"1\" bind-to-class=\"ui.GUI\">\n  <grid id=\"27dc6\" binding=\"cardPanel\" layout-manager=\"CardLayout\" hgap=\"0\" vgap=\"0\">\n    <constraints>\n      <xy x=\"20\" y=\"20\" width=\"900\" height=\"750\"/>\n    </constraints>\n    <properties>\n      <minimumSize width=\"900\" height=\"750\"/>\n    </properties>\n    <border type=\"none\"/>\n    <children>\n      <grid id=\"be28c\" binding=\"introMenu\" layout-manager=\"GridLayoutManager\" row-count=\"2\" column-count=\"2\" same-size-horizontally=\"true\" same-size-vertically=\"true\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <card name=\"introMenu\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"8599d\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"2\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <font style=\"1\"/>\n              <horizontalAlignment value=\"0\"/>\n              <horizontalTextPosition value=\"0\"/>\n              <text value=\"Password Manager\"/>\n            </properties>\n          </component>\n          <component id=\"d2111\" class=\"javax.swing.JButton\" binding=\"createButton\">\n            <constraints>\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Create new file\"/>\n            </properties>\n          </component>\n          <component id=\"766c8\" class=\"javax.swing.JButton\" binding=\"loadFromIntroButton\">\n            <constraints>\n              <grid row=\"1\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Load existing file\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"7261b\" binding=\"createFieldMenu\" layout-manager=\"GridLayoutManager\" row-count=\"6\" column-count=\"2\" same-size-horizontally=\"true\" same-size-vertically=\"true\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <card name=\"createFieldMenu\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"bf272\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"2\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <font style=\"1\"/>\n              <text value=\"Create entry\"/>\n            </properties>\n          </component>\n          <component id=\"9a23f\" class=\"javax.swing.JTextField\" binding=\"nameTextField\">\n            <constraints>\n              <grid row=\"1\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\n                <preferred-size width=\"150\" height=\"-1\"/>\n              </grid>\n            </constraints>\n            <properties>\n              <horizontalAlignment value=\"0\"/>\n            </properties>\n          </component>\n          <component id=\"75294\" class=\"javax.swing.JTextField\" binding=\"userNameTextField\">\n            <constraints>\n              <grid row=\"2\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\n                <preferred-size width=\"150\" height=\"-1\"/>\n              </grid>\n            </constraints>\n            <properties>\n              <horizontalAlignment value=\"0\"/>\n            </properties>\n          </component>\n          <component id=\"79fa8\" class=\"javax.swing.JTextField\" binding=\"urlTextField\">\n            <constraints>\n              <grid row=\"3\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\n                <preferred-size width=\"150\" height=\"-1\"/>\n              </grid>\n            </constraints>\n            <properties>\n              <horizontalAlignment value=\"0\"/>\n            </properties>\n          </component>\n          <component id=\"b277b\" class=\"javax.swing.JTextField\" binding=\"notesTextField\">\n            <constraints>\n              <grid row=\"4\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\n                <preferred-size width=\"150\" height=\"-1\"/>\n              </grid>\n            </constraints>\n            <properties>\n              <horizontalAlignment value=\"0\"/>\n            </properties>\n          </component>\n          <component id=\"1b7b2\" class=\"javax.swing.JButton\" binding=\"nextButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"5\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Next\"/>\n            </properties>\n          </component>\n          <component id=\"3ab57\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Name\"/>\n            </properties>\n          </component>\n          <component id=\"176f7\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"2\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Username\"/>\n            </properties>\n          </component>\n          <component id=\"edb89\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"3\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"URL\"/>\n            </properties>\n          </component>\n          <component id=\"e3a\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"4\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Notes\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"e9bee\" binding=\"chooseCustomOrRandom\" layout-manager=\"GridLayoutManager\" row-count=\"2\" column-count=\"2\" same-size-horizontally=\"true\" same-size-vertically=\"true\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <card name=\"chooseCustomOrRandom\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"7289f\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"2\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Would you like to create your own custom pasword or generate a password/passphrase?\"/>\n            </properties>\n          </component>\n          <component id=\"42f2b\" class=\"javax.swing.JRadioButton\" binding=\"customPasswordRadioButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Custom password\"/>\n            </properties>\n          </component>\n          <component id=\"96bea\" class=\"javax.swing.JRadioButton\" binding=\"generatePasswordRadioButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"1\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Generate password\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"3777a\" binding=\"customPassword\" layout-manager=\"GridLayoutManager\" row-count=\"3\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"true\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <card name=\"customPassword\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"e0e56\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Custom password\"/>\n            </properties>\n          </component>\n          <component id=\"fe016\" class=\"javax.swing.JPasswordField\" binding=\"customPasswordField\">\n            <constraints>\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\n                <preferred-size width=\"150\" height=\"-1\"/>\n              </grid>\n            </constraints>\n            <properties>\n              <horizontalAlignment value=\"0\"/>\n            </properties>\n          </component>\n          <component id=\"2553a\" class=\"javax.swing.JButton\" binding=\"nextButtonFromCustomPassword\">\n            <constraints>\n              <grid row=\"2\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Next\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"40665\" binding=\"choosePasswordOrPassphrase\" layout-manager=\"GridLayoutManager\" row-count=\"2\" column-count=\"2\" same-size-horizontally=\"true\" same-size-vertically=\"true\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <card name=\"choosePasswordOrPassphrase\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"732bc\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"2\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Would you like to generate a password or passphrase?\"/>\n            </properties>\n          </component>\n          <component id=\"4323\" class=\"javax.swing.JRadioButton\" binding=\"passphraseRadioButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"1\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Passphrase\"/>\n            </properties>\n          </component>\n          <component id=\"492f9\" class=\"javax.swing.JRadioButton\" binding=\"passwordRadioButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Password\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"fb726\" binding=\"passwordSpecifications\" layout-manager=\"GridLayoutManager\" row-count=\"7\" column-count=\"3\" same-size-horizontally=\"false\" same-size-vertically=\"true\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <card name=\"passwordSpecifications\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"d85d4\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"3\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Password specifications\"/>\n            </properties>\n          </component>\n          <component id=\"75afc\" class=\"javax.swing.JTextField\" binding=\"passwordLengthTextField\">\n            <constraints>\n              <grid row=\"5\" column=\"1\" row-span=\"1\" col-span=\"2\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\n                <preferred-size width=\"150\" height=\"-1\"/>\n              </grid>\n            </constraints>\n            <properties>\n              <horizontalAlignment value=\"0\"/>\n            </properties>\n          </component>\n          <component id=\"1d5b1\" class=\"javax.swing.JButton\" binding=\"nextButton2\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"6\" column=\"1\" row-span=\"1\" col-span=\"2\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Next\"/>\n            </properties>\n          </component>\n          <component id=\"f11c8\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"8\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Would you like lowercase alphabets in your password?\"/>\n            </properties>\n          </component>\n          <component id=\"18f2d\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"2\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Would you like uppercase alphabets in your password?\"/>\n            </properties>\n          </component>\n          <component id=\"16c5a\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"3\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Would you like numbers in your password?\"/>\n            </properties>\n          </component>\n          <component id=\"471ee\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"4\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Would you like symbols in your password?\"/>\n            </properties>\n          </component>\n          <component id=\"f2db3\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"5\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"How many characters do you want your password?\"/>\n            </properties>\n          </component>\n          <component id=\"3cd17\" class=\"javax.swing.JRadioButton\" binding=\"lowercaseNo\">\n            <constraints>\n              <grid row=\"1\" column=\"2\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"No\"/>\n            </properties>\n          </component>\n          <component id=\"adb01\" class=\"javax.swing.JRadioButton\" binding=\"uppercaseNo\">\n            <constraints>\n              <grid row=\"2\" column=\"2\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"No\"/>\n            </properties>\n          </component>\n          <component id=\"c6617\" class=\"javax.swing.JRadioButton\" binding=\"numbersNo\">\n            <constraints>\n              <grid row=\"3\" column=\"2\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"No\"/>\n            </properties>\n          </component>\n          <component id=\"37872\" class=\"javax.swing.JRadioButton\" binding=\"symbolsNo\">\n            <constraints>\n              <grid row=\"4\" column=\"2\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"No\"/>\n            </properties>\n          </component>\n          <component id=\"5597a\" class=\"javax.swing.JRadioButton\" binding=\"lowercaseYes\">\n            <constraints>\n              <grid row=\"1\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Yes\"/>\n            </properties>\n          </component>\n          <component id=\"36e5c\" class=\"javax.swing.JRadioButton\" binding=\"uppercaseYes\">\n            <constraints>\n              <grid row=\"2\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Yes\"/>\n            </properties>\n          </component>\n          <component id=\"b5754\" class=\"javax.swing.JRadioButton\" binding=\"numbersYes\">\n            <constraints>\n              <grid row=\"3\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Yes\"/>\n            </properties>\n          </component>\n          <component id=\"e183a\" class=\"javax.swing.JRadioButton\" binding=\"symbolsYes\">\n            <constraints>\n              <grid row=\"4\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Yes\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"9c303\" binding=\"passphraseSpecifications\" layout-manager=\"GridLayoutManager\" row-count=\"3\" column-count=\"2\" same-size-horizontally=\"true\" same-size-vertically=\"true\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <card name=\"passphraseSpecifications\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"72938\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"2\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Passphrase specifications\"/>\n            </properties>\n          </component>\n          <component id=\"b593\" class=\"javax.swing.JTextField\" binding=\"passphraseLengthTextField\">\n            <constraints>\n              <grid row=\"1\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\n                <preferred-size width=\"150\" height=\"-1\"/>\n              </grid>\n            </constraints>\n            <properties>\n              <horizontalAlignment value=\"0\"/>\n            </properties>\n          </component>\n          <component id=\"b9922\" class=\"javax.swing.JButton\" binding=\"nextButton3\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"2\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Next\"/>\n            </properties>\n          </component>\n          <component id=\"716c7\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"8\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"How many words do you want your passphrase?\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"95879\" binding=\"mainMenu\" layout-manager=\"GridLayoutManager\" row-count=\"7\" column-count=\"1\" same-size-horizontally=\"true\" same-size-vertically=\"true\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <card name=\"mainMenu\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"39fcd\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Main Menu\"/>\n            </properties>\n          </component>\n          <component id=\"29148\" class=\"javax.swing.JButton\" binding=\"createANewEntryButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Create a new entry\"/>\n            </properties>\n          </component>\n          <component id=\"486d7\" class=\"javax.swing.JButton\" binding=\"listAllEntriesButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"3\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"List all entries\"/>\n            </properties>\n          </component>\n          <component id=\"47ee\" class=\"javax.swing.JButton\" binding=\"saveEntriesToFileButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"4\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Save entries to file\"/>\n            </properties>\n          </component>\n          <component id=\"62062\" class=\"javax.swing.JButton\" binding=\"loadEntriesFromFileButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"5\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Load entries from file\"/>\n            </properties>\n          </component>\n          <component id=\"4eeb5\" class=\"javax.swing.JButton\" binding=\"exitButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"6\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Exit\"/>\n            </properties>\n          </component>\n          <component id=\"ab480\" class=\"javax.swing.JButton\" binding=\"deleteAnEntryButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"2\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Delete an entry\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"a1a88\" binding=\"listEntries\" layout-manager=\"GridLayoutManager\" row-count=\"4\" column-count=\"7\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <card name=\"listEntries\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"a9a98\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"7\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"List of all entries\"/>\n            </properties>\n          </component>\n          <component id=\"a31b4\" class=\"javax.swing.JTable\" binding=\"table1\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"2\" column=\"0\" row-span=\"1\" col-span=\"7\" vsize-policy=\"6\" hsize-policy=\"6\" anchor=\"0\" fill=\"3\" indent=\"0\" use-parent-layout=\"false\">\n                <preferred-size width=\"150\" height=\"50\"/>\n              </grid>\n            </constraints>\n            <properties/>\n          </component>\n          <component id=\"2fd65\" class=\"javax.swing.JRadioButton\" binding=\"scoreButton1\">\n            <constraints>\n              <grid row=\"1\" column=\"2\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"1\"/>\n            </properties>\n          </component>\n          <component id=\"813a5\" class=\"javax.swing.JRadioButton\" binding=\"scoreButton2\">\n            <constraints>\n              <grid row=\"1\" column=\"3\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"2\"/>\n            </properties>\n          </component>\n          <component id=\"4fc1\" class=\"javax.swing.JRadioButton\" binding=\"scoreButton3\">\n            <constraints>\n              <grid row=\"1\" column=\"4\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"3\"/>\n            </properties>\n          </component>\n          <component id=\"75ad3\" class=\"javax.swing.JRadioButton\" binding=\"scoreButton4\">\n            <constraints>\n              <grid row=\"1\" column=\"5\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"4\"/>\n            </properties>\n          </component>\n          <component id=\"5115c\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"8\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Filter by password score\"/>\n            </properties>\n          </component>\n          <component id=\"fb9b4\" class=\"javax.swing.JRadioButton\" binding=\"scoreButtonAll\">\n            <constraints>\n              <grid row=\"1\" column=\"6\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"All\"/>\n            </properties>\n          </component>\n          <component id=\"bf027\" class=\"javax.swing.JRadioButton\" binding=\"scoreButton0\">\n            <constraints>\n              <grid row=\"1\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"0\"/>\n            </properties>\n          </component>\n          <component id=\"a1e39\" class=\"javax.swing.JButton\" binding=\"backButton2\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"3\" column=\"3\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Back\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"621de\" binding=\"saveEntries\" layout-manager=\"GridLayoutManager\" row-count=\"2\" column-count=\"3\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <card name=\"saveEntries\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"2f949\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"2\" col-span=\"3\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Save entries\"/>\n            </properties>\n          </component>\n          <component id=\"1e899\" class=\"javax.swing.JButton\" binding=\"saveButton\">\n            <constraints>\n              <grid row=\"1\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Save\"/>\n            </properties>\n          </component>\n          <component id=\"282cc\" class=\"javax.swing.JButton\" binding=\"backButton1\">\n            <constraints>\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Back\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"6197c\" binding=\"loadEntries\" layout-manager=\"GridLayoutManager\" row-count=\"2\" column-count=\"2\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <card name=\"loadEntries\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"1eb0c\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"2\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Load entries\"/>\n            </properties>\n          </component>\n          <component id=\"78ed6\" class=\"javax.swing.JButton\" binding=\"loadButton1\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"1\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Load\"/>\n            </properties>\n          </component>\n          <component id=\"d89d4\" class=\"javax.swing.JButton\" binding=\"backButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Back\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"7282a\" binding=\"deleteEntry\" layout-manager=\"GridLayoutManager\" row-count=\"3\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <card name=\"deleteEntry\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"356ab\" class=\"javax.swing.JLabel\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Enter the index (0 based) of the entry you want to delete\"/>\n            </properties>\n          </component>\n          <component id=\"b58fa\" class=\"javax.swing.JTextField\" binding=\"deleteEntryTextField\">\n            <constraints>\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\n                <preferred-size width=\"150\" height=\"-1\"/>\n              </grid>\n            </constraints>\n            <properties>\n              <horizontalAlignment value=\"0\"/>\n            </properties>\n          </component>\n          <component id=\"e4e72\" class=\"javax.swing.JButton\" binding=\"deleteButton\" default-binding=\"true\">\n            <constraints>\n              <grid row=\"2\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Delete\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n    </children>\n  </grid>\n</form>\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/ui/GUI.form b/src/main/ui/GUI.form
+---- a/src/main/ui/GUI.form	(revision 8f63c64a5cdca8b262f0fc371487a572bc97dfc4)
+-+++ b/src/main/ui/GUI.form	(date 1681384350335)
+-@@ -589,7 +589,7 @@
+-           </component>
+-         </children>
+-       </grid>
+--      <grid id="621de" binding="saveEntries" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+-+      <grid id="621de" binding="saveEntries" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="true" hgap="-1" vgap="-1">
+-         <margin top="0" left="0" bottom="0" right="0"/>
+-         <constraints>
+-           <card name="saveEntries"/>
+-@@ -599,31 +599,49 @@
+-         <children>
+-           <component id="2f949" class="javax.swing.JLabel">
+-             <constraints>
+--              <grid row="0" column="0" row-span="2" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+-+              <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+-             </constraints>
+-             <properties>
+-               <text value="Save entries"/>
+-             </properties>
+-           </component>
+--          <component id="1e899" class="javax.swing.JButton" binding="saveButton">
+-+          <component id="7dd53" class="javax.swing.JPasswordField" binding="savePasswordTextField">
+-+            <constraints>
+-+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+-+                <preferred-size width="150" height="-1"/>
+-+              </grid>
+-+            </constraints>
+-+            <properties>
+-+              <horizontalAlignment value="0"/>
+-+            </properties>
+-+          </component>
+-+          <component id="464ed" class="javax.swing.JButton" binding="saveButton" default-binding="true">
+-             <constraints>
+--              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+-+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+-             </constraints>
+-             <properties>
+-               <text value="Save"/>
+-             </properties>
+-           </component>
+--          <component id="282cc" class="javax.swing.JButton" binding="backButton1">
+-+          <component id="51c44" class="javax.swing.JButton" binding="backButton1" default-binding="true">
+-             <constraints>
+--              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+-+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+-             </constraints>
+-             <properties>
+-               <text value="Back"/>
+-+            </properties>
+-+          </component>
+-+          <component id="ee754" class="javax.swing.JLabel">
+-+            <constraints>
+-+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+-+            </constraints>
+-+            <properties>
+-+              <text value="Enter your master password (this is the only one you need to remember)"/>
+-             </properties>
+-           </component>
+-         </children>
+-       </grid>
+--      <grid id="6197c" binding="loadEntries" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+-+      <grid id="6197c" binding="loadEntries" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+-         <margin top="0" left="0" bottom="0" right="0"/>
+-         <constraints>
+-           <card name="loadEntries"/>
+-@@ -639,17 +657,35 @@
+-               <text value="Load entries"/>
+-             </properties>
+-           </component>
+-+          <component id="9a280" class="javax.swing.JPasswordField" binding="loadPasswordTextField">
+-+            <constraints>
+-+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+-+                <preferred-size width="150" height="-1"/>
+-+              </grid>
+-+            </constraints>
+-+            <properties>
+-+              <horizontalAlignment value="0"/>
+-+            </properties>
+-+          </component>
+-           <component id="78ed6" class="javax.swing.JButton" binding="loadButton1" default-binding="true">
+-             <constraints>
+--              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+-+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+-             </constraints>
+-             <properties>
+-               <text value="Load"/>
+-             </properties>
+-           </component>
+-+          <component id="e52a2" class="javax.swing.JLabel">
+-+            <constraints>
+-+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+-+            </constraints>
+-+            <properties>
+-+              <text value="Enter your master password"/>
+-+            </properties>
+-+          </component>
+-           <component id="d89d4" class="javax.swing.JButton" binding="backButton" default-binding="true">
+-             <constraints>
+--              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+-+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+-             </constraints>
+-             <properties>
+-               <text value="Back"/>
+-Index: src/test/model/KeysetTest.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/test/model/KeysetTest.java b/src/test/model/KeysetTest.java
+-new file mode 100644
+---- /dev/null	(date 1681384350335)
+-+++ b/src/test/model/KeysetTest.java	(date 1681384350335)
+-@@ -0,0 +1,67 @@
+-+package model;
+-+
+-+import org.junit.jupiter.api.BeforeEach;
+-+import org.junit.jupiter.api.Test;
+-+
+-+import java.nio.charset.StandardCharsets;
+-+import java.security.GeneralSecurityException;
+-+import java.util.Arrays;
+-+
+-+import static org.junit.jupiter.api.Assertions.*;
+-+
+-+public class KeysetTest {
+-+
+-+    Keyset k;
+-+    byte[] saltBytes = createSalt();
+-+//    boolean setupCompleted = false;
+-+//    ByteConvertor bc;
+-+
+-+//    @BeforeEach
+-+//    // will never throw GeneralSecurityException since "SHA-256" is a valid algorithm
+-+//    void setup() throws GeneralSecurityException {
+-+//        if (!setupCompleted) {
+-+//            k = new Keyset("test-password", "SHA-256");
+-+//            bc = new ByteConvertor();
+-+//            setupCompleted = true;
+-+//        }
+-+//    }
+-+
+-+    @Test
+-+    void testEncryptAndDecrypt() {
+-+        try {
+-+            k = new Keyset("test-password", "SHA-256");
+-+            String plainText = "test-string";
+-+            byte[] encryptedBytes = k.encrypt(plainText, saltBytes);
+-+            assertEquals(encryptedBytes.length, 39);
+-+
+-+            byte[] ab = k.decrypt(encryptedBytes, saltBytes);
+-+            String plainText2 = new String(ab, StandardCharsets.UTF_8);
+-+            assertEquals(plainText2, "test-string");
+-+        } catch (GeneralSecurityException e) {
+-+            fail("Shouldn't have thrown exception.");
+-+        }
+-+    }
+-+
+-+    @Test
+-+    void testExceptionForEncrypt() {
+-+        try {
+-+            k = new Keyset("test-password", "SHA-256");
+-+        } catch (GeneralSecurityException e) {
+-+            fail("Shouldn't have thrown exception.");
+-+        }
+-+        String plainText = null;
+-+        byte[] encryptedBytes = k.encrypt(plainText, Arrays.copyOfRange(saltBytes, 0, 1));
+-+        assertNull(encryptedBytes);
+-+    }
+-+
+-+
+-+    private byte[] createSalt() {
+-+        int[] saltInt = new int[] {106, 53, -116, 19, -69, 59, 44, -4, 103, -55, -71, 91, -58, 47, -78, 32};
+-+        byte[] salt = new byte[saltInt.length];
+-+        for (int i = 0; i < saltInt.length; i++) {
+-+            salt[i] = (byte) saltInt[i];
+-+        }
+-+        return salt;
+-+    }
+-+
+-+}
+-Index: src/main/model/Keyset.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/model/Keyset.java b/src/main/model/Keyset.java
+-new file mode 100644
+---- /dev/null	(date 1681384350335)
+-+++ b/src/main/model/Keyset.java	(date 1681384350335)
+-@@ -0,0 +1,63 @@
+-+package model;
+-+
+-+import com.google.crypto.tink.aead.AeadConfig;
+-+import com.google.crypto.tink.subtle.AesGcmJce;
+-+
+-+import javax.crypto.AEADBadTagException;
+-+import java.nio.charset.StandardCharsets;
+-+import java.security.GeneralSecurityException;
+-+import java.security.MessageDigest;
+-+import java.security.NoSuchAlgorithmException;
+-+
+-+// Represents a custom Keyset object to use with the Tink library that is connected to a string (essentially the master
+-+// password of the file)
+-+public class Keyset {
+-+
+-+    private AesGcmJce aead;
+-+    private ByteConvertor bc;
+-+
+-+    /**
+-+     * @REQUIRES: password and algorithm are not null, algorithm is a valid algorithm that MessageDigest recognizes
+-+     * @EFFECTS: creates a keyset that is linked to the password given
+-+     */
+-+    public Keyset(String password, String algorithm) throws GeneralSecurityException {
+-+        bc = new ByteConvertor();
+-+        AeadConfig.register();
+-+        MessageDigest messageDigest = MessageDigest.getInstance(algorithm);
+-+        messageDigest.update(password.getBytes(StandardCharsets.UTF_8));
+-+        byte[] key128Bit = convertTo128Bits(messageDigest.digest());
+-+        aead = new AesGcmJce(key128Bit);
+-+    }
+-+
+-+    /**
+-+     * @REQUIRES: digest has at least 16 elements
+-+     * @EFFECTS: concatenates digest to be 128 bits long
+-+     */
+-+    private byte[] convertTo128Bits(byte[] digest) {
+-+        byte[] key128Bit = new byte[16];
+-+        System.arraycopy(digest, 0, key128Bit, 0, 16);
+-+        return key128Bit;
+-+    }
+-+
+-+    /**
+-+     * @REQUIRES: plainText and saltBytes are not null
+-+     * @EFFECTS: encrypts the plain text into an encrypted byte array
+-+     */
+-+    public byte[] encrypt(String plainText, byte[] saltBytes) {
+-+        try {
+-+            return aead.encrypt(plainText.getBytes(StandardCharsets.UTF_8), saltBytes);
+-+        } catch (Exception e) {
+-+            return null;
+-+        }
+-+    }
+-+
+-+    /**
+-+     * @REQUIRES: cipherBytes and saltBytes are not null
+-+     * @EFFECTS: decrypts the encrypted byte array into a plain text string
+-+     */
+-+    public byte[] decrypt(byte[] cipherBytes, byte[] saltBytes) throws GeneralSecurityException {
+-+        return aead.decrypt(cipherBytes, saltBytes);
+-+    }
+-+
+-+
+-+}
+-Index: data/testWriterGeneralFile.json
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>{\"entries\": [\n    {\n        \"password\": \"password101\",\n        \"notes\": \"old\",\n        \"name\": \"Reddit\",\n        \"url\": \"www.reddit.com\",\n        \"username\": \"atom9\"\n    },\n    {\n        \"password\": \"asddjakdsl\",\n        \"notes\": \"young\",\n        \"name\": \"Twitch\",\n        \"url\": \"www.twitch.tv\",\n        \"username\": \"piedipier\"\n    }\n]}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/data/testWriterGeneralFile.json b/data/testWriterGeneralFile.json
+---- a/data/testWriterGeneralFile.json	(revision 8f63c64a5cdca8b262f0fc371487a572bc97dfc4)
+-+++ b/data/testWriterGeneralFile.json	(date 1681384350335)
+-@@ -1,16 +1,18 @@
+- {"entries": [
+-     {
+--        "password": "password101",
+--        "notes": "old",
+--        "name": "Reddit",
+--        "url": "www.reddit.com",
+--        "username": "atom9"
+-+        "password": "LWKH43cv3GR+mUUDHASRtM/GDQ48NVZG6MA9Hgf5HL3l9J45p8ee",
+-+        "salt": "ccy8re95NQdKMz3lJHIeZw==",
+-+        "notes": "r6zxSyq391AwfRpE9+BU8hm0o6C1npLJP0xRywARoA==",
+-+        "name": "6Bj0Wn+FVmbNpy5wd7k5HymdUG88Admth3HmDUQoV5I0Uw==",
+-+        "url": "+JDkjFdTItqZc8LvTBye0DstnLpyGSLWvl2QqtuLjkA95EY6rxZ/YynR",
+-+        "username": "rEkhD3p9hPqOXHZRaWiqPZNOZPHU5Ao1sJiH3kAAhBbF"
+-     },
+-     {
+--        "password": "asddjakdsl",
+--        "notes": "young",
+--        "name": "Twitch",
+--        "url": "www.twitch.tv",
+--        "username": "piedipier"
+-+        "password": "PBmMjdddfNidIrkA1A1T2jfXhTUfy5kd0ZE8nxIniMLHOwKmi7E=",
+-+        "salt": "fu2RAkkX0JqCibSE9LIBpg==",
+-+        "notes": "tBrprJSc+b7ZDDu6fuRaInWuV72aVBf5xzY15QEKCOqy",
+-+        "name": "Ywsp88YGInHb3GqgvLVaUxfR9QLfzdrx7inxqlxKngjRfA==",
+-+        "url": "f4IGZE1n85heSU6VYRU+0Z4aj7SmVqXj4nMcwrTq+7NNd9a01lX2xHM=",
+-+        "username": "Zo4/YqtXjavwhOLowCJvyM6PrlNVXF9LeGEYcMGibp95a3TLew=="
+-     }
+- ]}
+-\ No newline at end of file
+-Index: src/main/persistence/JsonWriter.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package persistence;\n\nimport org.json.JSONObject;\nimport model.File;\n\nimport java.io.FileNotFoundException;\nimport java.io.PrintWriter;\n\n// Represents a writer that writes JSON representation of a file object to file\npublic class JsonWriter {\n    private static final int TAB = 4;\n    private PrintWriter writer;\n    private String destination;\n\n    /**\n     * @EFFECTS: constructs writer to write to destination file\n     */\n    public JsonWriter(String destination) {\n        this.destination = destination;\n    }\n\n    /**\n     * @MODIFIES: this\n     * @EFFECTS: opens writer; throws FileNotFoundException if destination file cannot be opened for writing\n     */\n    public void open() throws FileNotFoundException {\n        writer = new PrintWriter(destination);\n    }\n\n    /**\n     * @MODIFIES: this\n     * @EFFECTS: writes JSON representation of file object to file\n     */\n    public void write(File f) {\n        JSONObject json = f.toJson();\n        saveToFile(json.toString(TAB));\n    }\n\n    /**\n     * @MODIFIES: this\n     * @EFFECTS: closes writer\n     */\n    public void close() {\n        writer.close();\n    }\n\n    /**\n     * @MODIFIES: this\n     * @EFFECTS: writes string to file\n     */\n    private void saveToFile(String json) {\n        writer.print(json);\n    }\n}\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/persistence/JsonWriter.java b/src/main/persistence/JsonWriter.java
+---- a/src/main/persistence/JsonWriter.java	(revision 8f63c64a5cdca8b262f0fc371487a572bc97dfc4)
+-+++ b/src/main/persistence/JsonWriter.java	(date 1681384350335)
+-@@ -31,7 +31,8 @@
+-      * @MODIFIES: this
+-      * @EFFECTS: writes JSON representation of file object to file
+-      */
+--    public void write(File f) {
+-+    public void write(File f, String masterPassword) {
+-+        f.setMasterPassword(masterPassword);
+-         JSONObject json = f.toJson();
+-         saveToFile(json.toString(TAB));
+-     }
+-Index: src/main/ui/GUI.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package ui;\n\nimport model.Entry;\nimport model.File;\nimport model.Password;\n\nimport javax.swing.*;\nimport javax.swing.table.DefaultTableModel;\nimport java.awt.*;\nimport java.awt.event.ActionEvent;\nimport java.awt.event.ActionListener;\nimport java.util.ArrayList;\n\n// TODO: class comment\n\npublic class GUI extends JFrame implements ActionListener {\n    \n    private JPanel cardPanel;\n    private JPanel introMenu;\n    private JButton createButton;\n    private JButton loadFromIntroButton;\n    private JPanel createFieldMenu;\n    private JTextField nameTextField;\n    private JTextField userNameTextField;\n    private JTextField urlTextField;\n    private JTextField notesTextField;\n    private JButton nextButton;\n    private JPanel chooseCustomOrRandom;\n    private JRadioButton customPasswordRadioButton;\n    private JRadioButton generatePasswordRadioButton;\n    private JPanel customPassword;\n    private JPasswordField customPasswordField;\n    private JButton nextButtonFromCustomPassword;\n    private JPanel choosePasswordOrPassphrase;\n    private JRadioButton passphraseRadioButton;\n    private JRadioButton passwordRadioButton;\n    private JPanel passwordSpecifications;\n    private JTextField passwordLengthTextField;\n    private JButton nextButton2;\n    private JRadioButton lowercaseNo;\n    private JRadioButton uppercaseNo;\n    private JRadioButton numbersNo;\n    private JRadioButton symbolsNo;\n    private JRadioButton lowercaseYes;\n    private JRadioButton uppercaseYes;\n    private JRadioButton numbersYes;\n    private JRadioButton symbolsYes;\n    private JPanel passphraseSpecifications;\n    private JTextField passphraseLengthTextField;\n    private JButton nextButton3;\n    private JPanel mainMenu;\n    private JButton createANewEntryButton;\n    private JButton listAllEntriesButton;\n    private JButton saveEntriesToFileButton;\n    private JButton loadEntriesFromFileButton;\n    private JButton exitButton;\n    private JList list1;\n    private JPanel listEntries;\n    private JPanel saveEntries;\n    private JPasswordField loadPasswordTextField;\n    private JButton loadButton1;\n    private JButton backButton;\n    private JPasswordField savePasswordTextField;\n    private JButton saveButton;\n    private JButton backButton1;\n    private JPanel loadEntries;\n    private JButton deleteAnEntryButton;\n    private JTextField deleteEntryTextField;\n    private JButton deleteButton;\n    private JPanel deleteEntry;\n    private JTable table1;\n    private JRadioButton scoreButton1;\n    private JRadioButton scoreButton2;\n    private JRadioButton scoreButton3;\n    private JRadioButton scoreButton4;\n    private JRadioButton scoreButtonAll;\n    private JRadioButton scoreButton0;\n    private JButton backButton2;\n\n    private PasswordManager passwordManager;\n    private CardLayout cl;\n    private boolean loadFromIntro;\n    private ArrayList<ButtonGroup> buttonGroups;\n\n    private static final String CREATE_BUTTON = \"CREATE BUTTON\";\n    private static final String LOAD_BUTTON = \"LOAD BUTTON\";\n    private static final String LOAD_FROM_INTRO_BUTTON = \"LOAD_FROM_INTRO_BUTTON\";\n    private static final String GO_TO_SAVE_BUTTON = \"GO TO SAVE BUTTON\";\n    private static final String SAVE_BUTTON = \"SAVE BUTTON\";\n    private static final String NEXT_BUTTON = \"NEXT BUTTON\";\n    private static final String GENERATE_PASSWORD_BUTTON = \"GENERATE_PASSWORD_BUTTON \";\n    private static final String CUSTOM_PASSWORD_BUTTON = \"CUSTOM_PASSWORD_BUTTON \";\n    private static final String PASSWORD_BUTTON = \"PASSWORD_BUTTON \";\n    private static final String PASSPHRASE_BUTTON = \"PASSPHRASE_BUTTON\";\n    private static final String BUTTON_TO_MAIN_MENU_FROM_PASSWORD = \"BUTTON_TO_MAIN_MENU_FROM_PASSWORD\";\n    private static final String BUTTON_TO_MAIN_MENU_FROM_PASSPHRASE = \"BUTTON_TO_MAIN_MENU_FROM_PASSPHRASE\";\n    private static final String BUTTON_TO_MAIN_MENU_FROM_CUSTOM_PASSWORD = \"BUTTON TO MAIN MENU FROM CUSTOM PASSWORD\";\n    private static final String BACK_FROM_LOAD_BUTTON = \"BACK_FROM_LOAD_BUTTON\";\n    private static final String BACK_BUTTON = \"BACK_BUTTON\";\n    private static final String EXIT_BUTTON = \"EXIT BUTTON\";\n    private static final String LOAD_ENTRIES_BUTTON = \"LOAD ENTRIES BUTTON\";\n    private static final String LIST_ENTRIES = \"LIST ENTRIES\";\n    private static final String DELETE_BUTTON = \"DELETE BUTTON\";\n    private static final String GO_TO_DELETE_BUTTON = \"GO_TO_DELETE_BUTTON\";\n    private static final String A0_BUTTON = \"A0 BUTTON\";\n    private static final String A1_BUTTON = \"A1 BUTTON\";\n    private static final String A2_BUTTON = \"A2 BUTTON\";\n    private static final String A3_BUTTON = \"A3 BUTTON\";\n    private static final String A4_BUTTON = \"A4 BUTTON\";\n    private static final String ALL_BUTTON = \"ALL BUTTON\";\n    private static final String BACK_FROM_LIST_BUTTON = \"BACK FROM LIST BUTTON\";\n\n    /**\n     * @EFFECTS: creates the initial GUI and password manager backend\n     */\n    public GUI() {\n        super(\"Password Manager\");\n        setDefaultCloseOperation(EXIT_ON_CLOSE);\n        setSize(new Dimension((int) (600 * 1.5), (int) (500 * 1.5)));\n        setContentPane(cardPanel);\n\n        showSplashScreen();\n        setVisible(true);\n\n        passwordManager = new PasswordManager();\n        passwordManager.start();\n\n        setupCardLayout();\n        addActionToButtons();\n        populateButtonGroups();\n    }\n\n    /**\n     * @EFFECTS: shows a splash screen on start up\n     * code inspired by https://stackoverflow.com/a/16134912\n     * GIF was downloaded from\n     * https://static01.nyt.com/newsgraphics/2017/05/12/online-privacy-service/3f8185ccde46daab14d283d4156ae2ddd3a17755/password.gif\n     */\n    private void showSplashScreen() {\n        JWindow window = new JWindow();\n        window.getContentPane().add(\n                new JLabel(\"\", new ImageIcon(\"images/password.gif\"), SwingConstants.CENTER));\n        window.setSize(new Dimension((int) (600 * 1.5), (int) (500 * 1.5)));\n        window.setVisible(true);\n        try {\n            Thread.sleep(5050);\n        } catch (InterruptedException e) {\n            e.printStackTrace();\n        }\n        window.setVisible(false);\n    }\n\n    /**\n     * @MODIFIES: buttonGroups\n     * @EFFECTS: initializes and adds 5 button groups to buttonGroups\n     */\n    private void populateButtonGroups() {\n        buttonGroups = new ArrayList<>();\n        buttonGroups.add(new ButtonGroup());\n        buttonGroups.add(new ButtonGroup());\n        buttonGroups.add(new ButtonGroup());\n        buttonGroups.add(new ButtonGroup());\n        buttonGroups.add(new ButtonGroup());\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: initializes cl to be the layout of the main panel and shows the first (intro) panel\n     */\n    private void setupCardLayout() {\n        cl = (CardLayout) cardPanel.getLayout();\n        cl.first(cardPanel);\n    }\n\n    /**\n     * @MODIFIES: listAllEntriesButton, generatePasswordRadioButton, customPasswordRadioButton, passphraseRadioButton,\n     * passwordRadioButton, saveEntriesToFileButton, saveButton, deleteButton, deleteAnEntryButton, exitButton\n     * @EFFECTS: adds a unique action command to the specified buttons\n     */\n    public void addActionToButtons() {\n        activateCreateButtons();\n        activateLoadButtons();\n        activateNextButtons();\n        activateBackButtons();\n        activateScoreButtons();\n        activate(listAllEntriesButton, LIST_ENTRIES);\n        activate(generatePasswordRadioButton, GENERATE_PASSWORD_BUTTON);\n        activate(customPasswordRadioButton, CUSTOM_PASSWORD_BUTTON);\n        activate(passphraseRadioButton, PASSPHRASE_BUTTON);\n        activate(passwordRadioButton, PASSWORD_BUTTON);\n        activate(saveEntriesToFileButton, GO_TO_SAVE_BUTTON);\n        activate(saveButton, SAVE_BUTTON);\n        activate(deleteButton, DELETE_BUTTON);\n        activate(deleteAnEntryButton, GO_TO_DELETE_BUTTON);\n        activate(exitButton, EXIT_BUTTON);\n    }\n\n    /**\n     * @MODIFIES: scoreButton0, scoreButton1, scoreButton2, scoreButton3, scoreButton4, scoreButtonAll\n     * @EFFECTS: adds a unique action command to the specified buttons\n     */\n    private void activateScoreButtons() {\n        activate(scoreButton0, A0_BUTTON);\n        activate(scoreButton1, A1_BUTTON);\n        activate(scoreButton2, A2_BUTTON);\n        activate(scoreButton3, A3_BUTTON);\n        activate(scoreButton4, A4_BUTTON);\n        activate(scoreButtonAll, ALL_BUTTON);\n    }\n\n    /**\n     * @MODIFIES: backButton, backButton2, backButton3\n     * @EFFECTS: adds a unique action command to the specified buttons\n     */\n    private void activateBackButtons() {\n        activate(backButton, BACK_FROM_LOAD_BUTTON);\n        activate(backButton1, BACK_BUTTON);\n        activate(backButton2, BACK_FROM_LIST_BUTTON);\n    }\n\n    /**\n     * @MODIFIES: nextButton, nextButton2, nextButton3, nextButtonFromCustomPassword,\n     * @EFFECTS: adds a unique action command to the specified buttons\n     */\n    private void activateNextButtons() {\n        activate(nextButton, NEXT_BUTTON);\n        activate(nextButton2, BUTTON_TO_MAIN_MENU_FROM_PASSWORD);\n        activate(nextButton3, BUTTON_TO_MAIN_MENU_FROM_PASSPHRASE);\n        activate(nextButtonFromCustomPassword, BUTTON_TO_MAIN_MENU_FROM_CUSTOM_PASSWORD);\n    }\n\n    /**\n     * @MODIFIES: loadFromIntroButton, loadButton1, loadEntriesFromFileButton\n     * @EFFECTS: adds a unique action command to the specified buttons\n     */\n    private void activateLoadButtons() {\n        activate(loadFromIntroButton, LOAD_FROM_INTRO_BUTTON);\n        activate(loadButton1, LOAD_ENTRIES_BUTTON);\n        activate(loadEntriesFromFileButton, LOAD_BUTTON);\n    }\n\n    /**\n     * @MODIFIES: createButton, createANewEntryButton\n     * @EFFECTS: adds a unique action command to the specified buttons\n     */\n    private void activateCreateButtons() {\n        activate(createButton, CREATE_BUTTON);\n        activate(createANewEntryButton, CREATE_BUTTON);\n    }\n\n    /**\n     * @REQUIRES: button and actionCommand is not null; actionCommand is a unique string\n     * @MODIFIES: button\n     * @EFFECTS: adds an action listener to radio button and sets its action command\n     */\n    public void activate(JRadioButton button, String actionCommand) {\n        button.addActionListener(this);\n        button.setActionCommand(actionCommand);\n    }\n\n\n    /**\n     * @REQUIRES: button and actionCommand is not null; actionCommand is a unique string\n     * @MODIFIES: button\n     * @EFFECTS: adds an action listener to button and sets its action command\n     */\n    public void activate(JButton button, String actionCommand) {\n        button.addActionListener(this);\n        button.setActionCommand(actionCommand);\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: reacts to different button presses on the GUI\n     */\n    @Override\n    public void actionPerformed(ActionEvent actionEvent) {\n        switch (actionEvent.getActionCommand()) {\n            case CREATE_BUTTON:\n                cl.show(cardPanel, \"createFieldMenu\");\n                break;\n            case LOAD_BUTTON:\n            case LOAD_FROM_INTRO_BUTTON:\n            case LOAD_ENTRIES_BUTTON: {\n                actionPerformedLoad(actionEvent);\n                break;\n            }\n            case NEXT_BUTTON:\n            case BUTTON_TO_MAIN_MENU_FROM_PASSPHRASE:\n            case BUTTON_TO_MAIN_MENU_FROM_PASSWORD:\n            case BUTTON_TO_MAIN_MENU_FROM_CUSTOM_PASSWORD: {\n                actionPerformedNext(actionEvent);\n                break;\n            }\n            default:\n                actionPerformedTwo(actionEvent);\n                break;\n        }\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: reacts to different button presses on the GUI\n     */\n    private void actionPerformedTwo(ActionEvent actionEvent) {\n        switch (actionEvent.getActionCommand()) {\n            case PASSWORD_BUTTON:\n            case PASSPHRASE_BUTTON: {\n                actionPerformedGenerate(actionEvent);\n                break;\n            }\n            case A0_BUTTON:\n            case A1_BUTTON:\n            case A2_BUTTON:\n            case A3_BUTTON:\n            case A4_BUTTON:\n            case ALL_BUTTON: {\n                actionPerformedFilterTable(actionEvent);\n                break;\n            }\n            default:\n                actionPerformedThree(actionEvent);\n                break;\n        }\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: reacts to different button presses on the GUI\n     */\n    private void actionPerformedThree(ActionEvent actionEvent) {\n        switch (actionEvent.getActionCommand()) {\n            case GO_TO_SAVE_BUTTON:\n            case SAVE_BUTTON: {\n                actionPerformedSave(actionEvent);\n                break;\n            }\n            case GO_TO_DELETE_BUTTON:\n            case DELETE_BUTTON: {\n                actionPerformedDelete(actionEvent);\n                break;\n            }\n            case LIST_ENTRIES:\n                listEntries(passwordManager.getFile().getEntries());\n                cl.show(cardPanel, \"listEntries\");\n                break;\n            case EXIT_BUTTON:\n                System.exit(0);\n                break;\n            default:\n                actionPerformedFour(actionEvent);\n                break;\n        }\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: reacts to different button presses on the GUI\n     */\n    private void actionPerformedFour(ActionEvent actionEvent) {\n        switch (actionEvent.getActionCommand()) {\n            case CUSTOM_PASSWORD_BUTTON:\n            case GENERATE_PASSWORD_BUTTON: {\n                actionPerformedRandom(actionEvent);\n                break;\n            }\n            case BACK_BUTTON:\n            case BACK_FROM_LIST_BUTTON:\n            case BACK_FROM_LOAD_BUTTON: {\n                actionPerformedBack(actionEvent);\n                break;\n            }\n        }\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: reacts to different button presses on the GUI\n     */\n    private void actionPerformedDelete(ActionEvent actionEvent) {\n        switch (actionEvent.getActionCommand()) {\n            case DELETE_BUTTON:\n                deleteEntry();\n                clearTextField(deleteEntryTextField);\n                cl.show(cardPanel, \"mainMenu\");\n                break;\n            case GO_TO_DELETE_BUTTON:\n                cl.show(cardPanel, \"deleteEntry\");\n                break;\n        }\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: reacts to different button presses on the GUI\n     */\n    private void actionPerformedSave(ActionEvent actionEvent) {\n        switch (actionEvent.getActionCommand()) {\n            case SAVE_BUTTON:\n                save();\n                cl.show(cardPanel, \"mainMenu\");\n                break;\n            case GO_TO_SAVE_BUTTON:\n                cl.show(cardPanel, \"saveEntries\");\n                break;\n        }\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: reacts to different button presses on the GUI\n     */\n    private void actionPerformedBack(ActionEvent actionEvent) {\n        switch (actionEvent.getActionCommand()) {\n            case BACK_BUTTON:\n                cl.show(cardPanel, \"mainMenu\");\n                break;\n            case BACK_FROM_LOAD_BUTTON:\n                if (loadFromIntro) {\n                    cl.show(cardPanel, \"introMenu\");\n                } else {\n                    cl.show(cardPanel, \"mainMenu\");\n                }\n                break;\n            case BACK_FROM_LIST_BUTTON:\n                filterTable(5);\n                clearRadioButtonGroup(buttonGroups.get(4));\n                cl.show(cardPanel, \"mainMenu\");\n                break;\n        }\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: reacts to different button presses on the GUI\n     */\n    private void actionPerformedFilterTable(ActionEvent actionEvent) {\n        switch (actionEvent.getActionCommand()) {\n            case A0_BUTTON:\n                filterTable(0);\n                break;\n            case A1_BUTTON:\n                filterTable(1);\n                break;\n            case A2_BUTTON:\n                filterTable(2);\n                break;\n            case A3_BUTTON:\n                filterTable(3);\n                break;\n            case A4_BUTTON:\n                filterTable(4);\n                break;\n            case ALL_BUTTON:\n                filterTable(5);\n                break;\n        }\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: reacts to different button presses on the GUI\n     */\n    private void actionPerformedGenerate(ActionEvent actionEvent) {\n        switch (actionEvent.getActionCommand()) {\n            case PASSWORD_BUTTON:\n                cl.show(cardPanel, \"passwordSpecifications\");\n                makeRadioButtonsGroup();\n                clearRadioButton(passwordRadioButton);\n                break;\n            case PASSPHRASE_BUTTON:\n                cl.show(cardPanel, \"passphraseSpecifications\");\n                clearRadioButton(passphraseRadioButton);\n                break;\n        }\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: reacts to different button presses on the GUI\n     */\n    private void actionPerformedRandom(ActionEvent actionEvent) {\n        switch (actionEvent.getActionCommand()) {\n            case CUSTOM_PASSWORD_BUTTON:\n                cl.show(cardPanel, \"customPassword\");\n                clearRadioButton(customPasswordRadioButton);\n                break;\n            case GENERATE_PASSWORD_BUTTON:\n                cl.show(cardPanel, \"choosePasswordOrPassphrase\");\n                clearRadioButton(generatePasswordRadioButton);\n                break;\n        }\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: reacts to different button presses on the GUI\n     */\n    private void actionPerformedNext(ActionEvent actionEvent) {\n        switch (actionEvent.getActionCommand()) {\n            case NEXT_BUTTON:\n                cl.show(cardPanel, \"chooseCustomOrRandom\");\n                break;\n            case BUTTON_TO_MAIN_MENU_FROM_PASSPHRASE:\n                callCreateEntry(1);\n                clearRandomPassphraseMenu();\n                cl.show(cardPanel, \"mainMenu\");\n                break;\n            case BUTTON_TO_MAIN_MENU_FROM_PASSWORD:\n                callCreateEntry(2);\n                clearRandomPasswordMenu();\n                cl.show(cardPanel, \"mainMenu\");\n                break;\n            case BUTTON_TO_MAIN_MENU_FROM_CUSTOM_PASSWORD:\n                callCreateEntry(3);\n                clearCustomPasswordMenu();\n                cl.show(cardPanel, \"mainMenu\");\n        }\n    }\n\n    /**\n     * @MODIFIES: cl\n     * @EFFECTS: reacts to different button presses on the GUI\n     */\n    private void actionPerformedLoad(ActionEvent actionEvent) {\n        switch (actionEvent.getActionCommand()) {\n            case LOAD_BUTTON:\n                cl.show(cardPanel, \"loadEntries\");\n                loadFromIntro = false;\n                break;\n            case LOAD_FROM_INTRO_BUTTON:\n                cl.show(cardPanel, \"loadEntries\");\n                loadFromIntro = true;\n                break;\n            case LOAD_ENTRIES_BUTTON:\n                load();\n                cl.show(cardPanel, \"mainMenu\");\n                break;\n        }\n    }\n\n    /**\n     * @REQUIRES: 0 < i < 5\n     * @EFFECTS: filters the table to show passwords which have a password score from 0 to 4 or all password\n     */\n    private void filterTable(int i) {\n        File file = passwordManager.getFile();\n        ArrayList<Entry> entries = file.getEntries();\n        if (i == 5) {\n            listEntries(entries);\n        } else {\n            ArrayList<Entry> filteredEntries = new ArrayList<>();\n            for (Entry e : entries) {\n                if (e.getPassword().findScore() == i) {\n                    filteredEntries.add(e);\n                }\n            }\n            listEntries(filteredEntries);\n        }\n    }\n\n    /**\n     * @REQUIRES: deleteEntryTextField.getText() must be an int\n     * @MODIFIES: passwordManager\n     * @EFFECTS: removes the index from the entries stored in passwordManager\n     */\n    private void deleteEntry() {\n        passwordManager.removeEntryForGUI(Integer.parseInt(deleteEntryTextField.getText()));\n    }\n\n    /**\n     * @REQUIRES: entries is not null\n     * @MODIFIES: table1\n     * @EFFECTS: adds all the entries in entries to the JTabel and updates the GUI\n     */\n    private void listEntries(ArrayList<Entry> entries) {\n        DefaultTableModel tableModel = new DefaultTableModel() {\n            @Override\n            public boolean isCellEditable(int row, int column) {\n                return false;\n            }\n        };\n\n        table1.setModel(tableModel);\n\n        tableModel.addColumn(\"Name\");\n        tableModel.addColumn(\"Username\");\n        tableModel.addColumn(\"Password\");\n        tableModel.addColumn(\"URL\");\n        tableModel.addColumn(\"Notes\");\n\n        tableModel.addRow(new Object[]{\"Name\",\"Username\",\"Password\",\"URL\",\"Notes\"});\n\n        fillTableWithEntries(tableModel, entries);\n        makePasswordScoreRadioButtons();\n    }\n\n    /**\n     * @MODIFIES: buttons\n     * @EFFECTS: adds all the password score buttons to the same button group\n     */\n    private void makePasswordScoreRadioButtons() {\n        ArrayList<JRadioButton> buttons = new ArrayList<>();\n        buttons.add(scoreButton1);\n        buttons.add(scoreButton2);\n        buttons.add(scoreButton3);\n        buttons.add(scoreButton4);\n        buttons.add(scoreButtonAll);\n        makePairOfRadioButtons(buttons, buttonGroups.get(4));\n    }\n\n    /**\n     * @REQUIRES: tableModel and entries are not null\n     * @MODIFIES: tableModel\n     * @EFFECTS: populates tableModel with the data from entries\n     */\n    private void fillTableWithEntries(DefaultTableModel tableModel, ArrayList<Entry> entries) {\n        for (int i = 0; i < entries.size(); i++) {\n            Entry e = entries.get(i);\n            String[] entryData = new String[]{e.getName(), e.getUsername(), e.getPassword().getPassword(), e.getUrl(),\n                    e.getNotes()};\n            tableModel.addRow(entryData);\n        }\n    }\n\n    /**\n     * @REQUIRES: masterPassword is not an empty string\n     * @MODIFIES: passwordManager\n     * @EFFECTS: saves the entries to file using the master password entered by the user\n     */\n    private void save() {\n        passwordManager.saveFileFromGUI();\n    }\n\n    /**\n     * @REQUIRES: masterPassword is not an empty string\n     * @MODIFIES: passwordManager\n     * @EFFECTS: loads the entries from file using the master password entered by the user\n     */\n    private void load() {\n        passwordManager.loadFileFromGUI();\n    }\n\n    /**\n     * @REQUIRES: 1 <= passwordType <= 3\n     * @MODIFIES: passwordManager\n     * @EFFECTS: gets user input and creates an entry\n     */\n    private void callCreateEntry(int passwordType) {\n        String name = nameTextField.getText();\n        String username = userNameTextField.getText();\n        String url = urlTextField.getText();\n        String notes = notesTextField.getText();\n        Password password;\n        if (passwordType == 3) {\n            password = new Password(new String(customPasswordField.getPassword()));\n        } else {\n            password = getPassword(passwordType);\n        }\n        passwordManager.createEntry(name, username, password, url, notes);\n\n        clearCreateFieldMenu();\n    }\n\n    /**\n     * @REQUIRES: 1 <= passwordType <= 2\n     * @EFFECTS: returns a random password or passphrase depending on the specifications given by the user\n     */\n    private Password getPassword(int passwordType) {\n        String passwordText = null;\n        if (passwordType == 1) {\n            passwordText =\n                    passwordManager.generatePassphraseForGUI(Integer.parseInt(passphraseLengthTextField.getText()));\n        } else {\n            ArrayList<Boolean> characterTypesBoolean = new ArrayList<>();\n            characterTypesBoolean.add(returnBooleanValue(lowercaseYes));\n            characterTypesBoolean.add(returnBooleanValue(uppercaseYes));\n            characterTypesBoolean.add(returnBooleanValue(numbersYes));\n            characterTypesBoolean.add(returnBooleanValue(symbolsYes));\n            passwordText = passwordManager.generatePasswordForGUI(characterTypesBoolean,\n                    Integer.parseInt(passwordLengthTextField.getText()));\n        }\n        return new Password(passwordText);\n    }\n\n    /**\n     * @REQUIRES: button is not null\n     * @EFFECTS: returns true if button is selected\n     */\n    private boolean returnBooleanValue(JRadioButton button) {\n        return button.isSelected();\n    }\n\n    /**\n     * @MODIFIES: nameTextField, userNameTextField, urlTextField, notesTextField\n     * @EFFECTS: clears the specified text fields\n     */\n    private void clearCreateFieldMenu() {\n        clearTextField(nameTextField);\n        clearTextField(userNameTextField);\n        clearTextField(urlTextField);\n        clearTextField(notesTextField);\n    }\n\n    /**\n     * @MODIFIES: customPasswordField\n     * @EFFECTS: clears the specified text fields\n     */\n    private void clearCustomPasswordMenu() {\n        clearTextField(customPasswordField);\n    }\n\n    /**\n     * @MODIFIES: passwordLengthTextField, buttonsGroup.get(0), buttonsGroup.get(1), buttonsGroup.get(2),\n     * buttonsGroup.get(3),\n     * @EFFECTS: clears the specified text fields and radio button groups\n     */\n    private void clearRandomPasswordMenu() {\n        clearTextField(passwordLengthTextField);\n        clearRadioButtonGroup(buttonGroups.get(0));\n        clearRadioButtonGroup(buttonGroups.get(1));\n        clearRadioButtonGroup(buttonGroups.get(2));\n        clearRadioButtonGroup(buttonGroups.get(3));\n    }\n\n    /**\n     * @MODIFIES: passphraseLengthTextField\n     * @EFFECTS: sets the text inside of textField to be an empty string\n     */\n    private void clearRandomPassphraseMenu() {\n        clearTextField(passphraseLengthTextField);\n    }\n\n    /**\n     * @REQUIRES: radioButton is not null\n     * @MODIFIES: radioButton\n     * @EFFECTS: unselects radioButton\n     */\n    private void clearRadioButton(JRadioButton radioButton) {\n        radioButton.setSelected(false);\n    }\n\n    /**\n     * @REQUIRES: buttonGroup is not null\n     * @MODIFIES: buttonGroup\n     * @EFFECTS: unselects all JButtons in buttonGroup\n     */\n    private void clearRadioButtonGroup(ButtonGroup buttonGroup) {\n        buttonGroup.clearSelection();\n    }\n\n    /**\n     * @REQUIRES: textField is not null\n     * @MODIFIES: textField\n     * @EFFECTS: sets the text inside of textField to be an empty string\n     */\n    private void clearTextField(JTextField textField) {\n        textField.setText(\"\");\n    }\n\n    /**\n     * @MODIFIES: lowercaseNo, lowercaseYes, uppercaseNo, uppercaseYes, numbersNo, numbersYes,, symbolsNo, symbolsYes\n     * @EFFECTS: makes pair of radio buttons between the similar buttons\n     */\n    private void makeRadioButtonsGroup() {\n        makePairOfRadioButtons(lowercaseNo, lowercaseYes, buttonGroups.get(0));\n        makePairOfRadioButtons(uppercaseNo, uppercaseYes, buttonGroups.get(1));\n        makePairOfRadioButtons(numbersNo, numbersYes, buttonGroups.get(2));\n        makePairOfRadioButtons(symbolsNo, symbolsYes, buttonGroups.get(3));\n    }\n\n    /**\n     * @REQUIRES: buttonA, buttonB, and group are not null\n     * @MODIFIES: group\n     * @EFFECTS: adds buttonA and buttonB to group\n     * code found via https://stackoverflow.com/a/2253626\n     */\n    private void makePairOfRadioButtons(JRadioButton buttonA, JRadioButton buttonB, ButtonGroup group) {\n        group.add(buttonA);\n        group.add(buttonB);\n    }\n\n    /**\n     * @REQUIRES: buttons, group\n     * @MODIFIES: group\n     * @EFFECTS: adds all JRadioButtons in buttons to group\n     */\n    private void makePairOfRadioButtons(ArrayList<JRadioButton> buttons, ButtonGroup group) {\n        for (JRadioButton button : buttons) {\n            group.add(button);\n        }\n    }\n}\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/ui/GUI.java b/src/main/ui/GUI.java
+---- a/src/main/ui/GUI.java	(revision 8f63c64a5cdca8b262f0fc371487a572bc97dfc4)
+-+++ b/src/main/ui/GUI.java	(date 1681384350335)
+-@@ -398,6 +398,7 @@
+-         switch (actionEvent.getActionCommand()) {
+-             case SAVE_BUTTON:
+-                 save();
+-+                clearTextField(savePasswordTextField);
+-                 cl.show(cardPanel, "mainMenu");
+-                 break;
+-             case GO_TO_SAVE_BUTTON:
+-@@ -413,9 +414,11 @@
+-     private void actionPerformedBack(ActionEvent actionEvent) {
+-         switch (actionEvent.getActionCommand()) {
+-             case BACK_BUTTON:
+-+                clearTextField(savePasswordTextField);
+-                 cl.show(cardPanel, "mainMenu");
+-                 break;
+-             case BACK_FROM_LOAD_BUTTON:
+-+                clearTextField(loadPasswordTextField);
+-                 if (loadFromIntro) {
+-                     cl.show(cardPanel, "introMenu");
+-                 } else {
+-@@ -534,6 +537,7 @@
+-                 break;
+-             case LOAD_ENTRIES_BUTTON:
+-                 load();
+-+                clearTextField(loadPasswordTextField);
+-                 cl.show(cardPanel, "mainMenu");
+-                 break;
+-         }
+-@@ -629,7 +633,8 @@
+-      * @EFFECTS: saves the entries to file using the master password entered by the user
+-      */
+-     private void save() {
+--        passwordManager.saveFileFromGUI();
+-+        String masterPassword = new String(savePasswordTextField.getPassword());
+-+        passwordManager.saveFileFromGUI(masterPassword);
+-     }
+- 
+-     /**
+-@@ -638,7 +643,8 @@
+-      * @EFFECTS: loads the entries from file using the master password entered by the user
+-      */
+-     private void load() {
+--        passwordManager.loadFileFromGUI();
+-+        String masterPassword = new String(loadPasswordTextField.getPassword());
+-+        passwordManager.loadFileFromGUI(masterPassword);
+-     }
+- 
+-     /**
+-Index: src/test/model/EntryTest.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package model;\n\nimport org.json.JSONObject;\nimport org.junit.jupiter.api.BeforeEach;\nimport org.junit.jupiter.api.Test;\n\nimport java.util.Set;\n\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class EntryTest {\n    private Entry testEntry;\n    Password p;\n\n    @BeforeEach\n    void runBefore() {\n        p = new Password(\"password\");\n        testEntry = new Entry(\"Google\", \"a@gmail.com\", p,\n                \"www.google.com\", \"made for school\");\n    }\n\n    @Test\n    void testConstructor() {\n        assertEquals(\"Google\", testEntry.getName());\n        assertEquals(\"a@gmail.com\", testEntry.getUsername());\n        assertEquals(p, testEntry.getPassword());\n        assertEquals(\"www.google.com\", testEntry.getUrl());\n        assertEquals(\"made for school\", testEntry.getNotes());\n    }\n\n//    @Test\n//    void testSetAlgorithm() {\n//        testEntry.setAlgorithm(\"invalid\");\n//        assertEquals(testEntry.getAlgorithm(), \"invalid\");\n//    }\n\n//    @Test\n//    void testExceptionInToJson() {\n//        testEntry.setAlgorithm(\"invalid\");\n//        assertNull(testEntry.toJson());\n//    }\n\n    @Test\n    void testToJson() {\n        JSONObject testJson = testEntry.toJson();\n        Set<String> jsonKeys = testJson.keySet();\n        assertTrue(jsonKeys.contains(\"name\"));\n        assertTrue(jsonKeys.contains(\"username\"));\n        assertTrue(jsonKeys.contains(\"password\"));\n        assertTrue(jsonKeys.contains(\"url\"));\n        assertTrue(jsonKeys.contains(\"notes\"));\n    }\n\n}\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/test/model/EntryTest.java b/src/test/model/EntryTest.java
+---- a/src/test/model/EntryTest.java	(revision 8f63c64a5cdca8b262f0fc371487a572bc97dfc4)
+-+++ b/src/test/model/EntryTest.java	(date 1681384350335)
+-@@ -28,22 +28,24 @@
+-         assertEquals("made for school", testEntry.getNotes());
+-     }
+- 
+--//    @Test
+--//    void testSetAlgorithm() {
+--//        testEntry.setAlgorithm("invalid");
+--//        assertEquals(testEntry.getAlgorithm(), "invalid");
+--//    }
+--
+--//    @Test
+--//    void testExceptionInToJson() {
+--//        testEntry.setAlgorithm("invalid");
+--//        assertNull(testEntry.toJson());
+--//    }
+-+    @Test
+-+    void testSetAlgorithm() {
+-+        testEntry.setAlgorithm("invalid");
+-+        assertEquals(testEntry.getAlgorithm(), "invalid");
+-+    }
+-+
+-+    @Test
+-+    void testExceptionInToJson() {
+-+        testEntry.setAlgorithm("invalid");
+-+        assertNull(testEntry.toJson());
+-+    }
+- 
+-     @Test
+-     void testToJson() {
+-+        testEntry.setMasterPassword("password");
+-         JSONObject testJson = testEntry.toJson();
+-         Set<String> jsonKeys = testJson.keySet();
+-+        assertTrue(jsonKeys.contains("salt"));
+-         assertTrue(jsonKeys.contains("name"));
+-         assertTrue(jsonKeys.contains("username"));
+-         assertTrue(jsonKeys.contains("password"));
+-Index: src/test/model/ByteConvertorTest.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/test/model/ByteConvertorTest.java b/src/test/model/ByteConvertorTest.java
+-new file mode 100644
+---- /dev/null	(date 1681384350335)
+-+++ b/src/test/model/ByteConvertorTest.java	(date 1681384350335)
+-@@ -0,0 +1,36 @@
+-+package model;
+-+
+-+import org.junit.jupiter.api.BeforeEach;
+-+import org.junit.jupiter.api.Test;
+-+
+-+import java.nio.charset.StandardCharsets;
+-+import java.util.Arrays;
+-+
+-+import static org.junit.jupiter.api.Assertions.assertEquals;
+-+import static org.junit.jupiter.api.Assertions.assertTrue;
+-+
+-+public class ByteConvertorTest {
+-+
+-+    ByteConvertor bc;
+-+
+-+    @BeforeEach
+-+    void setup() {
+-+        bc = new ByteConvertor();
+-+    }
+-+
+-+    @Test
+-+    void testStringToBytes() {
+-+        String test = "testing";
+-+        byte[] testBytes = {(byte) 0xB5, (byte) 0xEB, 0x2D, (byte) 0x8A, 0x78};
+-+        assertTrue(Arrays.equals(bc.stringToBytes(test), testBytes));
+-+    }
+-+
+-+    @Test
+-+    void testBytesToString() {
+-+        byte[] testBytes = {(byte) 0xB5, (byte) 0xEB, 0x2D, (byte) 0x8A, 0x78};
+-+        String test = "testing=";
+-+
+-+        String test2 = bc.bytesToString(testBytes);
+-+        assertEquals(test2, test);
+-+    }
+-+}
+-Index: src/test/persistence/JsonReaderTest.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package persistence;\n\nimport model.*;\nimport org.junit.jupiter.api.Test;\nimport java.io.IOException;\nimport java.security.GeneralSecurityException;\nimport java.util.List;\nimport static org.junit.jupiter.api.Assertions.*;\n\nclass JsonReaderTest extends JsonTest {\n\n    @Test\n    void testReaderNonExistentFile() {\n        JsonReader reader = new JsonReader(\"./data/noSuchFile.json\");\n        try {\n            File file = reader.read();\n            fail(\"IOException expected\");\n        } catch (IOException e) {\n            // pass\n        }\n    }\n\n    @Test\n    void testReaderEmptyFile() {\n        JsonReader reader = new JsonReader(\"./data/testReaderEmptyFile.json\");\n        try {\n            File file = reader.read();\n            assertEquals(0, file.getSizeOfEntries());\n        } catch (IOException e) {\n            fail(\"Couldn't read from file\");\n        }\n    }\n\n    @Test\n    void testReaderGeneralWorkRoom() {\n        JsonReader reader = new JsonReader(\"./data/testReaderGeneralFile.json\");\n        try {\n            File file = reader.read();\n            List<Entry> entries = file.getEntries();\n\n            assertEquals(2, entries.size());\n            checkEntry(\"Google\", \"union@gmail.com\",\n                    new Password(\"stowing-attest-flogging-trillion-subgroup-salvage\"), \"www.google.com\",\n                    \"none\", entries.get(0));\n            checkEntry(\"Bing\", \"random@outlook.com\",\n                    new Password(\"rescuer-gulp-hunger-attention-folk\"), \"www.bing.ca\", \"none1\",\n                    entries.get(1));\n        } catch (IOException e) {\n            fail(\"Couldn't read from file\");\n        }\n    }\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/test/persistence/JsonReaderTest.java b/src/test/persistence/JsonReaderTest.java
+---- a/src/test/persistence/JsonReaderTest.java	(revision 8f63c64a5cdca8b262f0fc371487a572bc97dfc4)
+-+++ b/src/test/persistence/JsonReaderTest.java	(date 1681384350335)
+-@@ -9,14 +9,18 @@
+- 
+- class JsonReaderTest extends JsonTest {
+- 
+-+    private final static String masterPassword = "password";
+-+
+-     @Test
+-     void testReaderNonExistentFile() {
+-         JsonReader reader = new JsonReader("./data/noSuchFile.json");
+-         try {
+--            File file = reader.read();
+-+            File file = reader.read(masterPassword);
+-             fail("IOException expected");
+-         } catch (IOException e) {
+-             // pass
+-+        } catch (GeneralSecurityException e) {
+-+            fail();
+-         }
+-     }
+- 
+-@@ -24,10 +28,12 @@
+-     void testReaderEmptyFile() {
+-         JsonReader reader = new JsonReader("./data/testReaderEmptyFile.json");
+-         try {
+--            File file = reader.read();
+-+            File file = reader.read(masterPassword);
+-             assertEquals(0, file.getSizeOfEntries());
+-         } catch (IOException e) {
+-             fail("Couldn't read from file");
+-+        } catch (GeneralSecurityException e) {
+-+            fail();
+-         }
+-     }
+- 
+-@@ -35,18 +41,25 @@
+-     void testReaderGeneralWorkRoom() {
+-         JsonReader reader = new JsonReader("./data/testReaderGeneralFile.json");
+-         try {
+--            File file = reader.read();
+-+            File file = reader.read(masterPassword);
+-             List<Entry> entries = file.getEntries();
+- 
+-             assertEquals(2, entries.size());
+--            checkEntry("Google", "union@gmail.com",
+--                    new Password("stowing-attest-flogging-trillion-subgroup-salvage"), "www.google.com",
+--                    "none", entries.get(0));
+--            checkEntry("Bing", "random@outlook.com",
+--                    new Password("rescuer-gulp-hunger-attention-folk"), "www.bing.ca", "none1",
+-+            assertEquals(entries.get(0).getName(), "Google");
+-+            assertEquals(entries.get(0).getUsername(), "a@gmail.com");
+-+            assertEquals(entries.get(0).getPassword().getPassword(), "password123");
+-+            assertEquals(entries.get(0).getUrl(), "www.google.ca");
+-+            assertEquals(entries.get(0).getNotes(), "none");
+-+//            checkEntry("Google", "a@gmail.com",
+-+//                    new Password("password123"), "www.google.ca",
+-+//                    "none", entries.get(0));
+-+            checkEntry("Bing", "b@outlook.com",
+-+                    new Password("engaging-iodine-quicksand-canola"), "www.bing.ca", "none",
+-                     entries.get(1));
+-         } catch (IOException e) {
+-             fail("Couldn't read from file");
+-+        } catch (GeneralSecurityException e) {
+-+            fail();
+-         }
+-     }
+- }
+-\ No newline at end of file
+-Index: data/testReaderGeneralFile.json
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>{\"entries\": [\n    {\n        \"password\": \"stowing-attest-flogging-trillion-subgroup-salvage\",\n        \"notes\": \"none\",\n        \"name\": \"Google\",\n        \"url\": \"www.google.com\",\n        \"username\": \"union@gmail.com\"\n    },\n    {\n        \"password\": \"rescuer-gulp-hunger-attention-folk\",\n        \"notes\": \"none1\",\n        \"name\": \"Bing\",\n        \"url\": \"www.bing.ca\",\n        \"username\": \"random@outlook.com\"\n    }\n]}\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/data/testReaderGeneralFile.json b/data/testReaderGeneralFile.json
+---- a/data/testReaderGeneralFile.json	(revision 8f63c64a5cdca8b262f0fc371487a572bc97dfc4)
+-+++ b/data/testReaderGeneralFile.json	(date 1681384350335)
+-@@ -1,16 +1,18 @@
+- {"entries": [
+-     {
+--        "password": "stowing-attest-flogging-trillion-subgroup-salvage",
+--        "notes": "none",
+--        "name": "Google",
+--        "url": "www.google.com",
+--        "username": "union@gmail.com"
+-+        "password": "+E5DD2WtvKPtVu6MM86QL1vFnnXakR6vISSNH8iU0IbC21Vmg/Tb",
+-+        "salt": "c6UdIguTa0miYtRXvB038Q==",
+-+        "notes": "73e7VlOCgqshxhyis7vZNWTEke7oqRLLeNpAGAayzMM=",
+-+        "name": "n+0ALJoe6DnI19lWZoeqeX/BmzEjPqG/P3AUOoQguVqqrw==",
+-+        "url": "pdSYUjNUMhdd1WwyQOuGkDu7gRNu75xEmmxtsEmsakfBmCxDVJZM/eQ=",
+-+        "username": "rpmuoDqLWRRJpG1OreocY7xtsCNuewhjOBHmDNq10IOdcQOY/aDx"
+-     },
+-     {
+--        "password": "rescuer-gulp-hunger-attention-folk",
+--        "notes": "none1",
+--        "name": "Bing",
+--        "url": "www.bing.ca",
+--        "username": "random@outlook.com"
+-+        "password": "UkC+iqAZyKHgdXaQ8C4Wjnve7K+FxLMMZjlUmxHqD7lAbq20cL3SLGq4QkhAO3pLEAdpJ+Hut3d/LmHl",
+-+        "salt": "vSs6japOyCaXUee1qnrdJg==",
+-+        "notes": "JZUfhLzQMKMJIN0HPJsoMNmLyfHRE6ln4afPcGDPaXA=",
+-+        "name": "/RDK9KK/MtbvyGvwmyTYCvJpx3+t8gA8oMekxGgCBiE=",
+-+        "url": "OXrN/58B/9dHMm898K04WQbJWs5ToKlBR0m6dR4gfF98ogyIoD81",
+-+        "username": "ZwsdhY0qaHdU2nGoNiW5WA8PWd8I2sBeltMu6g5B1+wLCfOYY4vmPXc="
+-     }
+- ]}
+-Index: src/test/persistence/JsonWriterTest.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package persistence;\n\nimport model.*;\nimport org.junit.jupiter.api.Test;\nimport java.io.IOException;\nimport java.security.GeneralSecurityException;\nimport java.util.List;\nimport static org.junit.jupiter.api.Assertions.*;\n\nclass JsonWriterTest extends JsonTest {\n\n    @Test\n    void testWriterInvalidFile() {\n        try {\n            File file = new File();\n            JsonWriter writer = new JsonWriter(\"./data/my\\0illegal:fileName.json\");\n            writer.open();\n            fail(\"IOException was expected\");\n        } catch (IOException e) {\n            // pass\n        }\n    }\n\n    @Test\n    void testWriterEmptyWorkroom() {\n        try {\n            File file = new File();\n            JsonWriter writer = new JsonWriter(\"./data/testWriterEmptyFile.json\");\n            writer.open();\n            writer.write(file);\n            writer.close();\n\n            JsonReader reader = new JsonReader(\"./data/testWriterEmptyFile.json\");\n            file = reader.read();\n            assertEquals(0, file.getSizeOfEntries());\n        } catch (IOException e) {\n            fail(\"Exception should not have been thrown\");\n        }\n    }\n\n    @Test\n    void testWriterGeneralWorkroom() {\n        try {\n            File file = new File();\n            file.addEntry(new Entry(\"Reddit\", \"atom9\", new Password(\"password101\"), \"www.reddit.com\", \"old\"));\n            file.addEntry(new Entry(\"Twitch\", \"piedipier\", new Password(\"asddjakdsl\"), \"www.twitch.tv\", \"young\"));\n            JsonWriter writer = new JsonWriter(\"./data/testWriterGeneralFile.json\");\n            writer.open();\n            writer.write(file);\n            writer.close();\n\n            JsonReader reader = new JsonReader(\"./data/testWriterGeneralFile.json\");\n            file = reader.read();\n            List<Entry> entries = file.getEntries();\n            assertEquals(2, entries.size());\n            checkEntry(\"Reddit\", \"atom9\", new Password(\"password101\"), \"www.reddit.com\",\n                    \"old\", entries.get(0));\n            checkEntry(\"Twitch\", \"piedipier\", new Password(\"asddjakdsl\"), \"www.twitch.tv\",\n                    \"young\", entries.get(1));\n\n        } catch (IOException e) {\n            fail(\"Exception should not have been thrown\");\n        }\n    }\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/test/persistence/JsonWriterTest.java b/src/test/persistence/JsonWriterTest.java
+---- a/src/test/persistence/JsonWriterTest.java	(revision 8f63c64a5cdca8b262f0fc371487a572bc97dfc4)
+-+++ b/src/test/persistence/JsonWriterTest.java	(date 1681384350335)
+-@@ -9,6 +9,8 @@
+- 
+- class JsonWriterTest extends JsonTest {
+- 
+-+    private final static String masterPassword = "password";
+-+
+-     @Test
+-     void testWriterInvalidFile() {
+-         try {
+-@@ -27,13 +29,13 @@
+-             File file = new File();
+-             JsonWriter writer = new JsonWriter("./data/testWriterEmptyFile.json");
+-             writer.open();
+--            writer.write(file);
+-+            writer.write(file, masterPassword);
+-             writer.close();
+- 
+-             JsonReader reader = new JsonReader("./data/testWriterEmptyFile.json");
+--            file = reader.read();
+-+            file = reader.read(masterPassword);
+-             assertEquals(0, file.getSizeOfEntries());
+--        } catch (IOException e) {
+-+        } catch (IOException | GeneralSecurityException e) {
+-             fail("Exception should not have been thrown");
+-         }
+-     }
+-@@ -42,15 +44,17 @@
+-     void testWriterGeneralWorkroom() {
+-         try {
+-             File file = new File();
+--            file.addEntry(new Entry("Reddit", "atom9", new Password("password101"), "www.reddit.com", "old"));
+--            file.addEntry(new Entry("Twitch", "piedipier", new Password("asddjakdsl"), "www.twitch.tv", "young"));
+-+            file.addEntry(new Entry("Reddit", "atom9", new Password("password101"),
+-+                    "www.reddit.com", "old"));
+-+            file.addEntry(new Entry("Twitch", "piedipier", new Password("asddjakdsl"),
+-+                    "www.twitch.tv", "young"));
+-             JsonWriter writer = new JsonWriter("./data/testWriterGeneralFile.json");
+-             writer.open();
+--            writer.write(file);
+-+            writer.write(file, masterPassword);
+-             writer.close();
+- 
+-             JsonReader reader = new JsonReader("./data/testWriterGeneralFile.json");
+--            file = reader.read();
+-+            file = reader.read(masterPassword);
+-             List<Entry> entries = file.getEntries();
+-             assertEquals(2, entries.size());
+-             checkEntry("Reddit", "atom9", new Password("password101"), "www.reddit.com",
+-@@ -58,7 +62,7 @@
+-             checkEntry("Twitch", "piedipier", new Password("asddjakdsl"), "www.twitch.tv",
+-                     "young", entries.get(1));
+- 
+--        } catch (IOException e) {
+-+        } catch (IOException | GeneralSecurityException e) {
+-             fail("Exception should not have been thrown");
+-         }
+-     }
+-Index: src/main/model/File.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package model;\n\nimport org.json.JSONArray;\nimport org.json.JSONObject;\nimport persistence.Writable;\n\nimport java.util.ArrayList;\n\n// Represents a file which will contain a list of entries\npublic class File implements Writable {\n    private ArrayList<Entry> entries;\n    private String masterPassword;\n\n    /**\n     * @EFFECTS: creates a new file with no entries\n     */\n    public File() {\n        entries = new ArrayList<>();\n    }\n\n    /**\n     * @REQUIRES: entries is not null\n     * @EFFECTS: creates a new file with existing entries\n     */\n    public File(ArrayList<Entry> entries) {\n        this.entries = entries;\n    }\n\n    /**\n     * @MODIFIES: this\n     * @EFFECTS: adds the entry parameter to the end of the entries list\n     */\n    public void addEntry(Entry entry) {\n        entries.add(entry);\n    }\n\n    public void removeEntry(int index) {\n        entries.remove(index);\n    }\n\n    /**\n     * @EFFECTS: returns the size of the list\n     */\n    public int getSizeOfEntries() {\n        return entries.size();\n    }\n\n    /**\n     * @REQUIRES: entries has at least one element; i < entries.getSizeOfEntries()\n     * @EFFECTS: returns the entry at the specified index of the entries list\n     */\n    public Entry getEntryAtIndex(int i) {\n        return entries.get(i);\n    }\n\n    public ArrayList<Entry> getEntries() {\n        return entries;\n    }\n\n    /**\n     * @EFFECTS: returns contents of entries arraylist to JSONObject\n     */\n    @Override\n    public JSONObject toJson() {\n        JSONObject json = new JSONObject();\n        json.put(\"entries\", entriesToJson());\n        return json;\n    }\n\n    /**\n     * @REQUIRES: masterPassword and entries are not null\n     * @MODIFIES: entries\n     * @EFFECTS: uses the masterPassword to add the encrypted entries to a JSONArray which it then returns\n     */\n    private JSONArray entriesToJson() {\n        JSONArray jsonArray = new JSONArray();\n\n        for (Entry e : entries) {\n            jsonArray.put(e.toJson());\n        }\n\n        return jsonArray;\n    }\n\n}\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/model/File.java b/src/main/model/File.java
+---- a/src/main/model/File.java	(revision 8f63c64a5cdca8b262f0fc371487a572bc97dfc4)
+-+++ b/src/main/model/File.java	(date 1681384350335)
+-@@ -45,6 +45,10 @@
+-         return entries.size();
+-     }
+- 
+-+    public void setMasterPassword(String masterPassword) {
+-+        this.masterPassword = masterPassword;
+-+    }
+-+
+-     /**
+-      * @REQUIRES: entries has at least one element; i < entries.getSizeOfEntries()
+-      * @EFFECTS: returns the entry at the specified index of the entries list
+-@@ -63,7 +67,7 @@
+-     @Override
+-     public JSONObject toJson() {
+-         JSONObject json = new JSONObject();
+--        json.put("entries", entriesToJson());
+-+        json.put("entries", entriesToJson(masterPassword));
+-         return json;
+-     }
+- 
+-@@ -72,10 +76,11 @@
+-      * @MODIFIES: entries
+-      * @EFFECTS: uses the masterPassword to add the encrypted entries to a JSONArray which it then returns
+-      */
+--    private JSONArray entriesToJson() {
+-+    private JSONArray entriesToJson(String masterPassword) {
+-         JSONArray jsonArray = new JSONArray();
+- 
+-         for (Entry e : entries) {
+-+            e.setMasterPassword(masterPassword);
+-             jsonArray.put(e.toJson());
+-         }
+- 
+Index: data/workroom.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\"entries\": [\n    {\n        \"password\": \"a\",\n        \"notes\": \"a\",\n        \"name\": \"Google\",\n        \"url\": \"a\",\n        \"username\": \"a\"\n    },\n    {\n        \"password\": \"a\",\n        \"notes\": \"a\",\n        \"name\": \"Reddit\",\n        \"url\": \"aa\",\n        \"username\": \"a\"\n    },\n    {\n        \"password\": \"3\",\n        \"notes\": \"2\",\n        \"name\": \"Bing\",\n        \"url\": \"2\",\n        \"username\": \"2\"\n    }\n]}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/data/workroom.json b/data/workroom.json
+--- a/data/workroom.json	(revision 56ed67557fc843df00d9c29d602d460cf513da92)
++++ b/data/workroom.json	(date 1681448041557)
+@@ -14,10 +14,10 @@
+         "username": "a"
+     },
+     {
+-        "password": "3",
+-        "notes": "2",
+-        "name": "Bing",
+-        "url": "2",
+-        "username": "2"
++        "password": "",
++        "notes": "g",
++        "name": "GG",
++        "url": "g",
++        "username": "g"
+     }
+ ]}
+\ No newline at end of file
