@@ -1,11 +1,15 @@
 package persistence;
 
-import model.*;
+import model.Entry;
+import model.File;
+import model.Password;
 import org.junit.jupiter.api.Test;
+
 import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.util.List;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 class JsonWriterTest extends JsonTest {
 
