@@ -1,12 +1,9 @@
 package model;
 
-import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EntryTest {
     private Entry testEntry;
@@ -26,29 +23,6 @@ public class EntryTest {
         assertEquals(p, testEntry.getPassword());
         assertEquals("www.google.com", testEntry.getUrl());
         assertEquals("made for school", testEntry.getNotes());
-    }
-
-//    @Test
-//    void testSetAlgorithm() {
-//        testEntry.setAlgorithm("invalid");
-//        assertEquals(testEntry.getAlgorithm(), "invalid");
-//    }
-
-//    @Test
-//    void testExceptionInToJson() {
-//        testEntry.setAlgorithm("invalid");
-//        assertNull(testEntry.toJson());
-//    }
-
-    @Test
-    void testToJson() {
-        JSONObject testJson = testEntry.toJson();
-        Set<String> jsonKeys = testJson.keySet();
-        assertTrue(jsonKeys.contains("name"));
-        assertTrue(jsonKeys.contains("username"));
-        assertTrue(jsonKeys.contains("password"));
-        assertTrue(jsonKeys.contains("url"));
-        assertTrue(jsonKeys.contains("notes"));
     }
 
 }

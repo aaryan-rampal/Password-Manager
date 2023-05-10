@@ -1,12 +1,13 @@
 package model;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -38,10 +39,8 @@ public class FileTest {
     void testNotEmptyConstructor() {
         testList = new File(entryArrayList);
 
-        ArrayList<Entry> actualList = testList.getEntries();
-        assertEquals(2, actualList.size());
-        assertEquals(e1, actualList.get(0));
-        assertEquals(e2, actualList.get(1));
+        List<Entry> actualList = testList.getEntries();
+        assertEquals(actualList, entryArrayList);
     }
 
     @Test
@@ -68,8 +67,7 @@ public class FileTest {
 
     @Test
     void testRemoveEntry() {
-        testList.addEntry(e1);
-        testList.addEntry(e2);
+        testList = new File(entryArrayList);
 
         testList.removeEntry(0);
         assertEquals(testList.getSizeOfEntries(), 1);
@@ -77,21 +75,17 @@ public class FileTest {
     }
 
     @Test
-    void testToJson() {
-        testList.addEntry(e1);
+    void testToJson() throws JsonProcessingException {
+        testList = new File(entryArrayList);
+        ObjectMapper mapper = new ObjectMapper();
 
-        JSONArray arr = testList.toJson().getJSONArray("entries");
-        JSONObject entry = null;
-        for (Object json : arr) {
-            entry = (JSONObject) json;
+        String jsonData = testList.toJson();
+        List<Entry> loadedFromJson = mapper.readValue(jsonData, new TypeReference<List<Entry>>() { });
+
+        for (int i = 0; i < loadedFromJson.size(); i++) {
+            assertEquals(loadedFromJson.get(i), entryArrayList.get(i));
         }
-
-        assert entry != null;
-        assertEquals(entry.get("password"), e1.getPassword().getPassword());
-        assertEquals(entry.get("name"), e1.getName());
-        assertEquals(entry.get("notes"), e1.getNotes());
-        assertEquals(entry.get("username"), e1.getUsername());
-        assertEquals(entry.get("url"), e1.getUrl());
-
     }
+
 }
+

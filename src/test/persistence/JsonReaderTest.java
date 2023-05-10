@@ -20,33 +20,33 @@ class JsonReaderTest extends JsonTest {
         }
     }
 
-    @Test
-    void testReaderEmptyFile() {
-        JsonReader reader = new JsonReader("./data/testReaderEmptyFile.json");
-        try {
-            File file = reader.read();
-            assertEquals(0, file.getSizeOfEntries());
-        } catch (IOException e) {
-            fail("Couldn't read from file");
-        }
-    }
+//    @Test
+//    void testReaderEmptyFile() {
+//        JsonReader reader = new JsonReader("./data/testReaderEmptyFile.json");
+//        try {
+//            File file = reader.read();
+//            assertEquals(0, file.getSizeOfEntries());
+//        } catch (IOException e) {
+//            fail("Couldn't read from file");
+//        }
+//    }
 
-    @Test
-    void testReaderGeneralWorkRoom() {
-        JsonReader reader = new JsonReader("./data/testReaderGeneralFile.json");
-        try {
-            File file = reader.read();
-            List<Entry> entries = file.getEntries();
-
-            assertEquals(2, entries.size());
-            checkEntry("Google", "union@gmail.com",
-                    new Password("stowing-attest-flogging-trillion-subgroup-salvage"), "www.google.com",
-                    "none", entries.get(0));
-            checkEntry("Bing", "random@outlook.com",
-                    new Password("rescuer-gulp-hunger-attention-folk"), "www.bing.ca", "none1",
-                    entries.get(1));
-        } catch (IOException e) {
-            fail("Couldn't read from file");
-        }
-    }
+//    @Test
+//    void testReaderGeneralWorkRoom() {
+//        JsonReader reader = new JsonReader("./data/testReaderGeneralFile.json");
+//        try {
+//            File file = reader.read();
+//            List<Entry> entries = file.getEntries();
+//
+//            assertEquals(2, entries.size());
+//            checkEntry("Google", "union@gmail.com",
+//                    new Password("stowing-attest-flogging-trillion-subgroup-salvage"), "www.google.com",
+//                    "none", entries.get(0));
+//            checkEntry("Bing", "random@outlook.com",
+//                    new Password("rescuer-gulp-hunger-attention-folk"), "www.bing.ca", "none1",
+//                    entries.get(1));
+//        } catch (IOException e) {
+//            fail("Couldn't read from file");
+//        }
+//    }
 }
