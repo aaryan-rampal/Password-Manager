@@ -68,6 +68,29 @@ public class Entry {
         return notes;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Entry entry = (Entry) o;
 
+        if (getName() != null ? !getName().equals(entry.getName()) : entry.getName() != null) return false;
+        if (getUsername() != null ? !getUsername().equals(entry.getUsername()) : entry.getUsername() != null)
+            return false;
+        if (getPasswordText() != null ? !getPasswordText().equals(entry.getPasswordText()) : entry.getPasswordText() != null)
+            return false;
+        if (getUrl() != null ? !getUrl().equals(entry.getUrl()) : entry.getUrl() != null) return false;
+        return getNotes() != null ? getNotes().equals(entry.getNotes()) : entry.getNotes() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getName() != null ? getName().hashCode() : 0;
+        result = 31 * result + (getUsername() != null ? getUsername().hashCode() : 0);
+        result = 31 * result + (getPassword() != null ? getPassword().hashCode() : 0);
+        result = 31 * result + (getUrl() != null ? getUrl().hashCode() : 0);
+        result = 31 * result + (getNotes() != null ? getNotes().hashCode() : 0);
+        return result;
+    }
 }
