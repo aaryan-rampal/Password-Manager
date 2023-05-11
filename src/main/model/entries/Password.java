@@ -4,8 +4,6 @@ import me.gosimple.nbvcxz.Nbvcxz;
 import me.gosimple.nbvcxz.resources.Feedback;
 import me.gosimple.nbvcxz.scoring.Result;
 
-import java.math.BigDecimal;
-
 // Represents a password with the plaintext string password, Result field and Feedback field. The latter two are
 // provided by Nbvcxz and are used to calculate password strength and potential feedback on bad passwords.
 public class Password {

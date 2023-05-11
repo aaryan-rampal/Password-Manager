@@ -126,6 +126,7 @@ public class Entry {
     public String getEncryptedUsername() {
         return encryptor.encrypt(username, keySet, saltBytes);
     }
+
     /**
      * @REQUIRES: name, username, password, url, and notes are not null
      * @EFFECTS: creates a JSONObject and adds the encrypted strings of the fields to it
@@ -192,7 +193,7 @@ public class Entry {
 
     private String parseScore() {
         String stars = "";
-        for (int i = 0; i < password.findScore()+1; i++) {
+        for (int i = 0; i < password.findScore() + 1; i++) {
             stars += "*";
         }
         return stars;
@@ -213,7 +214,7 @@ public class Entry {
         }
 
         String warning = password.getFeedback().getWarning();
-        sb.append("\nWarning: " + ((warning== null) ? "None. Strong password!" : warning));
+        sb.append("\nWarning: " + ((warning == null) ? "None. Strong password!" : warning));
 
         Result result = password.getResult();
         sb.append("\nPassword entropy (higher the better): " + result.getEntropy().shortValue());

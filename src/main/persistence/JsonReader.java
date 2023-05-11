@@ -52,7 +52,8 @@ public class JsonReader {
         return parseFile(loadedEntries);
     }
 
-    private void decryptEntries(List<Entry> encryptedLoadedEntries, List<Entry> loadedEntries, String masterPassword) throws GeneralSecurityException {
+    private void decryptEntries(List<Entry> encryptedLoadedEntries, List<Entry> loadedEntries, String masterPassword)
+            throws GeneralSecurityException {
         Entry.instantiateKeySet(masterPassword);
         for (Entry e : encryptedLoadedEntries) {
             loadedEntries.add(e.decrypt());
