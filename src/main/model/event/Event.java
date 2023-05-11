@@ -1,5 +1,9 @@
 package model.event;
 
+import model.security.Encryptor;
+import model.security.Keyset;
+
+import java.security.GeneralSecurityException;
 import java.util.Calendar;
 import java.util.Date;
 

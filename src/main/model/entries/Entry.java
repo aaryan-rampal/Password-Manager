@@ -3,6 +3,10 @@ package model.entries;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import model.security.Encryptor;
+import model.security.Keyset;
+
+import java.security.GeneralSecurityException;
 
 // Represents an entry in the password manager including a name, username, password, url, and notes
 public class Entry {
@@ -11,6 +15,7 @@ public class Entry {
     private Password password;
     private String url;
     private String notes;
+    private byte[] salt = Encryptor.getInstance().createSalt();
 
     /**
      * @REQUIRES: name, username, url, and notes have non-zero length; password is not null
@@ -73,6 +78,27 @@ public class Entry {
     public String getNotes() {
         return notes;
     }
+
+    /**
+     * @REQUIRES: name, username, password, url, and notes are not null
+     * @EFFECTS: creates a JSONObject and adds the encrypted strings of the fields to it
+     */
+    public void toJson(String masterPassword) {
+        Encryptor encryptor = Encryptor.getInstance();
+        String algorithm = "SHA-256";
+        try {
+            byte[] saltBytes = encryptor.createSalt();
+            Keyset keySet = new Keyset(masterPassword, algorithm);
+            encryptor.encrypt(name, keySet, saltBytes);
+            encryptor.encrypt(username, keySet, saltBytes);
+            encryptor.encrypt(password.getPassword(), keySet, saltBytes);
+            encryptor.encrypt(url, keySet, saltBytes);
+            encryptor.encrypt(notes, keySet, saltBytes);
+
+        } catch (GeneralSecurityException e) {
+        }
+    }
+
 
     @Override
     public boolean equals(Object o) {

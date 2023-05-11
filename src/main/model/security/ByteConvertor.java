@@ -12,7 +12,7 @@ public class ByteConvertor {
      * @REQUIRES: bytes is not null
      * @EFFECTS: converts a byte array into a String object
      */
-    public String bytesToString(byte[] bytes) {
+    public static String bytesToString(byte[] bytes) {
         return Base64.encode(bytes);
     }
 
@@ -20,7 +20,7 @@ public class ByteConvertor {
      * @REQUIRES: s is not null
      * @EFFECTS: converts a String object into a byte array
      */
-    public byte[] stringToBytes(String s) {
+    public static byte[] stringToBytes(String s) {
         return Base64.decode(s);
     }
 
