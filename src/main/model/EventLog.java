@@ -78,8 +78,8 @@ public class EventLog implements Iterable<Event> {
     }
 
     public void removeEntry(int index, String name) {
-        EventLog.getInstance().logEvent(new Event("Removed entry #" + ++index +
-                " with name " + name + "."));
+        EventLog.getInstance().logEvent(new Event("Removed entry #" + ++index
+                + " with name " + name + "."));
     }
 
 

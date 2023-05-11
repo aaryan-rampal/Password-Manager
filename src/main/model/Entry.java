@@ -76,17 +76,28 @@ public class Entry {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Entry entry = (Entry) o;
 
-        if (getName() != null ? !getName().equals(entry.getName()) : entry.getName() != null) return false;
-        if (getUsername() != null ? !getUsername().equals(entry.getUsername()) : entry.getUsername() != null)
+        if (getName() != null ? !getName().equals(entry.getName()) : entry.getName() != null) {
             return false;
-        if (getPasswordText() != null ? !getPasswordText().equals(entry.getPasswordText()) : entry.getPasswordText() != null)
+        }
+        if (getUsername() != null ? !getUsername().equals(entry.getUsername()) : entry.getUsername() != null) {
             return false;
-        if (getUrl() != null ? !getUrl().equals(entry.getUrl()) : entry.getUrl() != null) return false;
+        }
+        if (getPasswordText() != null ? !getPasswordText().equals(entry.getPasswordText())
+                : entry.getPasswordText() != null) {
+            return false;
+        }
+        if (getUrl() != null ? !getUrl().equals(entry.getUrl()) : entry.getUrl() != null) {
+            return false;
+        }
         return getNotes() != null ? getNotes().equals(entry.getNotes()) : entry.getNotes() == null;
     }
 
