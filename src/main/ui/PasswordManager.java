@@ -37,6 +37,8 @@ public class PasswordManager {
     private static final String LOAD_COMMAND = "load";
     private static final String VIEW_COMMAND = "view";
 
+    private String masterPassword;
+
     /**
      * @MODIFIES: this
      * @EFFECTS: starts the password manager application
@@ -333,8 +335,10 @@ public class PasswordManager {
      */
     private void saveFile() {
         try {
-            System.out.println("Enter your master password: ");
-            String masterPassword = scan.nextLine();
+            if (masterPassword == null) {
+                System.out.println("Enter your master password: ");
+                masterPassword = scan.nextLine();
+            }
             jsonWriter.open();
             jsonWriter.write(file, masterPassword);
             jsonWriter.close();
@@ -364,7 +368,7 @@ public class PasswordManager {
     private void loadFile() {
         try {
             System.out.println("Enter your master password: ");
-            String masterPassword = scan.nextLine();
+            masterPassword = scan.nextLine();
             file = jsonReader.read(masterPassword, JSON_STORE);
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
