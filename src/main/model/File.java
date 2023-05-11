@@ -36,8 +36,8 @@ public class File {
      */
     public void addEntry(Entry entry) {
         entries.add(entry);
-        EventLog.getInstance().logEvent(new Event("Added entry #" + entries.size()
-                + " with name " + entry.getName() + "."));
+        EventLog.getInstance().logEvent(new Event("Added entry #" + entries.size() + " with name "
+                + entry.getName() + "."));
     }
 
     public void removeEntry(int index) {
