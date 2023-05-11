@@ -2,6 +2,7 @@ package model.entries;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import model.security.Encryptor;
 import model.security.Keyset;
@@ -20,10 +21,10 @@ public class Entry {
     Keyset keySet;
 
     private void setUpEncryptionFields() {
-        saltBytes = Encryptor.getInstance().createSalt();
         encryptor = Encryptor.getInstance();
+        saltBytes = encryptor.createSalt();
         try {
-            keySet = new Keyset(masterPassword, algorithm);
+            keySet = new Keyset("password", "SHA-256");
         } catch (GeneralSecurityException e) {
             throw new RuntimeException(e);
         }
@@ -60,12 +61,10 @@ public class Entry {
         this.notes = notes;
     }
 
-    @JsonProperty
     public String getName() {
         return name;
     }
 
-    @JsonProperty
     public String getUsername() {
         return username;
     }
@@ -77,25 +76,43 @@ public class Entry {
     /**
      * @EFFECTS: custom getter for Jackson using the password text instead of the password object
      */
-    @JsonGetter("password")
+    @JsonIgnore
     public String getPasswordText() {
         return password.getPassword();
     }
 
-    @JsonProperty
     public String getUrl() {
         return url;
     }
 
-    @JsonProperty
     public String getNotes() {
         return notes;
     }
 
+    @JsonGetter("notes")
     public String getEncryptedNotes() {
-
+        return encryptor.encrypt(notes, keySet, saltBytes);
     }
 
+    @JsonGetter("url")
+    public String getEncryptedUrl() {
+        return encryptor.encrypt(url, keySet, saltBytes);
+    }
+
+    @JsonGetter("name")
+    public String getEncryptedName() {
+        return encryptor.encrypt(name, keySet, saltBytes);
+    }
+
+    @JsonGetter("password")
+    public String getEncryptedPassword() {
+        return encryptor.encrypt(password.getPassword(), keySet, saltBytes);
+    }
+
+    @JsonGetter("username")
+    public String getEncryptedUsername() {
+        return encryptor.encrypt(username, keySet, saltBytes);
+    }
     /**
      * @REQUIRES: name, username, password, url, and notes are not null
      * @EFFECTS: creates a JSONObject and adds the encrypted strings of the fields to it
@@ -105,7 +122,6 @@ public class Entry {
         encryptor.encrypt(username, keySet, saltBytes);
         encryptor.encrypt(password.getPassword(), keySet, saltBytes);
         encryptor.encrypt(url, keySet, saltBytes);
-        encryptor.encrypt(notes, keySet, saltBytes);
 
     }
 
