@@ -56,6 +56,9 @@ public class Entry {
         return password;
     }
 
+    /**
+     * @EFFECTS: custom getter for Jackson using the password text instead of the password object
+     */
     @JsonGetter("password")
     public String getPasswordText() {
         return password.getPassword();
