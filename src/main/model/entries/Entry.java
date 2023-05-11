@@ -18,13 +18,17 @@ public class Entry {
     private String notes;
     private byte[] saltBytes;
     private Encryptor encryptor;
-    Keyset keySet;
+    private static Keyset keySet;
+    private static final String ALGORITHM = "SHA-256";
 
     private void setUpEncryptionFields() {
         encryptor = Encryptor.getInstance();
         saltBytes = encryptor.createSalt();
+    }
+
+    public static void instantiateKeySet(String masterPassword) {
         try {
-            keySet = new Keyset("password", "SHA-256");
+            keySet = new Keyset(masterPassword, ALGORITHM);
         } catch (GeneralSecurityException e) {
             throw new RuntimeException(e);
         }

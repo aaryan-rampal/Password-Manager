@@ -322,8 +322,10 @@ public class PasswordManager {
      */
     private void saveFile() {
         try {
+            System.out.println("Enter your master password: ");
+            String masterPassword = scan.nextLine();
             jsonWriter.open();
-            jsonWriter.write(file);
+            jsonWriter.write(file, masterPassword);
             jsonWriter.close();
             System.out.println("Saved file to " + JSON_STORE);
         } catch (FileNotFoundException e) {
@@ -337,7 +339,7 @@ public class PasswordManager {
     public void saveFileFromGUI() {
         try {
             jsonWriter.open();
-            jsonWriter.write(file);
+//            jsonWriter.write(file);
             jsonWriter.close();
         } catch (FileNotFoundException e) {
             e.getMessage();

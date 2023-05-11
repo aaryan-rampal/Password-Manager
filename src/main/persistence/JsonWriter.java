@@ -1,5 +1,6 @@
 package persistence;
 
+import model.entries.Entry;
 import model.event.Event;
 import model.event.EventLog;
 import model.entries.File;
@@ -31,7 +32,8 @@ public class JsonWriter {
      * @MODIFIES: this
      * @EFFECTS: writes JSON representation of file object to file
      */
-    public void write(File f) {
+    public void write(File f, String masterPassword) {
+        Entry.instantiateKeySet(masterPassword);
         String json = f.toJson();
         saveToFile(json);
         EventLog.getInstance().logEvent(new Event("Saved entries to workroom.json."));

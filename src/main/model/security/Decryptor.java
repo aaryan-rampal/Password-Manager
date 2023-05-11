@@ -2,7 +2,6 @@ package model.security;
 
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
-import java.security.SecureRandom;
 
 public class Decryptor {
     private static Decryptor decryptor;
