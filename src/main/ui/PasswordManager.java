@@ -1,10 +1,7 @@
 package ui;
 
 import me.gosimple.nbvcxz.resources.Generator;
-import model.Entry;
-import model.File;
-import model.Password;
-import model.PasswordGenerator;
+import model.*;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
@@ -85,6 +82,8 @@ public class PasswordManager {
                 return false;
             case EXIT_COMMAND:
                 System.out.println("Thanks for using the password manager!");
+                System.out.println("\nLog:\n");
+                EventLog.printLog();
                 return true;
             case SAVE_COMMAND:
                 saveFile();
