@@ -35,6 +35,7 @@ public class PasswordManager {
     private static final String PASSWORD_COMMAND = "password";
     private static final String SAVE_COMMAND = "save";
     private static final String LOAD_COMMAND = "load";
+    private static final String VIEW_COMMAND = "view";
 
     /**
      * @MODIFIES: this
@@ -61,6 +62,7 @@ public class PasswordManager {
         do {
             System.out.println("Welcome to your password manager\n"
                     + "Enter " + CREATE_COMMAND + " to create a new entry.\n"
+                    + "Enter " + VIEW_COMMAND + " to view an entry.\n"
                     + "Enter " + LIST_COMMAND + " to list all entries.\n"
                     + "Enter " + SAVE_COMMAND + " to save your file.\n"
                     + "Enter " + LOAD_COMMAND + " to load your file.\n"
@@ -95,10 +97,20 @@ public class PasswordManager {
             case LOAD_COMMAND:
                 loadFile();
                 return false;
+            case VIEW_COMMAND:
+                viewEntry();
+                return false;
             default:
                 System.out.println("Sorry, I didn't understand that command. Please try again.");
                 return false;
         }
+    }
+
+    private void viewEntry() {
+        listAllEntries();
+        System.out.println("Which entry number would you like to view?");
+        int index = nextInt() - 1;
+        file.viewEntry(index);
     }
 
     /**
@@ -109,20 +121,14 @@ public class PasswordManager {
         if (file.getSizeOfEntries() == 0) {
             System.out.println("You have no entries.");
         } else {
+            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < file.getSizeOfEntries(); i++) {
-                System.out.println("----------------------------------------------------------------------------");
+                sb.append("----------------------------------------------------------------------------\n");
 
                 Entry e = file.getEntryAtIndex(i);
-                Password p = e.getPassword();
-
-                System.out.println("Entry #" + (i + 1));
-                System.out.println("Name: " + e.getName());
-                System.out.println("Username: " + e.getUsername());
-                System.out.println("Password: " + p.getPassword());
-                System.out.println("Password score: " + p.findScore());
-                System.out.println("URL: " + e.getUrl());
-                System.out.println("Notes: " + e.getNotes());
+                sb.append(e.toString(i));
             }
+            System.out.print(sb.toString());
         }
     }
 

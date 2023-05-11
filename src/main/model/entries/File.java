@@ -90,4 +90,8 @@ public class File {
         return null;
     }
 
+    public void viewEntry(int index) {
+        Entry target = entries.get(index);
+        System.out.println(target.toString());
+    }
 }

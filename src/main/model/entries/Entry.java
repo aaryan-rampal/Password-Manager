@@ -174,4 +174,17 @@ public class Entry {
         result = 31 * result + (getNotes() != null ? getNotes().hashCode() : 0);
         return result;
     }
+
+    public String toString(int i) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Entry #" + (i + 1));
+        sb.append("\nName: " + name);
+        sb.append("\nUsername: " + username);
+        sb.append("\nPassword: " + password.getPassword());
+        sb.append("\nPassword score: " + password.findScore());
+        sb.append("\nURL: " + url);
+        sb.append("\nNotes: " + url);
+        sb.append("\n");
+        return sb.toString();
+    }
 }
