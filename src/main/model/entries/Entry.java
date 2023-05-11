@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import model.security.Decryptor;
 import model.security.Encryptor;
 import model.security.Keyset;
 
@@ -125,12 +126,14 @@ public class Entry {
      * @REQUIRES: name, username, password, url, and notes are not null
      * @EFFECTS: creates a JSONObject and adds the encrypted strings of the fields to it
      */
-    public void toJson(String masterPassword) {
-        encryptor.encrypt(name, keySet, saltBytes);
-        encryptor.encrypt(username, keySet, saltBytes);
-        encryptor.encrypt(password.getPassword(), keySet, saltBytes);
-        encryptor.encrypt(url, keySet, saltBytes);
-
+    public Entry decrypt() throws GeneralSecurityException {
+        Decryptor decryptor = Decryptor.getInstance();
+        String name = decryptor.decrypt(this.name, saltBytes, keySet);
+        String username = decryptor.decrypt(this.username, saltBytes, keySet);
+        String password = decryptor.decrypt(this.password.getPassword(), saltBytes, keySet);
+        String url = decryptor.decrypt(this.url, saltBytes, keySet);
+        String notes = decryptor.decrypt(this.notes, saltBytes, keySet);
+        return new Entry(name, username, new Password(password), url, notes);
     }
 
 
