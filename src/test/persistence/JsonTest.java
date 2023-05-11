@@ -1,6 +1,8 @@
 package persistence;
 
-import model.*;
+import model.entries.Entry;
+import model.entries.Password;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JsonTest {

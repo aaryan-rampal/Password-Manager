@@ -1,9 +1,9 @@
 package ui;
 
-import model.Entry;
-import model.EventLog;
-import model.File;
-import model.Password;
+import model.entries.Entry;
+import model.event.EventLog;
+import model.entries.File;
+import model.entries.Password;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

@@ -1,8 +1,8 @@
 package persistence;
 
-import model.Entry;
-import model.File;
-import model.Password;
+import model.entries.Entry;
+import model.entries.File;
+import model.entries.Password;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

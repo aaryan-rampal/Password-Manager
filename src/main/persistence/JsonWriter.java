@@ -1,9 +1,8 @@
 package persistence;
 
-import model.Event;
-import model.EventLog;
-import org.json.JSONObject;
-import model.File;
+import model.event.Event;
+import model.event.EventLog;
+import model.entries.File;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;

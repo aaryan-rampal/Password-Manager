@@ -1,7 +1,8 @@
-package model;
+package model.entries;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import model.event.EventLog;
 
 import java.util.ArrayList;
 import java.util.List;

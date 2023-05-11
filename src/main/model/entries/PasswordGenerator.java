@@ -1,4 +1,4 @@
-package model;
+package model.entries;
 
 import me.gosimple.nbvcxz.resources.Generator;
 import java.security.SecureRandom;

@@ -1,5 +1,7 @@
 package model;
 
+import model.entries.Entry;
+import model.entries.Password;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

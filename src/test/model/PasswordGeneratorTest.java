@@ -1,8 +1,9 @@
 package model;
 
+import model.entries.PasswordGenerator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static model.PasswordGenerator.CharacterTypes;
+import static model.entries.PasswordGenerator.CharacterTypes;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 import java.util.HashSet;

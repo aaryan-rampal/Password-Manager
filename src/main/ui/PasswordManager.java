@@ -1,7 +1,11 @@
 package ui;
 
 import me.gosimple.nbvcxz.resources.Generator;
-import model.*;
+import model.entries.Entry;
+import model.entries.File;
+import model.entries.Password;
+import model.entries.PasswordGenerator;
+import model.event.EventLog;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
@@ -10,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static model.PasswordGenerator.CharacterTypes;
+import static model.entries.PasswordGenerator.CharacterTypes;
 
 // Represents the password manager application with the file currently open
 public class PasswordManager {

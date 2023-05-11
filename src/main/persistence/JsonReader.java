@@ -2,10 +2,10 @@ package persistence;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import model.Entry;
-import model.Event;
-import model.EventLog;
-import model.File;
+import model.entries.Entry;
+import model.event.Event;
+import model.event.EventLog;
+import model.entries.File;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
