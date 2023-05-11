@@ -151,7 +151,7 @@ public class GUI extends JFrame implements ActionListener {
      * @EFFECTS: prints the event log to the console before exiting
      */
     private void printLog() {
-        passwordManager.getFile().printLog(EventLog.getInstance());
+        EventLog.printLog();
         System.exit(0);
     }
 

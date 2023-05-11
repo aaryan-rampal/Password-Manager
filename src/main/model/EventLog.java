@@ -61,4 +61,12 @@ public class EventLog implements Iterable<Event> {
     public Iterator<Event> iterator() {
         return events.iterator();
     }
+
+    public static void printLog() {
+        EventLog el = EventLog.getInstance();
+
+        for (Event next : el) {
+            System.out.println(next.toString());
+        }
+    }
 }
