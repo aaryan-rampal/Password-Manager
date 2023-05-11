@@ -10,6 +10,7 @@ import java.util.List;
 public class File {
 
     private List<Entry> entries;
+    private EventLog eventLog = EventLog.getInstance();
 
     /**
      * @EFFECTS: creates a new file with no entries
@@ -26,6 +27,11 @@ public class File {
         this.entries = entries;
     }
 
+    /**
+     * @REQUIRES: entries is not null
+     * @MODIFIES: entries
+     * @EFFECTS: setter for entries
+     */
     public void setEntries(List<Entry> entries) {
         this.entries = entries;
     }
@@ -36,15 +42,13 @@ public class File {
      */
     public void addEntry(Entry entry) {
         entries.add(entry);
-        EventLog.getInstance().logEvent(new Event("Added entry #" + entries.size() + " with name "
-                + entry.getName() + "."));
+        eventLog.addEntry(entries.size(), entry.getName());
     }
 
     public void removeEntry(int index) {
         String nameOfEntry = entries.get(index).getName();
         entries.remove(index);
-        EventLog.getInstance().logEvent(new Event("Removed entry #" + ++index
-                + " with name " + nameOfEntry + "."));
+        eventLog.removeEntry(++index, nameOfEntry);
     }
 
     /**

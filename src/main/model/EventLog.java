@@ -72,4 +72,15 @@ public class EventLog implements Iterable<Event> {
             System.out.println(next.toString());
         }
     }
+
+    public void addEntry(int size, String name) {
+        EventLog.getInstance().logEvent(new Event("Added entry #" + size + " with name " + name + "."));
+    }
+
+    public void removeEntry(int index, String name) {
+        EventLog.getInstance().logEvent(new Event("Removed entry #" + ++index +
+                " with name " + name + "."));
+    }
+
+
 }

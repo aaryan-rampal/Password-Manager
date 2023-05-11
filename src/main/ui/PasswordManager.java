@@ -82,7 +82,7 @@ public class PasswordManager {
                 return false;
             case EXIT_COMMAND:
                 System.out.println("Thanks for using the password manager!");
-                System.out.println("\nLog:\n");
+                System.out.println("\nLog:");
                 EventLog.printLog();
                 return true;
             case SAVE_COMMAND:
