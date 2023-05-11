@@ -19,6 +19,10 @@ public class File {
         entries = new ArrayList<>();
     }
 
+    public List<Entry> getEntries() {
+        return entries;
+    }
+
     /**
      * @REQUIRES: entries is not null
      * @EFFECTS: creates a new file with existing entries
@@ -45,10 +49,15 @@ public class File {
         eventLog.addEntry(entries.size(), entry.getName());
     }
 
-    public void removeEntry(int index) {
-        String nameOfEntry = entries.get(index).getName();
-        entries.remove(index);
-        eventLog.removeEntry(++index, nameOfEntry);
+    /**
+     * @REQUIRES: i exists in entries and is not null
+     * @MODIFIES: entries
+     * @EFFECTS: removes entry with index i
+     */
+    public void removeEntry(int i) {
+        String nameOfEntry = entries.get(i).getName();
+        entries.remove(i);
+        eventLog.removeEntry(++i, nameOfEntry);
     }
 
     /**
@@ -66,12 +75,8 @@ public class File {
         return entries.get(i);
     }
 
-    public List<Entry> getEntries() {
-        return entries;
-    }
-
     /**
-     * @EFFECTS: returns contents of entries arraylist to JSONObject
+     * @EFFECTS: returns contents of entries arraylist into parse-able JSON data
      */
     public String toJson() {
         ObjectMapper mapper = new ObjectMapper();
