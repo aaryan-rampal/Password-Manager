@@ -15,7 +15,19 @@ public class Entry {
     private Password password;
     private String url;
     private String notes;
-    private byte[] salt = Encryptor.getInstance().createSalt();
+    private byte[] saltBytes;
+    private Encryptor encryptor;
+    Keyset keySet;
+
+    private void setUpEncryptionFields() {
+        saltBytes = Encryptor.getInstance().createSalt();
+        encryptor = Encryptor.getInstance();
+        try {
+            keySet = new Keyset(masterPassword, algorithm);
+        } catch (GeneralSecurityException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     /**
      * @REQUIRES: name, username, url, and notes have non-zero length; password is not null
@@ -28,6 +40,7 @@ public class Entry {
         this.password = password;
         this.url = url;
         this.notes = notes;
+        setUpEncryptionFields();
     }
 
     @JsonCreator
@@ -79,24 +92,21 @@ public class Entry {
         return notes;
     }
 
+    public String getEncryptedNotes() {
+
+    }
+
     /**
      * @REQUIRES: name, username, password, url, and notes are not null
      * @EFFECTS: creates a JSONObject and adds the encrypted strings of the fields to it
      */
     public void toJson(String masterPassword) {
-        Encryptor encryptor = Encryptor.getInstance();
-        String algorithm = "SHA-256";
-        try {
-            byte[] saltBytes = encryptor.createSalt();
-            Keyset keySet = new Keyset(masterPassword, algorithm);
-            encryptor.encrypt(name, keySet, saltBytes);
-            encryptor.encrypt(username, keySet, saltBytes);
-            encryptor.encrypt(password.getPassword(), keySet, saltBytes);
-            encryptor.encrypt(url, keySet, saltBytes);
-            encryptor.encrypt(notes, keySet, saltBytes);
+        encryptor.encrypt(name, keySet, saltBytes);
+        encryptor.encrypt(username, keySet, saltBytes);
+        encryptor.encrypt(password.getPassword(), keySet, saltBytes);
+        encryptor.encrypt(url, keySet, saltBytes);
+        encryptor.encrypt(notes, keySet, saltBytes);
 
-        } catch (GeneralSecurityException e) {
-        }
     }
 
 
