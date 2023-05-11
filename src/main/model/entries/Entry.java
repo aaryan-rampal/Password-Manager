@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import me.gosimple.nbvcxz.matching.match.Match;
 import me.gosimple.nbvcxz.scoring.Result;
 import model.security.Decryptor;
 import model.security.Encryptor;
@@ -88,7 +87,7 @@ public class Entry {
      */
     @JsonIgnore
     public String getPasswordText() {
-        return password.getPassword();
+        return password.getPasswordText();
     }
 
     public String getUrl() {
@@ -120,7 +119,7 @@ public class Entry {
 
     @JsonGetter("password")
     public String getEncryptedPassword() {
-        return encryptor.encrypt(password.getPassword(), keySet, saltBytes);
+        return encryptor.encrypt(password.getPasswordText(), keySet, saltBytes);
     }
 
     @JsonGetter("username")
@@ -134,7 +133,7 @@ public class Entry {
     public Entry decrypt() throws GeneralSecurityException {
         String name = decryptor.decrypt(this.name, saltBytes, keySet);
         String username = decryptor.decrypt(this.username, saltBytes, keySet);
-        String password = decryptor.decrypt(this.password.getPassword(), saltBytes, keySet);
+        String password = decryptor.decrypt(this.password.getPasswordText(), saltBytes, keySet);
         String url = decryptor.decrypt(this.url, saltBytes, keySet);
         String notes = decryptor.decrypt(this.notes, saltBytes, keySet);
         return new Entry(name, username, new Password(password), url, notes);
@@ -183,7 +182,7 @@ public class Entry {
         sb.append("Entry #" + (i + 1));
         sb.append("\nName: " + name);
         sb.append("\nUsername: " + username);
-        sb.append("\nPassword: " + password.getPassword());
+        sb.append("\nPassword: " + password.getPasswordText());
         sb.append("\nPassword rating: " + parseScore());
         sb.append("\nURL: " + url);
         sb.append("\nNotes: " + url);

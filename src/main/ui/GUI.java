@@ -642,7 +642,7 @@ public class GUI extends JFrame implements ActionListener {
     private void fillTableWithEntries(DefaultTableModel tableModel, List<Entry> entries) {
         for (int i = 0; i < entries.size(); i++) {
             Entry e = entries.get(i);
-            String[] entryData = new String[]{e.getName(), e.getUsername(), e.getPassword().getPassword(), e.getUrl(),
+            String[] entryData = new String[]{e.getName(), e.getUsername(), e.getPassword().getPasswordText(), e.getUrl(),
                     e.getNotes()};
             tableModel.addRow(entryData);
         }

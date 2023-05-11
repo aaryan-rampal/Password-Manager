@@ -15,7 +15,7 @@ public class PasswordTest {
 
     @Test
     void testConstructor() {
-        assertEquals(password.getPassword(), "password");
+        assertEquals(password.getPasswordText(), "password");
     }
 
     @Test
