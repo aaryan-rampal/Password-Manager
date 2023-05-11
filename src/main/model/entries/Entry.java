@@ -4,11 +4,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import me.gosimple.nbvcxz.scoring.Result;
 import model.security.Decryptor;
 import model.security.Encryptor;
 import model.security.Keyset;
 
 import java.security.GeneralSecurityException;
+import java.util.List;
 
 // Represents an entry in the password manager including a name, username, password, url, and notes
 public class Entry {
@@ -186,6 +188,31 @@ public class Entry {
         sb.append("\nNotes: " + url);
         sb.append("\n");
         return sb.toString();
+    }
+
+    public StringBuilder detailedView() {
+        StringBuilder sb = new StringBuilder();
+        List<String> suggestions = password.getFeedback().getSuggestion();
+
+        sb.append("Suggestions: ");
+        if (suggestions.size() == 0) sb.append("None. Strong password!");
+        else {
+            for (int i = 0; i < suggestions.size(); i++) {
+                String s = suggestions.get(i);
+                if (i == suggestions.size() - 1) sb.append(s);
+                else sb.append(s + ", ");
+            }
+        }
+
+        String warning = password.getFeedback().getWarning();
+        sb.append("\nWarning: " + ((warning== null) ? "None. Strong password!" : warning));
+
+        Result result = password.getResult();
+        sb.append("\nPassword entropy (higher the better): " + result.getEntropy());
+        sb.append("\nNumber of guesses to crack: " + result.getGuesses());
+
+
+        return sb;
     }
 
 }

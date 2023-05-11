@@ -92,6 +92,9 @@ public class File {
 
     public String viewEntry(int index) throws IndexOutOfBoundsException {
         Entry target = entries.get(index);
-        return target.toString(index);
+        StringBuilder sb = new StringBuilder();
+        sb.append(target.toString(index));
+        sb.append(target.detailedView().toString());
+        return sb.toString();
     }
 }

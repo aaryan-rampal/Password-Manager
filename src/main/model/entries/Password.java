@@ -11,6 +11,10 @@ public class Password {
     private Result result;
     private Feedback feedback;
 
+    public Result getResult() {
+        return result;
+    }
+
     /**
      * @REQUIRES: password is not null and not an empty string
      * @EFFECTS: creates password object and sets password field to the parameter it was passed; creates a temporary
@@ -36,4 +40,7 @@ public class Password {
         return password;
     }
 
+    public Feedback getFeedback() {
+        return feedback;
+    }
 }
