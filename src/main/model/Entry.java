@@ -26,7 +26,10 @@ public class Entry {
     }
 
     @JsonCreator
-    // custom constructor for Entry when reading from json file
+    /**
+     * @REQUIRES: name, username, url, notes, and passowrd have non-zero length
+     * @EFFECTS: custom constructor for Entry when reading from json file
+     */
     public Entry(@JsonProperty("name") String name,
                  @JsonProperty("username") String username,
                  @JsonProperty("password") String password,
