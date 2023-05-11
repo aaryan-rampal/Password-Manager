@@ -4,10 +4,12 @@ import me.gosimple.nbvcxz.Nbvcxz;
 import me.gosimple.nbvcxz.resources.Feedback;
 import me.gosimple.nbvcxz.scoring.Result;
 
+import java.math.BigDecimal;
+
 // Represents a password with the plaintext string password, Result field and Feedback field. The latter two are
 // provided by Nbvcxz and are used to calculate password strength and potential feedback on bad passwords.
 public class Password {
-    private String password;
+    private String passwordText;
     private Result result;
     private Feedback feedback;
 
@@ -20,11 +22,11 @@ public class Password {
      * @EFFECTS: creates password object and sets password field to the parameter it was passed; creates a temporary
      * Nbvcxz to instantiate the result and feedback fields based off the parameter
      */
-    public Password(String password) {
+    public Password(String passwordText) {
         Nbvcxz nbvcxz = new Nbvcxz();
 
-        this.password = password;
-        result = nbvcxz.estimate(password);
+        this.passwordText = passwordText;
+        result = nbvcxz.estimate(passwordText);
         feedback = result.getFeedback();
     }
 
@@ -33,11 +35,25 @@ public class Password {
      * @EFFECTS: returns the score (between 1 and 4) of the password calculated by the nbvcxz library
      */
     public int findScore() {
+//        return getBasicScore();
         return result.getBasicScore();
     }
 
-    public String getPassword() {
-        return password;
+    private int getBasicScore() {
+        double entropy = result.getEntropy();
+        if (entropy <= 10) {
+            return 0;
+        } else if (entropy <= 32) {
+            return 1;
+        } else if (entropy <= 64) {
+            return 2;
+        } else {
+            return entropy <= 70 ? 3 : 4;
+        }
+    }
+
+    public String getPasswordText() {
+        return passwordText;
     }
 
     public Feedback getFeedback() {
