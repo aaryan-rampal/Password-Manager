@@ -107,10 +107,15 @@ public class PasswordManager {
     }
 
     private void viewEntry() {
-        listAllEntries();
+//        listAllEntries();
         System.out.println("Which entry number would you like to view?");
         int index = nextInt() - 1;
-        file.viewEntry(index);
+        try {
+            String output = file.viewEntry(index);
+            System.out.println(output);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Item #" + ++index + " does not exist.");
+        }
     }
 
     /**

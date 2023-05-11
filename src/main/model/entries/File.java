@@ -90,8 +90,8 @@ public class File {
         return null;
     }
 
-    public void viewEntry(int index) {
+    public String viewEntry(int index) throws IndexOutOfBoundsException {
         Entry target = entries.get(index);
-        System.out.println(target.toString());
+        return target.toString(index);
     }
 }
