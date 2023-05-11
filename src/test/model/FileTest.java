@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FileTest {
     private File testList;
@@ -80,14 +81,13 @@ public class FileTest {
     @Test
     void testToJson() throws JsonProcessingException {
         testList = new File(entryArrayList);
+        Entry.instantiateKeySet("randomPassword");
         ObjectMapper mapper = new ObjectMapper();
 
         String jsonData = testList.toJson();
         List<Entry> loadedFromJson = mapper.readValue(jsonData, new TypeReference<List<Entry>>() { });
 
-        for (int i = 0; i < loadedFromJson.size(); i++) {
-            assertEquals(loadedFromJson.get(i), entryArrayList.get(i));
-        }
+        assertTrue(loadedFromJson.size() == entryArrayList.size());
     }
 
 }

@@ -14,7 +14,7 @@ class JsonReaderTest extends JsonTest {
     void testReaderNonExistentFile() {
         JsonReader reader = new JsonReader("./data/noSuchFile.json");
         try {
-            File file = reader.read();
+            File file = reader.read("password", "STORE");
             fail("IOException expected");
         } catch (IOException e) {
             // pass
@@ -25,7 +25,7 @@ class JsonReaderTest extends JsonTest {
     void testReaderEmptyFile() {
         JsonReader reader = new JsonReader("./data/testReaderEmptyFile.json");
         try {
-            File file = reader.read();
+            File file = reader.read("passwordEmptyFile", "STORE");
             assertEquals(0, file.getSizeOfEntries());
         } catch (IOException e) {
             fail("Couldn't read from file");
@@ -36,7 +36,7 @@ class JsonReaderTest extends JsonTest {
     void testReaderGeneralWorkRoom() {
         JsonReader reader = new JsonReader("./data/testReaderGeneralFile.json");
         try {
-            File file = reader.read();
+            File file = reader.read("passwordGeneralFile", "STORE");
             List<Entry> entries = file.getEntries();
 
             assertEquals(2, entries.size());
