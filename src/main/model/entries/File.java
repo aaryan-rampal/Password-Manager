@@ -82,7 +82,8 @@ public class File {
     public String toJson() {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            return mapper.writeValueAsString(entries);
+//            return mapper.writeValueAsString(entries);
+            return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(entries);
         } catch (JsonProcessingException e) {
             System.out.println("Error in saving entries. Entries were not saved.");
         }
