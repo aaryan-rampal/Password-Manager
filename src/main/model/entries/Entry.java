@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import me.gosimple.nbvcxz.matching.match.Match;
 import me.gosimple.nbvcxz.scoring.Result;
 import model.security.Decryptor;
 import model.security.Encryptor;
@@ -183,11 +184,19 @@ public class Entry {
         sb.append("\nName: " + name);
         sb.append("\nUsername: " + username);
         sb.append("\nPassword: " + password.getPassword());
-        sb.append("\nPassword score: " + password.findScore());
+        sb.append("\nPassword rating: " + parseScore());
         sb.append("\nURL: " + url);
         sb.append("\nNotes: " + url);
         sb.append("\n");
         return sb.toString();
+    }
+
+    private String parseScore() {
+        String stars = "";
+        for (int i = 0; i < password.findScore()+1; i++) {
+            stars += "*";
+        }
+        return stars;
     }
 
     public StringBuilder detailedView() {
@@ -208,9 +217,8 @@ public class Entry {
         sb.append("\nWarning: " + ((warning== null) ? "None. Strong password!" : warning));
 
         Result result = password.getResult();
-        sb.append("\nPassword entropy (higher the better): " + result.getEntropy());
+        sb.append("\nPassword entropy (higher the better): " + result.getEntropy().shortValue());
         sb.append("\nNumber of guesses to crack: " + result.getGuesses());
-
 
         return sb;
     }
