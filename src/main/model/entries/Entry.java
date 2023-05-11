@@ -89,6 +89,10 @@ public class Entry {
         return notes;
     }
 
+    public byte[] getSaltBytes() {
+        return saltBytes;
+    }
+
     @JsonGetter("notes")
     public String getEncryptedNotes() {
         return encryptor.encrypt(notes, keySet, saltBytes);

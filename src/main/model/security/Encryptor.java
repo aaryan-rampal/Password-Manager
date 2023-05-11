@@ -1,7 +1,5 @@
 package model.security;
 
-import com.google.crypto.tink.Aead;
-
 import java.security.SecureRandom;
 
 public class Encryptor {
