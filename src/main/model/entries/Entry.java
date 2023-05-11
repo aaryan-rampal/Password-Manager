@@ -18,12 +18,14 @@ public class Entry {
     private String url;
     private String notes;
     private byte[] saltBytes;
-    private Encryptor encryptor;
+    private static Encryptor encryptor = Encryptor.getInstance();
+    private static Decryptor decryptor = Decryptor.getInstance();
     private static Keyset keySet;
     private static final String ALGORITHM = "SHA-256";
 
     private void setUpEncryptionFields() {
-        encryptor = Encryptor.getInstance();
+//        encryptor = Encryptor.getInstance();
+//        decryptor = Decryptor.getInstance();
         saltBytes = encryptor.createSalt();
     }
 
@@ -127,7 +129,6 @@ public class Entry {
      * @EFFECTS: creates a JSONObject and adds the encrypted strings of the fields to it
      */
     public Entry decrypt() throws GeneralSecurityException {
-        Decryptor decryptor = Decryptor.getInstance();
         String name = decryptor.decrypt(this.name, saltBytes, keySet);
         String username = decryptor.decrypt(this.username, saltBytes, keySet);
         String password = decryptor.decrypt(this.password.getPassword(), saltBytes, keySet);
