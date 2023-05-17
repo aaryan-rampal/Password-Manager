@@ -1,9 +1,5 @@
 package model.event;
 
-import model.security.Encryptor;
-import model.security.Keyset;
-
-import java.security.GeneralSecurityException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -46,6 +42,11 @@ public class Event {
     }
 
     @Override
+    public int hashCode() {
+        return (HASH_CONSTANT * dateLogged.hashCode() + description.hashCode());
+    }
+
+    @Override
     public boolean equals(Object other) {
         if (other == null) {
             return false;
@@ -59,11 +60,6 @@ public class Event {
 
         return (this.dateLogged.equals(otherEvent.dateLogged)
                 && this.description.equals(otherEvent.description));
-    }
-
-    @Override
-    public int hashCode() {
-        return (HASH_CONSTANT * dateLogged.hashCode() + description.hashCode());
     }
 
     @Override

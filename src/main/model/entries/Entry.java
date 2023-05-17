@@ -14,43 +14,36 @@ import java.util.List;
 
 // Represents an entry in the password manager including a name, username, password, url, and notes
 public class Entry {
+    private static final String ALGORITHM = "SHA-256";
+    private static Encryptor encryptor = Encryptor.getInstance();
+    private static Decryptor decryptor = Decryptor.getInstance();
+    private static Keyset keySet;
     private String name;
     private String username;
     private Password password;
     private String url;
     private String notes;
     private byte[] saltBytes;
-    private static Encryptor encryptor = Encryptor.getInstance();
-    private static Decryptor decryptor = Decryptor.getInstance();
-    private static Keyset keySet;
-    private static final String ALGORITHM = "SHA-256";
-
-    private void setUpEncryptionFields() {
-//        encryptor = Encryptor.getInstance();
-//        decryptor = Decryptor.getInstance();
-        saltBytes = encryptor.createSalt();
-    }
-
-    public static void instantiateKeySet(String masterPassword) {
-        try {
-            keySet = new Keyset(masterPassword, ALGORITHM);
-        } catch (GeneralSecurityException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     /**
      * @REQUIRES: name, username, url, and notes have non-zero length; password is not null
      * @EFFECTS: creates entry object which instantiates all the fields with the parameters that are passed into the
      * constructor
      */
-    public Entry(String name, String username, Password password, String url, String notes) {
+    public Entry(String name, String username, Password password, String url,
+                 String notes) {
         this.name = name;
         this.username = username;
         this.password = password;
         this.url = url;
         this.notes = notes;
         setUpEncryptionFields();
+    }
+
+    private void setUpEncryptionFields() {
+//        encryptor = Encryptor.getInstance();
+//        decryptor = Decryptor.getInstance();
+        saltBytes = encryptor.createSalt();
     }
 
     @JsonCreator
@@ -70,32 +63,12 @@ public class Entry {
         this.notes = notes;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public Password getPassword() {
-        return password;
-    }
-
-    /**
-     * @EFFECTS: custom getter for Jackson using the password text instead of the password object
-     */
-    @JsonIgnore
-    public String getPasswordText() {
-        return password.getPasswordText();
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public String getNotes() {
-        return notes;
+    public static void instantiateKeySet(String masterPassword) {
+        try {
+            keySet = new Keyset(masterPassword, ALGORITHM);
+        } catch (GeneralSecurityException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public byte[] getSaltBytes() {
@@ -134,12 +107,29 @@ public class Entry {
     public Entry decrypt() throws GeneralSecurityException {
         String name = decryptor.decrypt(this.name, saltBytes, keySet);
         String username = decryptor.decrypt(this.username, saltBytes, keySet);
-        String password = decryptor.decrypt(this.password.getPasswordText(), saltBytes, keySet);
+        String password =
+                decryptor.decrypt(this.password.getPasswordText(), saltBytes,
+                        keySet);
         String url = decryptor.decrypt(this.url, saltBytes, keySet);
         String notes = decryptor.decrypt(this.notes, saltBytes, keySet);
         return new Entry(name, username, new Password(password), url, notes);
     }
 
+    @Override
+    public int hashCode() {
+        int result = getName() != null ? getName().hashCode() : 0;
+        result = 31 * result +
+                (getUsername() != null ? getUsername().hashCode() : 0);
+        result = 31 * result +
+                (getPassword() != null ? getPassword().hashCode() : 0);
+        result = 31 * result + (getUrl() != null ? getUrl().hashCode() : 0);
+        result = 31 * result + (getNotes() != null ? getNotes().hashCode() : 0);
+        return result;
+    }
+
+    public Password getPassword() {
+        return password;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -152,30 +142,49 @@ public class Entry {
 
         Entry entry = (Entry) o;
 
-        if (getName() != null ? !getName().equals(entry.getName()) : entry.getName() != null) {
+        if (getName() != null ? !getName().equals(entry.getName()) :
+                entry.getName() != null) {
             return false;
         }
-        if (getUsername() != null ? !getUsername().equals(entry.getUsername()) : entry.getUsername() != null) {
+        if (getUsername() != null ? !getUsername().equals(entry.getUsername()) :
+                entry.getUsername() != null) {
             return false;
         }
-        if (getPasswordText() != null ? !getPasswordText().equals(entry.getPasswordText())
+        if (getPasswordText() != null ?
+                !getPasswordText().equals(entry.getPasswordText())
                 : entry.getPasswordText() != null) {
             return false;
         }
-        if (getUrl() != null ? !getUrl().equals(entry.getUrl()) : entry.getUrl() != null) {
+        if (getUrl() != null ? !getUrl().equals(entry.getUrl()) :
+                entry.getUrl() != null) {
             return false;
         }
-        return getNotes() != null ? getNotes().equals(entry.getNotes()) : entry.getNotes() == null;
+        return getNotes() != null ? getNotes().equals(entry.getNotes()) :
+                entry.getNotes() == null;
     }
 
-    @Override
-    public int hashCode() {
-        int result = getName() != null ? getName().hashCode() : 0;
-        result = 31 * result + (getUsername() != null ? getUsername().hashCode() : 0);
-        result = 31 * result + (getPassword() != null ? getPassword().hashCode() : 0);
-        result = 31 * result + (getUrl() != null ? getUrl().hashCode() : 0);
-        result = 31 * result + (getNotes() != null ? getNotes().hashCode() : 0);
-        return result;
+    public String getName() {
+        return name;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * @EFFECTS: custom getter for Jackson using the password text instead of the password object
+     */
+    @JsonIgnore
+    public String getPasswordText() {
+        return password.getPasswordText();
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getNotes() {
+        return notes;
     }
 
     public String toString(int i) {
@@ -220,10 +229,12 @@ public class Entry {
         }
 
         String warning = password.getFeedback().getWarning();
-        sb.append("\nWarning: " + ((warning == null) ? "None. Strong password!" : warning));
+        sb.append("\nWarning: " +
+                ((warning == null) ? "None. Strong password!" : warning));
 
         Result result = password.getResult();
-        sb.append("\nPassword entropy (higher the better): " + result.getEntropy().shortValue());
+        sb.append("\nPassword entropy (higher the better): " +
+                result.getEntropy().shortValue());
         sb.append("\nNumber of guesses to crack: " + result.getGuesses());
 
         return sb;

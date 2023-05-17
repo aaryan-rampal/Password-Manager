@@ -13,11 +13,7 @@ public enum Input {
     VIEW,
     DEFAULT;
 
-    Input() { }
-
-    @Override
-    public String toString() {
-        return super.toString().toLowerCase();
+    Input() {
     }
 
     /**
@@ -31,6 +27,11 @@ public enum Input {
             i = DEFAULT;
         }
         return i;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString().toLowerCase();
     }
 
 }

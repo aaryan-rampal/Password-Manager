@@ -14,7 +14,16 @@ import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static ui.Input.*;
+import static ui.Input.CREATE;
+import static ui.Input.CUSTOM;
+import static ui.Input.EXIT;
+import static ui.Input.LIST;
+import static ui.Input.LOAD;
+import static ui.Input.PASSPHRASE;
+import static ui.Input.PASSWORD;
+import static ui.Input.RANDOM;
+import static ui.Input.SAVE;
+import static ui.Input.VIEW;
 
 // Represents the password manager application with the file currently open
 public class PasswordManager {
@@ -86,7 +95,8 @@ public class PasswordManager {
                 viewEntry();
                 break;
             default:
-                System.out.println("Sorry, I didn't understand that command. Please try again.");
+                System.out.println(
+                        "Sorry, I didn't understand that command. Please try again.");
                 break;
         }
         return false;
@@ -113,7 +123,8 @@ public class PasswordManager {
         } else {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < file.getSizeOfEntries(); i++) {
-                sb.append("----------------------------------------------------------------------------\n");
+                sb.append(
+                        "----------------------------------------------------------------------------\n");
 
                 Entry e = file.getEntryAtIndex(i);
                 sb.append(e.toString(i));
@@ -155,8 +166,10 @@ public class PasswordManager {
 
         Input i;
         do {
-            System.out.println("Enter " + CUSTOM + " to create a custom password.\n"
-                    + "Enter " + RANDOM + " to generate a random password.");
+            System.out.println(
+                    "Enter " + CUSTOM + " to create a custom password.\n"
+                            + "Enter " + RANDOM +
+                            " to generate a random password.");
             input = scan.nextLine();
 
             i = Input.findCorrespondingEnum(input);
@@ -171,7 +184,8 @@ public class PasswordManager {
                     password = generateRandomPassword();
                     break;
                 default:
-                    System.out.println("Sorry, I didn't understand that command. Please try again.");
+                    System.out.println(
+                            "Sorry, I didn't understand that command. Please try again.");
                     break;
             }
         } while (i != CUSTOM && i != RANDOM);
@@ -190,8 +204,9 @@ public class PasswordManager {
      * @EFFECTS: creates random password or passphrase depending on user input and returns the password object
      */
     private Password generateRandomPassword() {
-        System.out.println("Enter " + PASSPHRASE + " to generate a passphrase.\n"
-                + "Enter " + PASSWORD + " to generate a password.");
+        System.out.println(
+                "Enter " + PASSPHRASE + " to generate a passphrase.\n"
+                        + "Enter " + PASSWORD + " to generate a password.");
         String input = scan.nextLine();
         String passwordText = null;
 
@@ -201,13 +216,17 @@ public class PasswordManager {
             ArrayList<Boolean> characterTypesBoolean = promptAndStoreInput();
             System.out.println("How many characters do you want?");
             int length = nextInt();
-            passwordText = passwordGenerator.generatePassword(characterTypesBoolean, length);
+            passwordText =
+                    passwordGenerator.generatePassword(characterTypesBoolean,
+                            length);
         } else if (i == PASSPHRASE) {
-            System.out.println("How many words do you want your passphrase to be?");
+            System.out.println(
+                    "How many words do you want your passphrase to be?");
             int words = nextInt();
             passwordText = passwordGenerator.generatePassphrase("-", words);
         } else {
-            System.out.println("Sorry, I didn't understand that. Please try again.");
+            System.out.println(
+                    "Sorry, I didn't understand that. Please try again.");
             return generateRandomPassword();
         }
 
@@ -270,7 +289,8 @@ public class PasswordManager {
             case "no":
                 return false;
             default:
-                System.out.println("Sorry, I didn't understand that. Please enter yes or no.");
+                System.out.println(
+                        "Sorry, I didn't understand that. Please enter yes or no.");
                 convertInputToBoolean();
         }
         return false;

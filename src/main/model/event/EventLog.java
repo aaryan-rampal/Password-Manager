@@ -26,6 +26,17 @@ public class EventLog implements Iterable<Event> {
     }
 
     /**
+     * Prints each event in the event log.
+     */
+    public static void printLog() {
+        EventLog el = EventLog.getInstance();
+
+        for (Event next : el) {
+            System.out.println(next.toString());
+        }
+    }
+
+    /**
      * Gets instance of EventLog - creates it
      * if it doesn't already exist.
      * (Singleton Design Pattern)
@@ -41,6 +52,14 @@ public class EventLog implements Iterable<Event> {
     }
 
     /**
+     * Clears the event log and logs the event.
+     */
+    public void clear() {
+        events.clear();
+        logEvent(new Event("Event log cleared."));
+    }
+
+    /**
      * Adds an event to the event log.
      *
      * @param e the event to be added
@@ -49,32 +68,14 @@ public class EventLog implements Iterable<Event> {
         events.add(e);
     }
 
-    /**
-     * Clears the event log and logs the event.
-     */
-    public void clear() {
-        events.clear();
-        logEvent(new Event("Event log cleared."));
-    }
-
     @Override
     public Iterator<Event> iterator() {
         return events.iterator();
     }
 
-    /**
-     * Prints each event in the event log.
-     */
-    public static void printLog() {
-        EventLog el = EventLog.getInstance();
-
-        for (Event next : el) {
-            System.out.println(next.toString());
-        }
-    }
-
     public void addEntry(int size, String name) {
-        EventLog.getInstance().logEvent(new Event("Added entry #" + size + " with name " + name + "."));
+        EventLog.getInstance().logEvent(
+                new Event("Added entry #" + size + " with name " + name + "."));
     }
 
     public void removeEntry(int index, String name) {

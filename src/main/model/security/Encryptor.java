@@ -5,7 +5,8 @@ import java.security.SecureRandom;
 public class Encryptor {
     private static Encryptor encryptor;
 
-    private Encryptor() {}
+    private Encryptor() {
+    }
 
     public static Encryptor getInstance() {
         if (encryptor == null) {

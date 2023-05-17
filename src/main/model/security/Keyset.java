@@ -3,11 +3,9 @@ package model.security;
 import com.google.crypto.tink.aead.AeadConfig;
 import com.google.crypto.tink.subtle.AesGcmJce;
 
-import javax.crypto.AEADBadTagException;
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 // Represents a custom Keyset object to use with the Tink library that is connected to a string (essentially the master
 // password of the file)
@@ -20,7 +18,8 @@ public class Keyset {
      * @REQUIRES: password and algorithm are not null, algorithm is a valid algorithm that MessageDigest recognizes
      * @EFFECTS: creates a keyset that is linked to the password given
      */
-    public Keyset(String password, String algorithm) throws GeneralSecurityException {
+    public Keyset(String password, String algorithm)
+            throws GeneralSecurityException {
         bc = new ByteConvertor();
         AeadConfig.register();
         MessageDigest messageDigest = MessageDigest.getInstance(algorithm);
@@ -45,7 +44,8 @@ public class Keyset {
      */
     public byte[] encrypt(String plainText, byte[] saltBytes) {
         try {
-            return aead.encrypt(plainText.getBytes(StandardCharsets.UTF_8), saltBytes);
+            return aead.encrypt(plainText.getBytes(StandardCharsets.UTF_8),
+                    saltBytes);
         } catch (Exception e) {
             return null;
         }
@@ -55,7 +55,8 @@ public class Keyset {
      * @REQUIRES: cipherBytes and saltBytes are not null
      * @EFFECTS: decrypts the encrypted byte array into a plain text string
      */
-    public byte[] decrypt(byte[] cipherBytes, byte[] saltBytes) throws GeneralSecurityException {
+    public byte[] decrypt(byte[] cipherBytes, byte[] saltBytes)
+            throws GeneralSecurityException {
         return aead.decrypt(cipherBytes, saltBytes);
     }
 

@@ -11,10 +11,6 @@ public class Password {
     private Result result;
     private Feedback feedback;
 
-    public Result getResult() {
-        return result;
-    }
-
     /**
      * @REQUIRES: password is not null and not an empty string
      * @EFFECTS: creates password object and sets password field to the parameter it was passed; creates a temporary
@@ -26,6 +22,10 @@ public class Password {
         this.passwordText = passwordText;
         result = nbvcxz.estimate(passwordText);
         feedback = result.getFeedback();
+    }
+
+    public Result getResult() {
+        return result;
     }
 
     /**

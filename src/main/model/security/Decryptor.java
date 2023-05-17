@@ -6,7 +6,8 @@ import java.security.GeneralSecurityException;
 public class Decryptor {
     private static Decryptor decryptor;
 
-    private Decryptor() {}
+    private Decryptor() {
+    }
 
     public static Decryptor getInstance() {
         if (decryptor == null) {
@@ -20,7 +21,8 @@ public class Decryptor {
      * @REQUIRES: field, salt, and keyset are not null
      * @EFFECTS: decrypts the field using keyset and returns the decrypted string
      */
-    public String decrypt(String field, byte[] salt, Keyset keyset) throws GeneralSecurityException,
+    public String decrypt(String field, byte[] salt, Keyset keyset)
+            throws GeneralSecurityException,
             GeneralSecurityException {
         byte[] cipherBytes = ByteConvertor.stringToBytes(field);
         byte[] decryptedBytes = keyset.decrypt(cipherBytes, salt);

@@ -1,9 +1,9 @@
 package persistence;
 
 import model.entries.Entry;
+import model.entries.File;
 import model.event.Event;
 import model.event.EventLog;
-import model.entries.File;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -36,15 +36,8 @@ public class JsonWriter {
         Entry.instantiateKeySet(masterPassword);
         String json = f.toJson();
         saveToFile(json);
-        EventLog.getInstance().logEvent(new Event("Saved entries to workroom.json."));
-    }
-
-    /**
-     * @MODIFIES: this
-     * @EFFECTS: closes writer
-     */
-    public void close() {
-        writer.close();
+        EventLog.getInstance()
+                .logEvent(new Event("Saved entries to workroom.json."));
     }
 
     /**
@@ -53,5 +46,13 @@ public class JsonWriter {
      */
     private void saveToFile(String json) {
         writer.print(json);
+    }
+
+    /**
+     * @MODIFIES: this
+     * @EFFECTS: closes writer
+     */
+    public void close() {
+        writer.close();
     }
 }

@@ -20,16 +20,16 @@ public class File {
         entries = new ArrayList<>();
     }
 
-    public List<Entry> getEntries() {
-        return entries;
-    }
-
     /**
      * @REQUIRES: entries is not null
      * @EFFECTS: creates a new file with existing entries
      */
     public File(List<Entry> entries) {
         this.entries = entries;
+    }
+
+    public List<Entry> getEntries() {
+        return entries;
     }
 
     /**
@@ -83,9 +83,11 @@ public class File {
         ObjectMapper mapper = new ObjectMapper();
         try {
 //            return mapper.writeValueAsString(entries);
-            return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(entries);
+            return mapper.writerWithDefaultPrettyPrinter()
+                    .writeValueAsString(entries);
         } catch (JsonProcessingException e) {
-            System.out.println("Error in saving entries. Entries were not saved.");
+            System.out.println(
+                    "Error in saving entries. Entries were not saved.");
         }
         return null;
     }
