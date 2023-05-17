@@ -18,14 +18,12 @@ import static ui.Input.*;
 
 // Represents the password manager application with the file currently open
 public class PasswordManager {
+    private static final String JSON_STORE = "./data/workroom.json";
     private File file;
     private Scanner scan;
     private PasswordGenerator passwordGenerator;
-
-    private static final String JSON_STORE = "./data/workroom.json";
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
-
     private String masterPassword;
 
     /**
@@ -64,33 +62,29 @@ public class PasswordManager {
      * indicates whether user wants to exit or not
      */
     private boolean parseInput(String input) {
+        boolean exit = false;
         switch (Input.findCorrespondingEnum(input)) {
             case CREATE:
                 createEntry();
                 System.out.println();
-                return false;
             case LIST:
                 listAllEntries();
                 System.out.println();
-                return false;
             case EXIT:
                 System.out.println("Thanks for using the password manager!");
                 System.out.println("\nLog:");
                 EventLog.printLog();
-                return true;
+                exit = true;
             case SAVE:
                 saveFile();
-                return false;
             case LOAD:
                 loadFile();
-                return false;
             case VIEW:
                 viewEntry();
-                return false;
             default:
                 System.out.println("Sorry, I didn't understand that command. Please try again.");
-                return false;
         }
+        return exit;
     }
 
     private void viewEntry() {
