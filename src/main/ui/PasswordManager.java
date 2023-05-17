@@ -11,13 +11,13 @@ import persistence.JsonWriter;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 import static model.entries.PasswordGenerator.CharacterTypes;
 
 // Represents the password manager application with the file currently open
 public class PasswordManager {
+    private Map<Input, String> setOfInputs;
     private File file;
     private Scanner scan;
     private PasswordGenerator passwordGenerator;
@@ -25,17 +25,8 @@ public class PasswordManager {
     private static final String JSON_STORE = "./data/workroom.json";
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
-    
-    private static final String CREATE_COMMAND = "create";
-    private static final String LIST_COMMAND = "list";
-    private static final String EXIT_COMMAND = "exit";
-    private static final String CUSTOM_COMMAND = "custom";
-    private static final String RANDOM_COMMAND = "random";
-    private static final String PASSPHRASE_COMMAND = "passphrase";
-    private static final String PASSWORD_COMMAND = "password";
-    private static final String SAVE_COMMAND = "save";
-    private static final String LOAD_COMMAND = "load";
-    private static final String VIEW_COMMAND = "view";
+
+    private Map<Input, String> inputStrings;
 
     private String masterPassword;
 
@@ -49,6 +40,7 @@ public class PasswordManager {
         passwordGenerator = new PasswordGenerator();
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
+        inputStrings = Input.createMap();
         displayIntroduction();
     }
 
