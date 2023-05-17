@@ -12,7 +12,6 @@ import java.security.MessageDigest;
 public class Keyset {
 
     private AesGcmJce aead;
-    private ByteConvertor bc;
 
     /**
      * @REQUIRES: password and algorithm are not null, algorithm is a valid algorithm that MessageDigest recognizes
@@ -20,7 +19,6 @@ public class Keyset {
      */
     public Keyset(String password, String algorithm)
             throws GeneralSecurityException {
-        bc = new ByteConvertor();
         AeadConfig.register();
         MessageDigest messageDigest = MessageDigest.getInstance(algorithm);
         messageDigest.update(password.getBytes(StandardCharsets.UTF_8));
