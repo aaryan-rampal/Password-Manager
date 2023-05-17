@@ -153,14 +153,6 @@ public class PasswordManager {
     }
 
     /**
-     * @MODIFIES: file
-     * @EFFECTS: removes entry with the given index
-     */
-    public void removeEntryForGUI(int index) {
-        file.removeEntry(index);
-    }
-
-    /**
      * @EFFECTS: takes a string and prompts the user to enter that string's value for the entry
      */
     private String editFields(String text) {
@@ -236,23 +228,6 @@ public class PasswordManager {
         }
 
         return new Password(passwordText);
-    }
-
-    /**
-     * @REQUIRES: words > 0
-     * @MODIFIES: returns a passphrase with the specified amount of words
-     */
-    public String generatePassphraseForGUI(int words) {
-        return Generator.generatePassphrase("-", words);
-    }
-
-    /**
-     * @REQUIRES: length > 0, characterTypesBoolean has 4 boolean values
-     * @MODIFIES: returns a password with the specified character types and length
-     */
-    public String generatePasswordForGUI(ArrayList<Boolean> characterTypesBoolean, int length) {
-        ArrayList<CharacterTypes> ct = passwordGenerator.addCharacterTypes(characterTypesBoolean);
-        return generatePassword(ct, length);
     }
 
     /**
@@ -343,19 +318,6 @@ public class PasswordManager {
     }
 
     /**
-     * @EFFECTS: saves the file object
-     */
-    public void saveFileFromGUI() {
-        try {
-            jsonWriter.open();
-//            jsonWriter.write(file);
-            jsonWriter.close();
-        } catch (FileNotFoundException e) {
-            e.getMessage();
-        }
-    }
-
-    /**
      * @MODIFIES: this
      * @EFFECTS: loads saved file object
      */
@@ -367,18 +329,6 @@ public class PasswordManager {
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
         }
-    }
-
-    /**
-     * @MODIFIES: this
-     * @EFFECTS: loads saved file object
-     */
-    public void loadFileFromGUI() {
-//        try {
-//            file = jsonReader.read();
-//        } catch (IOException e) {
-//            System.out.println("Unable to read from file: " + JSON_STORE);
-//        }
     }
 
 }
