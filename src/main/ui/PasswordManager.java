@@ -168,6 +168,9 @@ public class PasswordManager {
         return scan.nextLine();
     }
 
+    /**
+     * @EFFECTS: returns enum corresponding to input or Input.DEFAULT if enum doesn't exist
+     */
     private Input findCorrespondingEnum(String input) {
         Input i;
         try {
