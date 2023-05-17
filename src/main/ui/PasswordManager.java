@@ -45,7 +45,7 @@ public class PasswordManager {
     private void displayIntroduction() {
         boolean breakCondition = false;
         do {
-            System.out.println("Welcome to your password manager\n"
+            System.out.println("Welcome to SafePass!\n"
                     + "Enter " + CREATE + " to create a new entry.\n"
                     + "Enter " + VIEW + " to view an entry.\n"
                     + "Enter " + LIST + " to list all entries.\n"
