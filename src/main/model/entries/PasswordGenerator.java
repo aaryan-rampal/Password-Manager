@@ -82,6 +82,14 @@ public class PasswordGenerator extends Generator {
     }
 
     /**
+     * @EFFECTS: returns a random password given the character types that are available and the length specified
+     */
+    public String generatePassword(ArrayList<Boolean> characterTypesBoolean, int length) {
+        ArrayList<CharacterTypes> ct = addCharacterTypes(characterTypesBoolean);
+        return generateRandomPassword(ct, length);
+    }
+
+    /**
      * @EFFECTS: list of the 4 different character types that are included as an option in the password
      */
     public enum CharacterTypes {

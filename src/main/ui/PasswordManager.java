@@ -201,8 +201,7 @@ public class PasswordManager {
             ArrayList<Boolean> characterTypesBoolean = promptAndStoreInput();
             System.out.println("How many characters do you want?");
             int length = nextInt();
-            ArrayList<CharacterTypes> ct = passwordGenerator.addCharacterTypes(characterTypesBoolean);
-            passwordText = generatePassword(ct, length);
+            passwordText = passwordGenerator.generatePassword(characterTypesBoolean, length);
         } else if (i == PASSPHRASE) {
             System.out.println("How many words do you want your passphrase to be?");
             int words = nextInt();
@@ -213,13 +212,6 @@ public class PasswordManager {
         }
 
         return new Password(passwordText);
-    }
-
-    /**
-     * @EFFECTS: returns a random password given the character types that are available and the length specified
-     */
-    private String generatePassword(ArrayList<CharacterTypes> ct, int length) {
-        return passwordGenerator.generateRandomPassword(ct, length);
     }
 
     /**
