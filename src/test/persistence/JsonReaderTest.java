@@ -26,7 +26,7 @@ class JsonReaderTest extends JsonTest {
 
     @Test
     void testReaderEmptyFile() {
-        JsonReader reader = new JsonReader("./data/testReaderEmptyFile.json");
+        JsonReader reader = new JsonReader("./data/test/testReaderEmptyFile.json");
         try {
             File file = reader.read("passwordEmptyFile", "STORE");
             assertEquals(0, file.getSizeOfEntries());
@@ -39,7 +39,7 @@ class JsonReaderTest extends JsonTest {
 
     @Test
     void testReaderGeneralWorkRoom() {
-        JsonReader reader = new JsonReader("./data/testReaderGeneralFile.json");
+        JsonReader reader = new JsonReader("./data/test/testReaderGeneralFile.json");
         try {
             File file = reader.read("passwordGeneralFile", "STORE");
             List<Entry> entries = file.getEntries();
