@@ -20,7 +20,7 @@ class JsonReaderTest extends JsonTest {
         } catch (IOException e) {
             // pass
         } catch (GeneralSecurityException e) {
-            fail("GeneralSecurityException not expected");
+            fail(e.getClass().getSimpleName() + " should not have been thrown.");
         }
     }
 
@@ -33,7 +33,7 @@ class JsonReaderTest extends JsonTest {
         } catch (IOException e) {
             fail("Couldn't read from file");
         } catch (GeneralSecurityException e) {
-            fail("GeneralSecurityException not expected");
+            fail(e.getClass().getSimpleName() + " should not have been thrown.");
         }
     }
 
@@ -54,7 +54,7 @@ class JsonReaderTest extends JsonTest {
         } catch (IOException e) {
             fail("Couldn't read from file");
         } catch (GeneralSecurityException e) {
-            fail("GeneralSecurityException not expected");
+            fail(e.getClass().getSimpleName() + " should not have been thrown.");
         }
     }
 }

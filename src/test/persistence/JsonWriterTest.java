@@ -38,10 +38,8 @@ class JsonWriterTest extends JsonTest {
             JsonReader reader = new JsonReader("./data/testWriterEmptyFile.json");
             file = reader.read("password", "STORE");
             assertEquals(0, file.getSizeOfEntries());
-        } catch (IOException e) {
-            fail("Exception should not have been thrown");
-        } catch (GeneralSecurityException e) {
-            fail("GeneralSecurityException not expected");
+        } catch (IOException | GeneralSecurityException e) {
+            fail(e.getClass().getSimpleName() + " should not have been thrown.");
         }
     }
 
@@ -66,10 +64,8 @@ class JsonWriterTest extends JsonTest {
             checkEntry("Twitch", "piedipier", new Password("asddjakdsl"), "www.twitch.tv",
                     "young", entries.get(1));
 
-        } catch (IOException e) {
-            fail("Exception should not have been thrown");
-        } catch (GeneralSecurityException e) {
-            fail(e.getClass() + " not expected");
+        } catch (IOException | GeneralSecurityException e) {
+            fail(e.getClass().getSimpleName() + " should not have been thrown.");
         }
     }
 }
