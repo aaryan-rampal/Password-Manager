@@ -41,10 +41,6 @@ public class PasswordManager {
         displayIntroduction();
     }
 
-    public File getFile() {
-        return file;
-    }
-
     /**
      * @EFFECTS: displays the introduction menu and handles user input
      */
@@ -139,15 +135,6 @@ public class PasswordManager {
         String url = editFields("url");
         String notes = editFields("notes");
 
-        Entry entry = new Entry(name, username, password, url, notes);
-        file.addEntry(entry);
-    }
-
-    /**
-     * @MODIFIES: file
-     * @EFFECTS: assigns parameters to a new entry object which is added to file
-     */
-    public void createEntry(String name, String username, Password password, String url, String notes) {
         Entry entry = new Entry(name, username, password, url, notes);
         file.addEntry(entry);
     }
