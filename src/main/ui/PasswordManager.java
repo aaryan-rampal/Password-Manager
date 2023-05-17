@@ -189,12 +189,15 @@ public class PasswordManager {
         Password password = null;
         String input;
 
+        Input i;
         do {
             System.out.println("Enter " + CUSTOM + " to create a custom password.\n"
                     + "Enter " + RANDOM + " to generate a random password.");
             input = scan.nextLine();
 
-            switch (findCorrespondingEnum(input)) {
+            i = findCorrespondingEnum(input);
+
+            switch (i) {
                 case CUSTOM:
                     System.out.println("Enter your password.");
                     String passwordText = scan.nextLine();
@@ -207,7 +210,7 @@ public class PasswordManager {
                     System.out.println("Sorry, I didn't understand that command. Please try again.");
                     break;
             }
-        } while (findCorrespondingEnum(input) == DEFAULT);
+        } while (i != CUSTOM && i != RANDOM);
 
         return password;
     }
