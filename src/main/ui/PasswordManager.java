@@ -62,33 +62,37 @@ public class PasswordManager {
      * indicates whether user wants to exit or not
      */
     private boolean parseInput(String input) {
-        boolean exit = false;
         switch (Input.findCorrespondingEnum(input)) {
             case CREATE:
                 createEntry();
                 System.out.println();
+                break;
             case LIST:
                 listAllEntries();
                 System.out.println();
+                break;
             case EXIT:
                 System.out.println("Thanks for using the password manager!");
                 System.out.println("\nLog:");
                 EventLog.printLog();
-                exit = true;
+                return true;
             case SAVE:
                 saveFile();
+                break;
             case LOAD:
                 loadFile();
+                break;
             case VIEW:
                 viewEntry();
+                break;
             default:
                 System.out.println("Sorry, I didn't understand that command. Please try again.");
+                break;
         }
-        return exit;
+        return false;
     }
 
     private void viewEntry() {
-//        listAllEntries();
         System.out.println("Which entry number would you like to view?");
         int index = nextInt() - 1;
         try {
