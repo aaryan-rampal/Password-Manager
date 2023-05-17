@@ -206,12 +206,16 @@ public class Entry {
         List<String> suggestions = password.getFeedback().getSuggestion();
 
         sb.append("Suggestions: ");
-        if (suggestions.size() == 0) sb.append("None. Strong password!");
-        else {
+        if (suggestions.size() == 0) {
+            sb.append("None. Strong password!");
+        } else {
             for (int i = 0; i < suggestions.size(); i++) {
                 String s = suggestions.get(i);
-                if (i == suggestions.size() - 1) sb.append(s);
-                else sb.append(s + ", ");
+                if (i == suggestions.size() - 1) {
+                    sb.append(s);
+                } else {
+                    sb.append(s + ", ");
+                }
             }
         }
 
