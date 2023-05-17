@@ -199,6 +199,8 @@ public class Entry {
         return stars;
     }
 
+    // TODO: add general numbers for number of guesses to crack.
+    //  For example, 500 sextillion instead of 487446578262835240000000
     public StringBuilder detailedView() {
         StringBuilder sb = new StringBuilder();
         List<String> suggestions = password.getFeedback().getSuggestion();
