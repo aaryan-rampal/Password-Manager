@@ -1,6 +1,5 @@
 package ui;
 
-import me.gosimple.nbvcxz.resources.Generator;
 import model.entries.Entry;
 import model.entries.File;
 import model.entries.Password;

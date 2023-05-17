@@ -14,7 +14,7 @@ public class PasswordGeneratorTest {
 
     @BeforeEach
     void runBefore() {
-        pg = new PasswordGenerator();
+        pg = PasswordGenerator.getInstance();
         characterTypesBoolean = new ArrayList<>();
     }
 
