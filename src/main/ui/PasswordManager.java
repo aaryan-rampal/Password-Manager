@@ -68,7 +68,7 @@ public class PasswordManager {
      * indicates whether user wants to exit or not
      */
     private boolean parseInput(String input) {
-        switch (Input.valueOf(input.toUpperCase())) {
+        switch (findCorrespondingEnum(input)) {
             case CREATE:
                 createEntry();
                 System.out.println();
