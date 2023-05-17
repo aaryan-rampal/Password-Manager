@@ -34,7 +34,7 @@ public class JsonReader {
      * @EFFECTS: reads file object from JSON data and returns it; throws IOException if an
      * error occurs reading data from file
      */
-    public File read(String masterPassword, String store) throws IOException {
+    public File read(String masterPassword, String store) throws IOException, GeneralSecurityException {
         String jsonData = readFile(source);
         ObjectMapper mapper = new ObjectMapper();
 
@@ -45,8 +45,8 @@ public class JsonReader {
             EventLog.getInstance().logEvent(new Event("Loaded entries from workroom.json."));
             System.out.println("Loaded file from " + store);
         } catch (GeneralSecurityException e) {
-            System.out.println("Bad password!");
             EventLog.getInstance().logEvent(new Event("Failed to authenticate password to load entries."));
+            throw new GeneralSecurityException("Bad password!");
         }
 
         return parseFile(loadedEntries);

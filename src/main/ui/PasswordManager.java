@@ -10,6 +10,7 @@ import persistence.JsonWriter;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -295,7 +296,9 @@ public class PasswordManager {
 
     /**
      * @MODIFIES: this
-     * @EFFECTS: loads saved file object
+     * @EFFECTS: loads saved file object. If the passwords do not match, prints error message and nulls out
+     * masterPassword. This is important since it ensures the program prompts the user for a password if they end up
+     * saving after this instead of using the incorrect password value.
      */
     private void loadFile() {
         try {
@@ -304,6 +307,10 @@ public class PasswordManager {
             file = jsonReader.read(masterPassword, JSON_STORE);
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
+            masterPassword = null;
+        } catch (GeneralSecurityException e) {
+            System.out.println(e.getMessage());
+            masterPassword = null;
         }
     }
 

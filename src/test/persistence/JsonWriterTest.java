@@ -6,6 +6,7 @@ import model.entries.Password;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -39,6 +40,8 @@ class JsonWriterTest extends JsonTest {
             assertEquals(0, file.getSizeOfEntries());
         } catch (IOException e) {
             fail("Exception should not have been thrown");
+        } catch (GeneralSecurityException e) {
+            fail("GeneralSecurityException not expected");
         }
     }
 
@@ -65,6 +68,8 @@ class JsonWriterTest extends JsonTest {
 
         } catch (IOException e) {
             fail("Exception should not have been thrown");
+        } catch (GeneralSecurityException e) {
+            fail(e.getClass() + " not expected");
         }
     }
 }

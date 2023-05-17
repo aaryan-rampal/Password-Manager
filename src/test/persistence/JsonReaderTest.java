@@ -5,6 +5,7 @@ import model.entries.File;
 import model.entries.Password;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,6 +19,8 @@ class JsonReaderTest extends JsonTest {
             fail("IOException expected");
         } catch (IOException e) {
             // pass
+        } catch (GeneralSecurityException e) {
+            fail("GeneralSecurityException not expected");
         }
     }
 
@@ -29,6 +32,8 @@ class JsonReaderTest extends JsonTest {
             assertEquals(0, file.getSizeOfEntries());
         } catch (IOException e) {
             fail("Couldn't read from file");
+        } catch (GeneralSecurityException e) {
+            fail("GeneralSecurityException not expected");
         }
     }
 
@@ -48,6 +53,8 @@ class JsonReaderTest extends JsonTest {
                     entries.get(1));
         } catch (IOException e) {
             fail("Couldn't read from file");
+        } catch (GeneralSecurityException e) {
+            fail("GeneralSecurityException not expected");
         }
     }
 }
