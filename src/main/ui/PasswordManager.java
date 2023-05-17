@@ -68,7 +68,7 @@ public class PasswordManager {
      * indicates whether user wants to exit or not
      */
     private boolean parseInput(String input) {
-        switch (findCorrespondingEnum(input)) {
+        switch (Input.findCorrespondingEnum(input)) {
             case CREATE:
                 createEntry();
                 System.out.println();
@@ -169,19 +169,6 @@ public class PasswordManager {
     }
 
     /**
-     * @EFFECTS: returns enum corresponding to input or Input.DEFAULT if enum doesn't exist
-     */
-    private Input findCorrespondingEnum(String input) {
-        Input i;
-        try {
-            i = Input.valueOf(input.toUpperCase());
-        } catch (IllegalArgumentException e) {
-            i = DEFAULT;
-        }
-        return i;
-    }
-
-    /**
      * @EFFECTS: takes user input regarding a custom or random password and calls the specified methods for the user
      * choice
      */
@@ -195,7 +182,7 @@ public class PasswordManager {
                     + "Enter " + RANDOM + " to generate a random password.");
             input = scan.nextLine();
 
-            i = findCorrespondingEnum(input);
+            i = Input.findCorrespondingEnum(input);
 
             switch (i) {
                 case CUSTOM:
@@ -231,7 +218,7 @@ public class PasswordManager {
         String input = scan.nextLine();
         String passwordText = null;
 
-        Input i = findCorrespondingEnum(input);
+        Input i = Input.findCorrespondingEnum(input);
 
         if (i == PASSWORD) {
             ArrayList<Boolean> characterTypesBoolean = promptAndStoreInput();
