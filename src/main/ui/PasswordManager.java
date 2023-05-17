@@ -14,10 +14,10 @@ import java.io.IOException;
 import java.util.*;
 
 import static model.entries.PasswordGenerator.CharacterTypes;
+import static ui.Input.*;
 
 // Represents the password manager application with the file currently open
 public class PasswordManager {
-    private Map<Input, String> setOfInputs;
     private File file;
     private Scanner scan;
     private PasswordGenerator passwordGenerator;
@@ -25,8 +25,6 @@ public class PasswordManager {
     private static final String JSON_STORE = "./data/workroom.json";
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
-
-    private Map<Input, String> inputStrings;
 
     private String masterPassword;
 
@@ -40,7 +38,6 @@ public class PasswordManager {
         passwordGenerator = new PasswordGenerator();
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
-        inputStrings = Input.createMap();
         displayIntroduction();
     }
 
@@ -55,12 +52,12 @@ public class PasswordManager {
         boolean breakCondition = false;
         do {
             System.out.println("Welcome to your password manager\n"
-                    + "Enter " + CREATE_COMMAND + " to create a new entry.\n"
-                    + "Enter " + VIEW_COMMAND + " to view an entry.\n"
-                    + "Enter " + LIST_COMMAND + " to list all entries.\n"
-                    + "Enter " + SAVE_COMMAND + " to save your file.\n"
-                    + "Enter " + LOAD_COMMAND + " to load your file.\n"
-                    + "Enter " + EXIT_COMMAND + " to exit.");
+                    + "Enter " + CREATE + " to create a new entry.\n"
+                    + "Enter " + VIEW + " to view an entry.\n"
+                    + "Enter " + LIST + " to list all entries.\n"
+                    + "Enter " + SAVE + " to save your file.\n"
+                    + "Enter " + LOAD + " to load your file.\n"
+                    + "Enter " + EXIT + " to exit.");
 
             breakCondition = parseInput(scan.nextLine());
         } while (!breakCondition);
@@ -71,27 +68,27 @@ public class PasswordManager {
      * indicates whether user wants to exit or not
      */
     private boolean parseInput(String input) {
-        switch (input) {
-            case CREATE_COMMAND:
+        switch (Input.valueOf(input.toUpperCase())) {
+            case CREATE:
                 createEntry();
                 System.out.println();
                 return false;
-            case LIST_COMMAND:
+            case LIST:
                 listAllEntries();
                 System.out.println();
                 return false;
-            case EXIT_COMMAND:
+            case EXIT:
                 System.out.println("Thanks for using the password manager!");
                 System.out.println("\nLog:");
                 EventLog.printLog();
                 return true;
-            case SAVE_COMMAND:
+            case SAVE:
                 saveFile();
                 return false;
-            case LOAD_COMMAND:
+            case LOAD:
                 loadFile();
                 return false;
-            case VIEW_COMMAND:
+            case VIEW:
                 viewEntry();
                 return false;
             default:
@@ -127,7 +124,7 @@ public class PasswordManager {
                 Entry e = file.getEntryAtIndex(i);
                 sb.append(e.toString(i));
             }
-            System.out.print(sb.toString());
+            System.out.print(sb);
         }
     }
 
@@ -171,6 +168,16 @@ public class PasswordManager {
         return scan.nextLine();
     }
 
+    private Input findCorrespondingEnum(String input) {
+        Input i;
+        try {
+            i = Input.valueOf(input.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            i = DEFAULT;
+        }
+        return i;
+    }
+
     /**
      * @EFFECTS: takes user input regarding a custom or random password and calls the specified methods for the user
      * choice
@@ -180,24 +187,24 @@ public class PasswordManager {
         String input;
 
         do {
-            System.out.println("Enter " + CUSTOM_COMMAND + " to create a custom password.\n"
-                    + "Enter " + RANDOM_COMMAND + " to generate a random password.");
+            System.out.println("Enter " + CUSTOM + " to create a custom password.\n"
+                    + "Enter " + RANDOM + " to generate a random password.");
             input = scan.nextLine();
 
-            switch (input) {
-                case CUSTOM_COMMAND:
+            switch (findCorrespondingEnum(input)) {
+                case CUSTOM:
                     System.out.println("Enter your password.");
                     String passwordText = scan.nextLine();
                     password = new Password(passwordText);
                     break;
-                case RANDOM_COMMAND:
+                case RANDOM:
                     password = generateRandomPassword();
                     break;
                 default:
                     System.out.println("Sorry, I didn't understand that command. Please try again.");
                     break;
             }
-        } while (!input.equals(CUSTOM_COMMAND) && !input.equals(RANDOM_COMMAND));
+        } while (findCorrespondingEnum(input) == DEFAULT);
 
         return password;
     }
@@ -213,18 +220,20 @@ public class PasswordManager {
      * @EFFECTS: creates random password or passphrase depending on user input and returns the password object
      */
     private Password generateRandomPassword() {
-        System.out.println("Enter " + PASSPHRASE_COMMAND + " to generate a passphrase.\n"
-                + "Enter " + PASSWORD_COMMAND + " to generate a password.");
+        System.out.println("Enter " + PASSPHRASE + " to generate a passphrase.\n"
+                + "Enter " + PASSWORD + " to generate a password.");
         String input = scan.nextLine();
         String passwordText = null;
 
-        if (input.equals(PASSWORD_COMMAND)) {
+        Input i = findCorrespondingEnum(input);
+
+        if (i == PASSWORD) {
             ArrayList<Boolean> characterTypesBoolean = promptAndStoreInput();
             System.out.println("How many characters do you want?");
             int length = nextInt();
             ArrayList<CharacterTypes> ct = passwordGenerator.addCharacterTypes(characterTypesBoolean);
             passwordText = generatePassword(ct, length);
-        } else if (input.equals(PASSPHRASE_COMMAND)) {
+        } else if (i == PASSPHRASE) {
             System.out.println("How many words do you want your passphrase to be?");
             int words = nextInt();
             passwordText = Generator.generatePassphrase("-", words);
