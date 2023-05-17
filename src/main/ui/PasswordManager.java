@@ -11,9 +11,9 @@ import persistence.JsonWriter;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-import static model.entries.PasswordGenerator.CharacterTypes;
 import static ui.Input.*;
 
 // Represents the password manager application with the file currently open
@@ -33,7 +33,7 @@ public class PasswordManager {
     public void start() {
         file = new File();
         scan = new Scanner(System.in);
-        passwordGenerator = new PasswordGenerator();
+        passwordGenerator = PasswordGenerator.getInstance();
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         displayIntroduction();
@@ -205,7 +205,7 @@ public class PasswordManager {
         } else if (i == PASSPHRASE) {
             System.out.println("How many words do you want your passphrase to be?");
             int words = nextInt();
-            passwordText = Generator.generatePassphrase("-", words);
+            passwordText = passwordGenerator.generatePassphrase("-", words);
         } else {
             System.out.println("Sorry, I didn't understand that. Please try again.");
             return generateRandomPassword();

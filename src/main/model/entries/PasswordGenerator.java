@@ -8,6 +8,20 @@ import java.util.ArrayList;
 // some methods to be better utilized by the password manager. The code methods and outline is inspired by the Generator
 // class in the Nbvcxz library.
 public class PasswordGenerator extends Generator {
+
+    private static PasswordGenerator passwordGenerator;
+
+    private PasswordGenerator() {
+
+    }
+
+    public static PasswordGenerator getInstance() {
+        if (passwordGenerator == null) {
+            passwordGenerator = new PasswordGenerator();
+        }
+        return passwordGenerator;
+    }
+
     /**
      * @REQUIRES: characterTypes is a valid enum value (LOWERCASE_ALPHA, UPPERCASE_ALPHA, NUMERIC, or SYMBOLS);
      * length > 0
