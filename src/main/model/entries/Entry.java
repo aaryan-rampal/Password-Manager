@@ -10,7 +10,9 @@ import model.security.Encryptor;
 import model.security.Keyset;
 
 import java.security.GeneralSecurityException;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 // Represents an entry in the password manager including a name, username, password, url, and notes
 public class Entry {
@@ -208,8 +210,6 @@ public class Entry {
         return stars;
     }
 
-    // TODO: add general numbers for number of guesses to crack.
-    //  For example, 500 sextillion instead of 487446578262835240000000
     public StringBuilder detailedView() {
         StringBuilder sb = new StringBuilder();
         List<String> suggestions = password.getFeedback().getSuggestion();
@@ -235,9 +235,14 @@ public class Entry {
         Result result = password.getResult();
         sb.append("\nPassword entropy (higher the better): " +
                 result.getEntropy().shortValue());
-        sb.append("\nNumber of guesses to crack: " + result.getGuesses());
+
+        sb.append("\nNumber of guesses to crack: " + numberInEnglish(result));
 
         return sb;
+    }
+
+    private String numberInEnglish(Result result) {
+        return NumberFormat.getCompactNumberInstance(Locale.ENGLISH, NumberFormat.Style.LONG).format(result.getGuesses());
     }
 
 }

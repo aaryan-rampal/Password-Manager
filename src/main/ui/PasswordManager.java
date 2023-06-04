@@ -5,6 +5,8 @@ import model.entries.File;
 import model.entries.Password;
 import model.entries.PasswordGenerator;
 import model.event.EventLog;
+import model.security.Decryptor;
+import org.w3c.dom.events.Event;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
